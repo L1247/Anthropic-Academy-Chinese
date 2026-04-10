@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:anthropic.skilljar.com)",
+      "WebSearch",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:www.labla.org)",
+      "Bash(echo \"---EXIT:$?---\")",
+      "Bash(npm list:*)",
+      "Bash(npx vitepress:*)",
+      "Bash(npm --version)",
+      "WebFetch(domain:vitepress.dev)",
+      "WebFetch(domain:www.termdock.com)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(powershell -c \"[System.Media.SystemSounds]::Beep.Play\\(\\)\")"
+    ]
+  }
+}
