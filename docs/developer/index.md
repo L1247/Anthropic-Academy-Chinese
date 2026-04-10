@@ -7,69 +7,69 @@
 ### 💻 核心開發課程
 
 <div class="role-cards">
-  <div class="role-card">
+  <a class="role-card" href="/developer/building-with-api">
     <div class="role-icon">🔧</div>
-    <h3><a href="/developer/building-with-api">使用 Claude API 開發</a></h3>
+    <h3>使用 Claude API 開發</h3>
     <p>開發者最重要的課程。84 堂課、8 小時以上。涵蓋 API 設定、對話管理、提示工程、工具整合、RAG、代理架構。</p>
     <p>⭐⭐⭐ 中-高級 · 前置：Python、JSON 基礎</p>
-  </div>
-  <div class="role-card">
+  </a>
+  <a class="role-card" href="/developer/claude-code-in-action">
     <div class="role-icon">⚡</div>
-    <h3><a href="/developer/claude-code-in-action">Claude Code 實戰</a></h3>
+    <h3>Claude Code 實戰</h3>
     <p>將 Claude Code 整合進開發工作流程，掌握工具系統、上下文管理、MCP 整合、GitHub 自動化。</p>
     <p>⭐⭐ 中級 · 前置：終端操作、Git</p>
-  </div>
+  </a>
 </div>
 
 ### 🔌 MCP 協定課程
 
 <div class="role-cards">
-  <div class="role-card">
+  <a class="role-card" href="/developer/mcp-intro">
     <div class="role-icon">🔌</div>
-    <h3><a href="/developer/mcp-intro">MCP 入門</a></h3>
+    <h3>MCP 入門</h3>
     <p>Model Context Protocol 基礎。用 Python SDK 建立 MCP Server 和 Client，掌握工具、資源、提示三大原語。</p>
     <p>⭐⭐ 中級 · 前置：Python、JSON、HTTP 基礎</p>
-  </div>
-  <div class="role-card">
+  </a>
+  <a class="role-card" href="/developer/mcp-advanced">
     <div class="role-icon">🚀</div>
-    <h3><a href="/developer/mcp-advanced">MCP 進階主題</a></h3>
+    <h3>MCP 進階主題</h3>
     <p>生產環境的 MCP 實作：取樣機制、傳輸方式（stdio/HTTP）、根目錄存取、水平擴展部署。</p>
     <p>⭐⭐⭐ 高級 · 前置：MCP 入門 + async 程式設計</p>
-  </div>
+  </a>
 </div>
 
 ### ⚡ Claude Code 擴充課程
 
 <div class="role-cards">
-  <div class="role-card">
+  <a class="role-card" href="/developer/agent-skills">
     <div class="role-icon">🤖</div>
-    <h3><a href="/developer/agent-skills">Agent Skills 入門</a></h3>
+    <h3>Agent Skills 入門</h3>
     <p>建立可重用的 SKILL.md 指令檔，讓 Claude 自動套用在正確的任務上。支援團隊共享。</p>
     <p>⭐⭐ 中級 · 前置：Claude Code 基本使用經驗</p>
-  </div>
-  <div class="role-card">
+  </a>
+  <a class="role-card" href="/developer/subagents">
     <div class="role-icon">👥</div>
-    <h3><a href="/developer/subagents">子代理入門</a></h3>
+    <h3>子代理入門</h3>
     <p>將複雜任務委派給獨立的子代理，保持主上下文視窗乾淨，提升長任務的效率。</p>
     <p>⭐⭐ 中級 · 前置：Claude Code 基本使用經驗</p>
-  </div>
+  </a>
 </div>
 
 ### ☁️ 雲端平台課程
 
 <div class="role-cards">
-  <div class="role-card">
+  <a class="role-card" href="/developer/amazon-bedrock">
     <div class="role-icon">☁️</div>
-    <h3><a href="/developer/amazon-bedrock">Claude × Amazon Bedrock</a></h3>
+    <h3>Claude × Amazon Bedrock</h3>
     <p>在 AWS 基礎設施上部署 Claude，建立提示工程系統和代理工作流程。</p>
     <p>⭐⭐ 中級 · 前置：Python、AWS 基礎</p>
-  </div>
-  <div class="role-card">
+  </a>
+  <a class="role-card" href="/developer/google-vertex">
     <div class="role-icon">🌐</div>
-    <h3><a href="/developer/google-vertex">Claude × Google Vertex AI</a></h3>
+    <h3>Claude × Google Vertex AI</h3>
     <p>在 GCP 上部署 Claude，建立 RAG 管道、系統評估，並應用企業級 AI 架構模式。</p>
     <p>⭐⭐ 中級 · 前置：Python、GCP 基礎</p>
-  </div>
+  </a>
 </div>
 
 ## 🗺️ 建議學習路線

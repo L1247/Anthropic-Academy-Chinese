@@ -146,3 +146,9 @@ Claude 分析任務，制定計畫
 - [Agent Skills 入門](/developer/agent-skills)（建立可重用技能）
 - [子代理入門](/developer/subagents)（委派複雜任務）
 - [MCP 入門](/developer/mcp-intro)（擴展 Claude 的工具）
+
+## 📚 延伸閱讀
+
+- [Claude Code 101 課程頁面](https://anthropic.skilljar.com/claude-code-101)（英文，原始課程）
+- [Claude Code 官方文件](https://docs.anthropic.com/en/docs/claude-code/overview)（英文，完整技術文件）
+- [Anthropic Academy 課程總覽](https://www.anthropic.com/learn)（英文，所有課程的入口）

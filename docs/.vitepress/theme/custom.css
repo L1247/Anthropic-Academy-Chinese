@@ -30,16 +30,25 @@ body {
 }
 
 .role-card {
+  display: block;
   border: 1px solid var(--vp-c-divider);
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
-  transition: border-color 0.25s, box-shadow 0.25s;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.role-card *,
+.role-card *:hover {
+  text-decoration: none !important;
 }
 
 .role-card:hover {
   border-color: var(--vp-c-brand-1);
   box-shadow: 0 4px 20px rgba(217, 119, 6, 0.15);
+  transform: translateY(-2px);
 }
 
 .role-card .role-icon {
@@ -50,12 +59,18 @@ body {
 .role-card h3 {
   margin: 0 0 0.5rem;
   font-size: 1.1rem;
+  color: var(--vp-c-text-1);
 }
 
 .role-card p {
   color: var(--vp-c-text-2);
   font-size: 0.9rem;
   margin: 0 0 1rem;
+}
+
+.role-card-cta {
+  color: var(--vp-c-brand-1);
+  font-size: 0.9rem;
 }
 
 /* 前置條件區塊 */
