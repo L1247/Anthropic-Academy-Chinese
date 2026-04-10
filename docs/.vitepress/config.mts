@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
-export default defineConfig({
+export default withMermaid(defineConfig({
   lang: 'zh-TW',
   title: 'Anthropic Academy 中文指南',
   description: 'Anthropic Academy 17 門免費課程的完整繁體中文學習指南',
@@ -118,4 +119,9 @@ export default defineConfig({
       copyright: '© 2026 Anthropic Academy 中文指南 | 版權歸 Anthropic 所有',
     },
   },
-})
+
+  mermaid: {
+    theme: 'default',
+  },
+
+}))
