@@ -1,10 +1,10 @@
-# 開發者課程總覽
+# 🛠️ 開發者課程總覽
 
 本分類共 **8 門課程**，從 Claude API 整合到 MCP 協定、代理架構、雲端部署，完整覆蓋開發者所需的技術棧。
 
-## 課程列表
+## 📚 課程列表
 
-### 核心開發課程
+### 💻 核心開發課程
 
 <div class="role-cards">
   <div class="role-card">
@@ -21,7 +21,7 @@
   </div>
 </div>
 
-### MCP 協定課程
+### 🔌 MCP 協定課程
 
 <div class="role-cards">
   <div class="role-card">
@@ -38,7 +38,7 @@
   </div>
 </div>
 
-### Claude Code 擴充課程
+### ⚡ Claude Code 擴充課程
 
 <div class="role-cards">
   <div class="role-card">
@@ -55,7 +55,7 @@
   </div>
 </div>
 
-### 雲端平台課程
+### ☁️ 雲端平台課程
 
 <div class="role-cards">
   <div class="role-card">
@@ -72,7 +72,7 @@
   </div>
 </div>
 
-## 建議學習路線
+## 🗺️ 建議學習路線
 
 **從零開始的開發者：**
 使用 Claude API 開發 → MCP 入門 → MCP 進階 → 雲端平台
@@ -84,7 +84,7 @@ Claude Code 實戰 → Agent Skills → 子代理
 - AWS 用戶：Claude API → Amazon Bedrock
 - GCP 用戶：Claude API → Google Vertex AI
 
-## 技術先備知識
+## 🔧 技術先備知識
 
 | 技術 | 需要它的課程 |
 |------|------------|
