@@ -47,6 +47,7 @@ export default withMermaid(defineConfig({
             { text: '學生的 AI 素養', link: '/ai-fluency/for-students' },
             { text: '教授 AI 素養', link: '/ai-fluency/teaching' },
             { text: '非營利組織的 AI 素養', link: '/ai-fluency/for-nonprofits' },
+            { text: '🎯 4D 互動練習', link: '/ai-fluency/4d-practice' },
           ],
         },
       ],

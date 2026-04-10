@@ -70,6 +70,7 @@ features:
 | [學生的 AI 素養](/ai-fluency/for-students) | AI 素養 | ⭐ 初學者 | 無 |
 | [教授 AI 素養](/ai-fluency/teaching) | AI 素養 | ⭐⭐ 中級 | AI Fluency 基礎 |
 | [非營利組織的 AI 素養](/ai-fluency/for-nonprofits) | AI 素養 | ⭐ 初學者 | 建議先修基礎 |
+| [4D 互動練習](/ai-fluency/4d-practice) | AI 素養 | ⭐ 初學者 | AI Fluency 基礎 |
 | [Claude 101](/claude-products/claude-101) | Claude 產品 | ⭐ 初學者 | 無 |
 | [Claude Code 101](/claude-products/claude-code-101) | Claude 產品 | ⭐⭐ 初-中級 | 命令列基礎 |
 | [Claude Cowork 入門](/claude-products/claude-cowork) | Claude 產品 | ⭐ 初學者 | 無 |

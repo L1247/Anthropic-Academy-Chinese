@@ -12,6 +12,14 @@
     <h3>AI 素養：框架與基礎</h3>
     <p>必修核心課程。學習 4D AI 素養框架（委派、描述、辨識、盡責），建立與 AI 協作的正確觀念。</p>
     <p>⭐ 初學者 · 前置：無 · 時長：約 1 小時</p>
+    <span class="role-card-cta"><strong>從這裡開始 →</strong></span>
+  </a>
+  <a class="role-card" href="/ai-fluency/4d-practice">
+    <div class="role-icon">🎯</div>
+    <h3>4D 互動練習</h3>
+    <p>選擇題、委派四問情境、提示改寫、盡責聲明產生器——動手練習學會 4D 框架。</p>
+    <p>⭐ 初學者 · 前置：AI Fluency 基礎 · 時長：約 30 分鐘</p>
+    <span class="role-card-cta"><strong>開始練習 →</strong></span>
   </a>
   <a class="role-card" href="/ai-fluency/capabilities-limitations">
     <div class="role-icon">⚡</div>
