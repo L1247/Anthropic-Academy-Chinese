@@ -1,7 +1,65 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.analyticsvidhya.com)"
+      "WebFetch(domain:www.analyticsvidhya.com)",
+      "Edit(~/.npm/**)",
+      "Read(~/.npm/**)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Bash(git push *)",
+      "Bash(git reset --hard *)"
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "network": {
+      "allowLocalBinding": true,
+      "allowedDomains": [
+        "registry.npmjs.org",
+        "*.npmjs.org",
+        "*.github.com",
+        "github.com",
+        "*.githubusercontent.com",
+        "localhost:*"
+      ]
+    }
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/protect-files.sh"
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat CLAUDE.md"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/notify-done.sh"
+          }
+        ]
+      }
     ]
   }
 }
