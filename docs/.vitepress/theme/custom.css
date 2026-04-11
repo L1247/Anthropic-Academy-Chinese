@@ -1,4 +1,7 @@
+
 :root {
+  --vp-sidebar-width: 316px;
+
   --vp-c-brand-1: #d97706;
   --vp-c-brand-2: #b45309;
   --vp-c-brand-3: #92400e;
@@ -8,6 +11,22 @@
   --vp-home-hero-name-background: linear-gradient(135deg, #d97706, #7c3aed);
   --vp-home-hero-image-background-image: linear-gradient(135deg, #fef3c7 50%, #ede9fe 50%);
   --vp-home-hero-image-filter: blur(44px);
+}
+
+/* Sidebar 內容往右內縮，靠近捲動條 */
+.VPSidebar .nav {
+  padding-left: 60px;
+  padding-right: 4px;
+}
+
+/* 網站標題靠右對齊 */
+.VPNavBarTitle {
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+.VPNavBarTitle .title {
+  margin-left: auto;
 }
 
 /* 中文字型優化 */
