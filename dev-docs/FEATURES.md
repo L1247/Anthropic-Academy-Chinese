@@ -55,7 +55,7 @@
 
 ## 課程內容清單
 
-### AI 素養（6 門）
+### AI 素養（6 門 + 互動練習頁）
 
 | 課程 | 檔案 | 狀態 |
 |------|------|------|
@@ -65,6 +65,12 @@
 | 學生的 AI 素養 | `ai-fluency/for-students.md` | ✅ |
 | 教授 AI 素養 | `ai-fluency/teaching.md` | ✅ |
 | 非營利組織的 AI 素養 | `ai-fluency/for-nonprofits.md` | ✅ |
+| 4D 框架互動練習 | `ai-fluency/4d-practice.md` | ✅ |
+
+**4D 框架互動練習頁功能說明：**
+- 使用 VitePress + Vue 3 `<script setup>` 嵌入互動式自我評估問卷
+- 讓學習者透過情境題實際演練 4D 框架（Discover、Decide、Design、Deliver）
+- 題目作答後即時顯示解析說明
 
 ### Claude 產品（3 門）
 

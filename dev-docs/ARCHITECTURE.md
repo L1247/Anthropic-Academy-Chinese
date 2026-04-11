@@ -9,7 +9,22 @@ anthropic-academy-chinese/
 ├── package-lock.json
 ├── .gitignore
 ├── .claude/
-│   ├── settings.json                  # Claude Code 權限設定
+│   ├── settings.json                  # Claude Code 權限與 Hook 設定
+│   ├── settings.local.json            # 本地覆蓋設定（不納入版控）
+│   ├── agents/                        # 客製化 Sub-agent 定義
+│   │   ├── code-reviewer.md           # 內容品質與規範審查
+│   │   ├── debugger.md                # 建置錯誤診斷與修復
+│   │   ├── doc-writer.md              # 繁體中文課程頁面撰寫
+│   │   ├── git-commit.md              # 符合規範的 commit 產生
+│   │   ├── refactor-assistant.md      # 內容結構重構
+│   │   ├── security-auditor.md        # 外部連結與依賴安全審查
+│   │   └── test-runner.md             # VitePress 建置驗證
+│   ├── rules/                         # 路徑感知的開發規則
+│   │   ├── git-commit.md              # Commit message 格式規則
+│   │   └── vitepress-content.md       # VitePress 內容撰寫規則（作用於 docs/**）
+│   ├── hooks/                         # 自動化 Hook 腳本
+│   │   ├── protect-files.sh           # PreToolUse：阻止編輯敏感檔案
+│   │   └── notify-done.sh             # Stop：任務完成 Windows 氣球通知
 │   └── skills/                        # 自訂 Skill 腳本
 ├── dev-docs/                          # AI 輔助開發文件（不進入網站建置）
 │   ├── README.md

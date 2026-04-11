@@ -54,5 +54,6 @@ npm run docs:preview
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | 架構、目錄結構、VitePress 設定說明 |
 | [DEVELOPMENT.md](./DEVELOPMENT.md) | 開發規範、新增課程的完整步驟 |
 | [FEATURES.md](./FEATURES.md) | 功能清單與完成狀態 |
+| [TESTING.md](./TESTING.md) | 建置驗證與品質確認流程 |
 | [CHANGELOG.md](./CHANGELOG.md) | 更新日誌 |
 | [plans/](./plans/) | 開發計畫目錄 |
