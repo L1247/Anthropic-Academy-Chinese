@@ -147,6 +147,10 @@ Claude 分析任務，制定計畫
 - [子代理入門](/developer/subagents)（委派複雜任務）
 - [MCP 入門](/developer/mcp-intro)（擴展 Claude 的工具）
 
+## 🎯 互動練習
+
+準備好測試你的理解了嗎？前往 [Claude Code 101 互動練習](/claude-products/claude-code-101-practice)，透過 Agentic Loop 概念、工作流程排序、模式選擇情境題等鞏固本課程的核心概念。
+
 ## 📚 延伸閱讀
 
 - [Claude Code 101 課程頁面](https://anthropic.skilljar.com/claude-code-101)（英文，原始課程）

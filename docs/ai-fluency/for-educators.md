@@ -126,6 +126,10 @@ description: 將 AI 素養融入教學實踐與機構策略，課程設計與評
 - [教授 AI 素養](/ai-fluency/teaching)（進階：訓練他人）
 - [學生的 AI 素養](/ai-fluency/for-students)（了解學生視角）
 
+## 🎯 互動練習
+
+準備好測試你的理解了嗎？前往 [教育者的 AI 素養互動練習](/ai-fluency/educators-practice)，透過評量策略判斷、高上下文提示改寫等題目鞏固本課程的核心概念。
+
 ## 📚 延伸閱讀
 
 - [AI Fluency for Educators 課程頁面](https://anthropic.skilljar.com/ai-fluency-for-educators)（英文，原始課程）

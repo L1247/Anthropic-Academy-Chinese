@@ -145,6 +145,10 @@ description: 利用 AI 提升學習效率、職涯規劃與學術成就的實用
 - [AI 能力與限制](/ai-fluency/capabilities-limitations)（理解 AI 的邊界）
 - [Claude 101](/claude-products/claude-101)（實際操作 Claude）
 
+## 🎯 互動練習
+
+準備好測試你的理解了嗎？前往 [學生的 AI 素養互動練習](/ai-fluency/students-practice)，透過委派四問情境、輔助 vs. 替代分類、盡責聲明等題目鞏固本課程的核心概念。
+
 ## 📚 延伸閱讀
 
 - [AI Fluency for Students 課程頁面](https://anthropic.skilljar.com/ai-fluency-for-students)（英文，原始課程）

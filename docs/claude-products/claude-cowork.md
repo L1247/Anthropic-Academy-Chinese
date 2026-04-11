@@ -178,6 +178,10 @@ Cowork 最核心的使用場景——直接處理你電腦上的真實檔案：
 - [Claude 101](/claude-products/claude-101)（Claude 基礎）
 - [Claude Code 101](/claude-products/claude-code-101)（開發者版本的代理工具）
 
+## 🎯 互動練習
+
+準備好測試你的理解了嗎？前往 [Claude Cowork 互動練習](/claude-products/claude-cowork-practice)，透過產品定位選擇、任務描述改寫、長任務技巧配對等題目鞏固本課程的核心概念。
+
 ## 📚 延伸閱讀
 
 - [Claude Cowork 課程頁面](https://anthropic.skilljar.com/introduction-to-claude-cowork)（英文，原始課程）

@@ -161,6 +161,10 @@ AI 輸出結果
 - [AI 素養：框架與基礎](/ai-fluency/framework-foundations)（建立 4D 協作框架）
 - [Claude 101](/claude-products/claude-101)（實際操作體驗 Claude）
 
+## 🎯 互動練習
+
+準備好測試你的理解了嗎？前往 [AI 能力與限制互動練習](/ai-fluency/capabilities-practice)，透過失敗模式辨識、提示改寫等題目鞏固本課程的核心概念。
+
 ## 📚 延伸閱讀
 
 - [Anthropic 學習資源](https://www.anthropic.com/learn)（英文，官方課程列表）

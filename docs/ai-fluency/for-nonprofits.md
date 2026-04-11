@@ -141,6 +141,10 @@ description: 資源有限組織的 AI 應用策略，聚焦任務對齊、效率
 - [Claude 101](/claude-products/claude-101)（實際操作 Claude）
 - [AI 能力與限制](/ai-fluency/capabilities-limitations)（理解 AI 邊界）
 
+## 🎯 互動練習
+
+準備好測試你的理解了嗎？前往 [非營利組織的 AI 素養互動練習](/ai-fluency/nonprofits-practice)，透過應用場景風險排序、受益者保護原則配對等題目鞏固本課程的核心概念。
+
 ## 📚 延伸閱讀
 
 - [AI Fluency for Nonprofits 課程頁面](https://anthropic.skilljar.com/ai-fluency-for-nonprofits)（英文，原始課程）
