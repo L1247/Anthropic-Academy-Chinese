@@ -39,17 +39,6 @@
         ]
       }
     ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "powershell -c \"Add-Type -AssemblyName System.Windows.Forms; \\$n = New-Object System.Windows.Forms.NotifyIcon; \\$n.Icon = [System.Drawing.SystemIcons]::Information; \\$n.Visible = \\$true; \\$n.ShowBalloonTip(5000, 'Claude Code', '任務完成！', [System.Windows.Forms.ToolTipIcon]::Info); Start-Sleep -s 6; \\$n.Dispose()\""
-          }
-        ]
-      }
-    ],
     "PostCompact": [
       {
         "matcher": "",
