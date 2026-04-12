@@ -38,7 +38,8 @@
       "Bash(cp \"C:/Users/User/.claude/plugins/marketplaces/cli-anything/cli-anything-plugin/commands/refine.md\" \"C:/Users/User/.claude/commands/cli-anything:refine.md\")",
       "Bash(cp \"C:/Users/User/.claude/plugins/marketplaces/cli-anything/cli-anything-plugin/commands/test.md\" \"C:/Users/User/.claude/commands/cli-anything:test.md\")",
       "Bash(cp \"C:/Users/User/.claude/plugins/marketplaces/cli-anything/cli-anything-plugin/commands/validate.md\" \"C:/Users/User/.claude/commands/cli-anything:validate.md\")",
-      "Bash(cp \"C:/Users/User/.claude/plugins/marketplaces/cli-anything/cli-anything-plugin/commands/list.md\" \"C:/Users/User/.claude/commands/cli-anything:list.md\")"
+      "Bash(cp \"C:/Users/User/.claude/plugins/marketplaces/cli-anything/cli-anything-plugin/commands/list.md\" \"C:/Users/User/.claude/commands/cli-anything:list.md\")",
+      "Bash(PYTHONIOENCODING=utf-8 notebooklm:*)"
     ]
   }
 }
