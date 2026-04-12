@@ -1555,14 +1555,6 @@ details > *:not(summary) {
   border: 1px solid var(--vp-c-divider);
 }
 
-.paths-title {
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0 0 1.25rem;
-  color: var(--vp-c-text-1);
-}
-
 .paths-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -2,8 +2,9 @@
 
 依照你的目標和背景，選擇最適合的學習路線。每條路線都標註了課程順序與前置條件的關係。
 
+## 📋 官方推薦學習路徑
+
 <div class="recommended-paths">
-  <p class="paths-title">Anthropic Academy 官方推薦學習路徑</p>
   <div class="paths-grid">
     <div class="path-card path-orange">
       <div class="path-header">
