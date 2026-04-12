@@ -41,7 +41,7 @@ const quizOptions3 = [
 
 <Badge type="tip" text="NotebookLM 生成" /> <Badge type="info" text="影片摘要 + 簡報 + 測驗" />
 
-> 以下內容由 Google NotebookLM 根據課程影片「The 4D Framework」自動生成，作為延伸濃縮學習素材。
+> 以下內容由 Google NotebookLM 根據課程影片「The 4D Framework」自動生成，作為延伸濃縮學習素材。  
 > 📖 回到主課程：[AI 素養：框架與基礎](/ai-fluency/framework-foundations)
 
 ## 📋 課程概覽
