@@ -57,6 +57,12 @@
           {
             "type": "command",
             "command": "bash .claude/hooks/notify-done.sh"
+          },
+          {
+            "type": "agent",
+            "prompt": "檢查目前的 git 狀態（git status）。如果有未提交的變更（modified、new file、deleted），請依照 git-commit agent 的規範分析變更內容、決定正確的 commit type，並執行 git add 與 git commit。若工作區乾淨（nothing to commit），則直接結束，不做任何動作。不要 push。",
+            "statusMessage": "自動提交變更中...",
+            "timeout": 120
           }
         ]
       }
