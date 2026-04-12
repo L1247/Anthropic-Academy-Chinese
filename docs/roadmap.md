@@ -2,11 +2,71 @@
 
 依照你的目標和背景，選擇最適合的學習路線。每條路線都標註了課程順序與前置條件的關係。
 
-::: info 📋 官方推薦學習路徑總覽
-以下為 Anthropic Academy 官方建議的整體學習路徑，可作為選擇路線的整體參考。
-
-![官方推薦學習路徑](https://storage.ghost.io/c/5e/61/5e6189f0-c5e0-49a0-97b4-5eddd3f43c77/content/images/2026/03/1-1.png)
-:::
+<div class="recommended-paths">
+  <p class="paths-title">Anthropic Academy 官方推薦學習路徑</p>
+  <div class="paths-grid">
+    <div class="path-card path-orange">
+      <div class="path-header">
+        <span class="path-badge">非工程師路徑</span>
+        <p class="path-audience">上班族・創作者・學生</p>
+      </div>
+      <ol class="path-courses">
+        <li>
+          <div class="course-info">
+            <div class="course-main">Claude 101</div>
+            <div class="course-sub">入門必修，了解核心功能</div>
+          </div>
+        </li>
+        <li>
+          <div class="course-info">
+            <div class="course-main">AI Fluency：基礎概覽</div>
+            <div class="course-sub">建立 AI 協作思維</div>
+          </div>
+        </li>
+        <li>
+          <div class="course-info">
+            <div class="course-main">Claude Cowork 入門</div>
+            <div class="course-sub">實際以應用場景延伸學習</div>
+          </div>
+        </li>
+      </ol>
+      <div class="path-cta path-cta-orange">✓ 從「會用」升級到「懂用」</div>
+    </div>
+    <div class="path-card path-blue">
+      <div class="path-header">
+        <span class="path-badge">開發者路徑</span>
+        <p class="path-audience">後端工程師・AI 開發者</p>
+      </div>
+      <ol class="path-courses">
+        <li>
+          <div class="course-info">
+            <div class="course-main">Claude Code 實戰</div>
+            <div class="course-sub">整合環境工具，提升開發效率</div>
+          </div>
+        </li>
+        <li>
+          <div class="course-info">
+            <div class="course-main">Agent Skills 入門</div>
+            <div class="course-sub">建立可重複使用工具鏈</div>
+          </div>
+        </li>
+        <li>
+          <div class="course-info">
+            <div class="course-main">使用 Claude API 開發</div>
+            <div class="course-sub">完整 API 整合知識</div>
+          </div>
+        </li>
+        <li>
+          <div class="course-info">
+            <div class="course-main">MCP 入門</div>
+            <div class="course-sub">擴展外部協議與工具</div>
+          </div>
+        </li>
+      </ol>
+      <div class="path-cta path-cta-blue">✓ 具備完整 AI 開發能力</div>
+    </div>
+  </div>
+</div>
 
 ::: tip 🔍 圖表操作提示
 點擊下方任一流程圖可放大檢視；放大後可 🖱️ 滾輪縮放、拖曳移動，按 ESC 關閉。

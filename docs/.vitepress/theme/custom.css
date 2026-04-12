@@ -1542,3 +1542,165 @@ details > *:not(summary) {
 .dark .ref-article-preview {
   border-color: var(--vp-c-divider);
 }
+
+/* =====================================================
+   學習路徑推薦卡片（roadmap.md）
+   ===================================================== */
+
+.recommended-paths {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.paths-title {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 1.25rem;
+  color: var(--vp-c-text-1);
+}
+
+.paths-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .paths-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.path-card {
+  background: var(--vp-c-bg);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.path-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.path-badge {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.path-orange .path-badge {
+  background: #e87040;
+}
+
+.path-blue .path-badge {
+  background: #3b6fe0;
+}
+
+.path-audience {
+  font-size: 0.78rem;
+  color: var(--vp-c-text-2);
+  margin: 0;
+}
+
+.path-courses {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+  counter-reset: course-counter;
+}
+
+.path-courses li {
+  counter-increment: course-counter;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.path-courses li:first-child {
+  padding-top: 0;
+}
+
+.path-courses li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.path-courses li::before {
+  content: counter(course-counter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+.path-orange .path-courses li::before {
+  background: #e87040;
+}
+
+.path-blue .path-courses li::before {
+  background: #3b6fe0;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.course-main {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--vp-c-text-1);
+  line-height: 1.4;
+}
+
+.course-sub {
+  font-size: 0.76rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.4;
+}
+
+.path-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.path-cta-orange {
+  background: #e87040;
+}
+
+.path-cta-blue {
+  background: #3b6fe0;
+}
