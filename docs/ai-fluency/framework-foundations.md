@@ -374,8 +374,6 @@ flowchart TD
 | **描述** Description | 如何清楚溝通你的需求？ |
 | **辨識** Discernment | 如何批判性評估 AI 輸出？ |
 | **勤勉** Diligence | 如何負責任、透明地使用 AI？ |
-
-> 簡報檔案（PDF）儲存於：`.claude/notebooklm-exports/4ds-ai-fluency/slides.pdf`
 :::
 
 ::: tip 🧪 延伸測驗：AI 流暢力測驗（10 題）
