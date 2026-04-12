@@ -43,7 +43,12 @@
       "Bash(where ffmpeg:*)",
       "Bash(mkdir -p 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/4ds-ai-fluency/frames')",
       "Bash(ffprobe -v quiet -print_format json -show_format -show_streams 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/4ds-ai-fluency/video.mp4')",
-      "Bash(ffmpeg -i 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/4ds-ai-fluency/video.mp4' -vf fps=1/5 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/4ds-ai-fluency/frames/frame_%03d.png' -y)"
+      "Bash(ffmpeg -i 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/4ds-ai-fluency/video.mp4' -vf fps=1/5 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/4ds-ai-fluency/frames/frame_%03d.png' -y)",
+      "Bash(cp 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/the-4d-framework/slides_new/slide_01.png' 'D:/Git Project/Side Project/Anthropic Academy Chinese/docs/public/images/ai-fluency/nlm02-slide-01-cover.png')",
+      "Bash(cp 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/the-4d-framework/slides_new/slide_02.png' 'D:/Git Project/Side Project/Anthropic Academy Chinese/docs/public/images/ai-fluency/nlm02-slide-02-ai-fluency.png')",
+      "Bash(cp 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/the-4d-framework/slides_new/slide_03.png' 'D:/Git Project/Side Project/Anthropic Academy Chinese/docs/public/images/ai-fluency/nlm02-slide-03-4d-overview.png')",
+      "Bash(cp 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/the-4d-framework/slides_new/slide_04.png' 'D:/Git Project/Side Project/Anthropic Academy Chinese/docs/public/images/ai-fluency/nlm02-slide-04-delegation.png')",
+      "Bash(cp 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/the-4d-framework/slides_new/slide_05.png' 'D:/Git Project/Side Project/Anthropic Academy Chinese/docs/public/images/ai-fluency/nlm02-slide-05-delegation-case.png')"
     ]
   }
 }
