@@ -6,18 +6,17 @@
 
 **目標：** 掌握 AI 基礎知識，能在日常工作中有效使用 Claude
 
+<div class="route-beginner-chart">
+
 ```mermaid
 flowchart TD
     A["🌱 起點：Claude 101<br/>了解 Claude 的核心功能與工作流程"] --> B
     B["🧠 AI 素養：框架與基礎<br/>建立 AI 協作的心智模型（4D 框架）"] --> C
     C["⚡ AI 能力與限制<br/>理解 AI 的行為模式與失敗類型"] --> D
     D["💬 Claude Cowork 入門<br/>學習與 Claude 協作處理真實檔案與任務"]
-
-    style A fill:#fef3c7,stroke:#d97706
-    style B fill:#fef3c7,stroke:#d97706
-    style C fill:#fef3c7,stroke:#d97706
-    style D fill:#fef3c7,stroke:#d97706
 ```
+
+</div>
 
 **預計時間：** 3–5 小時 | **難度：** ⭐ 初學者
 
@@ -26,6 +25,8 @@ flowchart TD
 ## 💻 路線二：開發者
 
 **目標：** 將 Claude 整合進應用程式，掌握 API、MCP 和代理架構
+
+<div class="route-dev-chart">
 
 ```mermaid
 flowchart TD
@@ -40,14 +41,9 @@ flowchart TD
     E --> I["👥 子代理入門<br/>前置：Claude Code 經驗"]
     F --> J["Amazon Bedrock<br/>前置：Python、AWS"]
     F --> K["Google Vertex AI<br/>前置：Python、GCP"]
-
-    style B fill:#dbeafe,stroke:#3b82f6
-    style D fill:#dbeafe,stroke:#3b82f6
-    style E fill:#dbeafe,stroke:#3b82f6
-    style G fill:#dbeafe,stroke:#3b82f6
-    style H fill:#dbeafe,stroke:#3b82f6
-    style I fill:#dbeafe,stroke:#3b82f6
 ```
+
+</div>
 
 **預計時間：** 15–30 小時 | **難度：** ⭐⭐–⭐⭐⭐ 中-高級
 
@@ -57,18 +53,17 @@ flowchart TD
 
 **目標：** 將 AI 素養融入教學實踐與機構策略
 
+<div class="route-edu-chart">
+
 ```mermaid
 flowchart TD
     A["🧠 AI 素養：框架與基礎<br/>必修：4D 框架核心概念"] --> B
     B["⚡ AI 能力與限制<br/>理解 AI 行為與失敗類型"] --> C
     C["👩‍🏫 教育者的 AI 素養<br/>課程設計、評量策略、教學整合"] --> D
     D["📖 教授 AI 素養<br/>前置：AI Fluency 基礎課程<br/>教學場景設計、學習成效評估"]
-
-    style A fill:#f0fdf4,stroke:#22c55e
-    style B fill:#f0fdf4,stroke:#22c55e
-    style C fill:#f0fdf4,stroke:#22c55e
-    style D fill:#f0fdf4,stroke:#22c55e
 ```
+
+</div>
 
 **預計時間：** 4–6 小時 | **難度：** ⭐–⭐⭐ 初-中級
 
@@ -78,18 +73,17 @@ flowchart TD
 
 **目標：** 利用 AI 提升學習效率、職涯規劃與學術成就
 
+<div class="route-student-chart">
+
 ```mermaid
 flowchart TD
     A["🧠 AI 素養：框架與基礎<br/>必修：建立正確的 AI 使用觀念"] --> B
     B["⚡ AI 能力與限制<br/>了解 AI 的邊界，避免過度依賴"] --> C
     C["🎓 學生的 AI 素養<br/>學術研究、職涯規劃、學習策略"] --> D
     D["💬 Claude 101<br/>（選修）掌握 Claude 實際操作技巧"]
-
-    style A fill:#fdf4ff,stroke:#a855f7
-    style B fill:#fdf4ff,stroke:#a855f7
-    style C fill:#fdf4ff,stroke:#a855f7
-    style D fill:#fdf4ff,stroke:#a855f7
 ```
+
+</div>
 
 **預計時間：** 3–4 小時 | **難度：** ⭐ 初學者
 

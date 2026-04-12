@@ -859,6 +859,379 @@ body {
   flex-shrink: 0;
 }
 
+/* ========================================
+   證書展示區塊
+   ======================================== */
+
+.cert-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
+  margin: 2rem 0;
+  align-items: center;
+}
+
+@media (max-width: 680px) {
+  .cert-showcase {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* 證書卡片 */
+.cert-card {
+  display: block;
+  border: 2px solid #d97706;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #fffbeb, #fef3c7);
+  box-shadow:
+    0 0 0 4px rgba(217, 119, 6, 0.10),
+    0 4px 24px rgba(217, 119, 6, 0.18);
+  overflow: hidden;
+  position: relative;
+  text-decoration: none !important;
+  color: inherit;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 4px rgba(217, 119, 6, 0.18),
+    0 8px 32px rgba(217, 119, 6, 0.25);
+}
+
+.cert-card *,
+.cert-card *:hover {
+  text-decoration: none !important;
+}
+
+.dark .cert-card {
+  background: linear-gradient(145deg, #1c1600, #2d1f00);
+  border-color: #b45309;
+  box-shadow:
+    0 0 0 4px rgba(180, 83, 9, 0.15),
+    0 4px 24px rgba(180, 83, 9, 0.25);
+}
+
+/* 頂部絲帶 */
+.cert-ribbon {
+  background: linear-gradient(90deg, #b45309, #d97706, #b45309);
+  color: #fff;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+}
+
+/* 證書主體 */
+.cert-body {
+  padding: 1.5rem 1.75rem;
+  text-align: center;
+}
+
+.cert-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cert-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #92400e;
+}
+
+.dark .cert-card h3 {
+  color: #fbbf24;
+}
+
+.cert-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  margin: 0.25rem 0 0.6rem;
+  border-top: 1px solid rgba(217, 119, 6, 0.3);
+  border-bottom: 1px solid rgba(217, 119, 6, 0.3);
+  padding: 0.4rem 0;
+}
+
+.cert-desc {
+  font-size: 0.85rem;
+  color: #92400e;
+  margin: 0;
+}
+
+.dark .cert-desc {
+  color: #fbbf24;
+}
+
+.cert-cta {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+}
+
+/* 右側特點列表 */
+.cert-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cert-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.cert-feature-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.cert-feature strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--vp-c-text-1);
+  margin-bottom: 0.15rem;
+}
+
+.cert-feature p {
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ========================================
+   Hero 證書徽章 (HeroCertBadge)
+   ======================================== */
+
+@keyframes hcb-shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes hcb-glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(217,119,6,0.25), 0 0 28px rgba(217,119,6,0.20), 0 8px 32px rgba(0,0,0,0.12); }
+  50%       { box-shadow: 0 0 0 4px rgba(217,119,6,0.40), 0 0 44px rgba(217,119,6,0.30), 0 8px 40px rgba(0,0,0,0.16); }
+}
+
+.hero-cert-badge {
+  /* Positioning: mirrors VitePress .image-src absolute centering */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: block;
+  width: 230px;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
+
+  /* Gold double-border */
+  border: 2px solid #d97706;
+  outline: 4px solid rgba(217,119,6,0.18);
+  outline-offset: 2px;
+
+  /* Background */
+  background: linear-gradient(170deg, #fffbeb 0%, #fef3c7 55%, #fff7ed 100%);
+
+  /* Animated glow */
+  animation: hcb-glow-pulse 3s ease-in-out infinite;
+
+  transition: transform 0.3s ease, outline-color 0.3s ease;
+  z-index: 1;
+}
+
+.hero-cert-badge:hover {
+  transform: translate(-50%, -50%) scale(1.04);
+  outline-color: rgba(217,119,6,0.45);
+  text-decoration: none !important;
+}
+
+.hero-cert-badge *,
+.hero-cert-badge *:hover {
+  text-decoration: none !important;
+}
+
+/* Shimmer overlay */
+.hcb-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(255,255,255,0.08) 40%,
+    rgba(255,255,255,0.22) 50%,
+    rgba(255,255,255,0.08) 60%,
+    transparent 75%
+  );
+  background-size: 200% 100%;
+  animation: hcb-shimmer 3.5s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+/* Top ribbon */
+.hcb-ribbon {
+  background: linear-gradient(90deg, #92400e 0%, #d97706 40%, #f59e0b 50%, #d97706 60%, #92400e 100%);
+  color: #fff;
+  text-align: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* Corner ornaments */
+.hcb-corners {
+  position: absolute;
+  inset: 0.55rem;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hcb-corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: #d97706;
+  border-style: solid;
+  opacity: 0.7;
+}
+
+.hcb-corner--tl { top: 0; left: 0;     border-width: 2px 0 0 2px; }
+.hcb-corner--tr { top: 0; right: 0;    border-width: 2px 2px 0 0; }
+.hcb-corner--bl { bottom: 0; left: 0;  border-width: 0 0 2px 2px; }
+.hcb-corner--br { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+
+/* Body */
+.hcb-body {
+  padding: 1.1rem 1.25rem 1.25rem;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.hcb-seal {
+  font-size: 2.2rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.hcb-issuer {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #92400e;
+  margin: 0 0 0.55rem;
+}
+
+.hcb-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(217,119,6,0.45), transparent);
+  margin: 0.5rem 0;
+}
+
+.hcb-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #78350f;
+  line-height: 1.35;
+  margin: 0.35rem 0;
+}
+
+.hcb-desc {
+  font-size: 0.78rem;
+  color: #92400e;
+  line-height: 1.55;
+  margin: 0.4rem 0 0.75rem;
+}
+
+.hcb-cta {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #d97706;
+  background: rgba(217,119,6,0.10);
+  border: 1px solid rgba(217,119,6,0.35);
+  border-radius: 99px;
+  padding: 0.3rem 0.85rem;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.hero-cert-badge:hover .hcb-cta {
+  background: rgba(217,119,6,0.18);
+  border-color: rgba(217,119,6,0.6);
+}
+
+/* --- Dark mode --- */
+.dark .hero-cert-badge {
+  background: linear-gradient(170deg, #1c1400 0%, #2a1d00 55%, #1a1200 100%);
+  border-color: #b45309;
+  outline-color: rgba(180,83,9,0.25);
+}
+
+.dark .hcb-shimmer {
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(255,220,100,0.04) 40%,
+    rgba(255,220,100,0.12) 50%,
+    rgba(255,220,100,0.04) 60%,
+    transparent 75%
+  );
+  background-size: 200% 100%;
+}
+
+.dark .hcb-ribbon {
+  background: linear-gradient(90deg, #78350f 0%, #b45309 40%, #d97706 50%, #b45309 60%, #78350f 100%);
+}
+
+.dark .hcb-corner { border-color: #b45309; }
+
+.dark .hcb-issuer { color: #fbbf24; }
+.dark .hcb-title  { color: #fde68a; }
+.dark .hcb-desc   { color: #fbbf24; }
+
+.dark .hcb-cta {
+  color: #fbbf24;
+  background: rgba(251,191,36,0.10);
+  border-color: rgba(251,191,36,0.30);
+}
+
+.dark .hero-cert-badge:hover .hcb-cta {
+  background: rgba(251,191,36,0.18);
+  border-color: rgba(251,191,36,0.55);
+}
+
+/* --- Responsive sizing --- */
+@media (max-width: 640px) {
+  .hero-cert-badge {
+    width: 190px;
+  }
+  .hcb-title  { font-size: 0.92rem; }
+  .hcb-desc   { font-size: 0.72rem; }
+}
+
 /* ---- Collapsible Details ---- */
 details {
   margin: 0.5rem 0 1rem;
@@ -885,4 +1258,36 @@ details[open] summary {
 
 details > *:not(summary) {
   font-size: 0.92rem;
+}
+
+/* ========================================
+   Mermaid 流程圖樣式
+   ======================================== */
+
+/* 可點擊提示 */
+.mermaid {
+  cursor: zoom-in;
+  transition: box-shadow 0.2s;
+  border-radius: 8px;
+}
+
+.mermaid:hover {
+  box-shadow: 0 0 0 2px var(--vp-c-brand-1);
+}
+
+/* 防止 foreignObject 裁切文字（即時 CSS 保護） */
+.mermaid foreignObject {
+  overflow: visible !important;
+}
+
+/* 固定量測字型大小，確保 Mermaid 量測值與實際渲染一致 */
+.mermaid .nodeLabel {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* 中文字型 */
+.mermaid .nodeLabel,
+.mermaid .label text {
+  font-family: 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
 }

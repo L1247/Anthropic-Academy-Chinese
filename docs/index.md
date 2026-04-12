@@ -60,6 +60,44 @@ features:
   </a>
 </div>
 
+## 🏆 免費課程，官方證書
+
+<div class="cert-showcase">
+  <a class="cert-card" href="/certificates">
+    <div class="cert-ribbon">Certificate of Completion</div>
+    <div class="cert-body">
+      <div class="cert-icon">📜</div>
+      <h3>Anthropic Academy</h3>
+      <p class="cert-name">Certificate of Completion</p>
+      <p class="cert-desc">完成課程即可獲得官方電子結業證書</p>
+      <span class="cert-cta">查看證書詳情 →</span>
+    </div>
+  </a>
+  <div class="cert-info">
+    <div class="cert-feature">
+      <span class="cert-feature-icon">✅</span>
+      <div>
+        <strong>完課即得，不需考試</strong>
+        <p>完成所有課程單元後，Skilljar 平台會自動頒發電子證書</p>
+      </div>
+    </div>
+    <div class="cert-feature">
+      <span class="cert-feature-icon">💼</span>
+      <div>
+        <strong>可加入 LinkedIn 與履歷</strong>
+        <p>官方電子證書格式可直接新增至個人職涯檔案，展示 AI 學習成果</p>
+      </div>
+    </div>
+    <div class="cert-feature">
+      <span class="cert-feature-icon">🆓</span>
+      <div>
+        <strong>完全免費</strong>
+        <p>所有課程與證書皆免費，僅需註冊免費的 Skilljar 帳號即可報名</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 ## 📋 全部 17 門課程一覽
 
 | 課程名稱 | 分類 | 難度 | 前置條件 |

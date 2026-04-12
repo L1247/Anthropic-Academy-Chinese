@@ -17,19 +17,20 @@ export default withMermaid(defineConfig({
     siteTitle: 'Anthropic Academy 中文指南',
 
     nav: [
-      { text: '首頁', link: '/' },
+      { text: '🏠 首頁', link: '/' },
       {
-        text: '課程分類',
+        text: '📂 課程分類',
         items: [
           { text: '🧠 AI 素養（6 門）', link: '/ai-fluency/' },
           { text: '💬 Claude 產品（3 門）', link: '/claude-products/' },
           { text: '🛠️ 開發者（8 門）', link: '/developer/' },
         ],
       },
-      { text: '學習路線', link: '/roadmap' },
-      { text: '額外資源', link: '/resources' },
+      { text: '🗺️ 學習路線', link: '/roadmap' },
+      { text: '🎓 官方證書', link: '/certificates' },
+      { text: '📎 額外資源', link: '/resources' },
       {
-        text: '官方課程',
+        text: '🔗 官方課程',
         link: 'https://anthropic.skilljar.com/',
         target: '_blank',
       },
@@ -146,6 +147,14 @@ export default withMermaid(defineConfig({
 
   mermaid: {
     theme: 'default',
+    themeVariables: {
+      fontSize: '13px',
+    },
+    flowchart: {
+      padding: 20,
+      rankSpacing: 70,
+      htmlLabels: true,
+    },
   },
 
 }))
