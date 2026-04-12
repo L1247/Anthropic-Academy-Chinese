@@ -155,11 +155,14 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
   question="題目文字"
   :options="nlmQ1Options"
   :answer="正確答案索引"
+  hint="提示文字（來自 questions[].hint）"
   explanation="解析文字（來自 rationale）"
 />
 
 <!-- 其餘題目 -->
 ```
+
+每道題目都必須加入 `hint` prop（對應 `quiz.json` 的 `questions[].hint` 欄位），讓使用者可以點擊提示按鈕查看。若該題目的 `hint` 為空字串或 null，則省略 `hint` prop。
 
 ### Step 11：確認更新完成
 
