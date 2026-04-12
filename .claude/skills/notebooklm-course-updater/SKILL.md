@@ -349,17 +349,28 @@ Step 1 Delegation — When should humans do work and when should AI?
 委派：何時由人類執行？何時交給 AI？
 ```
 
-#### 引言 / 金句 → 英文原文保留，中文翻譯在下一行
+#### 引言 / 金句 → 只保留中文翻譯，刪除英文原文
 
-引言保留英文原文以示出處，緊接下一行加上中文翻譯（同為 blockquote）。
+引言直接以中文呈現，英文原文刪除。
 
 ```markdown
-<!-- ✅ 正確：英文原文 + 下一行中文 -->
-> *"The ability to engage with AI systems in ways that are effective, efficient, ethical, and safe."*
+<!-- ✅ 正確：只顯示中文翻譯 -->
 > 「以有效、高效、合乎道德且安全的方式與 AI 系統互動的能力。」
 
-<!-- ❌ 不可：純英文引言，缺少中文 -->
-> *"The ability to engage with AI systems..."*
+<!-- ❌ 不可：保留英文原文 -->
+> *"The ability to engage with AI systems in ways that are effective, efficient, ethical, and safe."*
+> 「以有效、高效、合乎道德且安全的方式與 AI 系統互動的能力。」
+```
+
+#### 標題標籤（如 What You Gain）→ 刪除英文標籤，只保留中文說明
+
+```markdown
+<!-- ✅ 正確 -->
+學完這門課你將獲得：
+
+<!-- ❌ 不可：保留英文標籤 -->
+**What You Gain**（影片畫面）
+學完這門課你將獲得：
 ```
 
 #### 表格欄位 → 英文在前，中文括號補充（表格無法換行）

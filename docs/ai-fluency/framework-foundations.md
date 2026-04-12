@@ -344,8 +344,7 @@ flowchart TD
 | 關鍵洞察 | 特定提示技巧下個月就會過時；建立核心能力才能持久 |
 | 思維轉變 | **THINKING ABOUT AI → THINKING WITH AI**（從旁觀者到協作者） |
 
-**AI Fluency 定義**（影片原文）：
-> *"The ability to engage with AI systems in ways that are **effective, efficient, ethical, and safe**."*
+**AI Fluency 定義**：
 > 「以**有效、高效、合乎道德且安全**的方式與 AI 系統互動的能力。」
 
 **4D 四步驟流程**（影片畫面）：
@@ -356,13 +355,10 @@ flowchart TD
 步驟4 **盡責**：如何確保 AI 互動過程負責任且透明？
 
 **核心心態轉變**（影片結語）：
-> *"Treat AI not as a **spellchecker**, but as a trusted partner for **creative problem-solving**."*
 > 「不要把 AI 當作**拼字檢查器**，而要視為**創意解題**的值得信賴夥伴。」
 
-> *"The goal isn't to think **about** AI. It's to think **with** AI."*
 > 「目標不是思考 **AI 是什麼**，而是**與 AI 一起思考**。」
 
-**What You Gain**（影片畫面）
 學完這門課你將獲得：
 - 指引互動的完整框架
 - 深思熟慮協作的技能
