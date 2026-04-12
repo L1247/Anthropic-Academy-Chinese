@@ -80,6 +80,46 @@ PYTHONIOENCODING=utf-8 notebooklm download slide-deck "$OUTDIR/slides.pdf" 2>&1
 PYTHONIOENCODING=utf-8 notebooklm download audio "$OUTDIR/podcast.mp3" 2>&1
 ```
 
+### Step 5.5：將 slides.pdf 轉為圖片並判斷是否可直接嵌入
+
+使用 PyMuPDF（需 Python 3.10+）將每頁轉為 PNG：
+
+```bash
+py -3.11 -c "
+import fitz, os
+doc = fitz.open('$OUTDIR/slides.pdf')
+os.makedirs('$OUTDIR/slides', exist_ok=True)
+for i, page in enumerate(doc):
+    pix = page.get_pixmap(dpi=200)
+    pix.save(f'$OUTDIR/slides/slide_{i+1:02d}.png')
+doc.close()
+"
+```
+
+接著使用 Read 工具讀取每張 PNG（Claude 多模態能力），判斷每頁是否符合**直接嵌入**條件：
+
+| 條件 | 結果 |
+|------|------|
+| 繁體中文內容 + 無真實人臉 | ✅ 複製到 `docs/public/images/<category>/` 直接嵌入 |
+| 含英文文字 或 含真實人臉照片 | ❌ 使用 `.slide-card` CSS/HTML 元件以中文重製 |
+
+**嵌入語法**（Markdown）：
+```markdown
+![簡報說明文字](/images/<category>/slide-XX-<name>.png)
+```
+
+**容器樣式**（搭配 custom.css 的 `.slide-image-gallery` / `.slide-image-item`）：
+```html
+<div class="slide-image-gallery">
+  <div class="slide-image-item">
+    <img src="/images/<category>/slide-XX.png" alt="說明" loading="lazy" />
+    <div class="slide-image-caption">簡短中文說明</div>
+  </div>
+</div>
+```
+
+若 PyMuPDF 未安裝：`py -3.11 -m pip install pymupdf`
+
 ### Step 6：讀取 quiz.json，解析題目
 
 從 `quiz.json` 提取：
