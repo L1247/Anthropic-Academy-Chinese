@@ -12,6 +12,5 @@
 - Claude推出13堂免費線上課程！可領官方證書，Agent Skills、Claude Code實作一次學 
 https://www.bnext.com.tw/article/90216/claude-13-free-lessons
 
-- 強調4D課程
 - 將參考連結內新增啟發影片
 - 總複習練習頁面，選擇後不會提示選錯或正確，按下答題完畢按鈕後計算分數，並總結錯誤題目與正確選項說明

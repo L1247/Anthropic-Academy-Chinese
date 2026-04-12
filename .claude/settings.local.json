@@ -16,7 +16,8 @@
       "Bash(powershell -c \"[System.Media.SystemSounds]::Beep.Play\\(\\)\")",
       "Bash(powershell:*)",
       "Bash(rm /c/Users/User/.claude/projects/D--Git-Project-Side-Project-Anthropic-Academy-Chinese/memory/feedback_design_dark_light_mode.md)",
-      "Bash(rm /c/Users/User/.claude/projects/D--Git-Project-Side-Project-Anthropic-Academy-Chinese/memory/MEMORY.md)"
+      "Bash(rm /c/Users/User/.claude/projects/D--Git-Project-Side-Project-Anthropic-Academy-Chinese/memory/MEMORY.md)",
+      "Bash(claude -p \"只回覆 ok\" --max-turns 1)"
     ]
   }
 }
