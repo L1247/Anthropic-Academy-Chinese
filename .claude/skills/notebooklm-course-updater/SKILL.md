@@ -11,18 +11,54 @@ triggers:
 ## 使用方式
 
 ```
-/notebooklm-update <notebook名稱或ID> [課程檔案路徑]
+/notebooklm-update <notebook名稱或ID|Skilljar-URL> [課程檔案路徑]
 ```
 
 **範例：**
 ```
 /notebooklm-update "The 4Ds of AI Fluency"
 /notebooklm-update 208e3044 docs/ai-fluency/framework-foundations.md
+/notebooklm-update https://anthropic.skilljar.com/ai-fluency-framework-foundations/291876
 ```
 
 ---
 
 ## 執行步驟
+
+### Step 0：從 Skilljar URL 建立新筆記本（若輸入為 URL）
+
+若使用者提供的是 Skilljar 課程 URL（以 `https://` 開頭），執行以下流程：
+
+**0.1 嘗試 WebFetch 提取影片標題：**
+
+由於 Skilljar 頁面採動態載入且需要認證，WebFetch 通常無法取得影片標題。若失敗，請直接詢問使用者：
+- 影片/課堂的標題（用來作為筆記本名稱）
+- 影片來源（YouTube URL、直接 URL 或本地 .mp4 路徑）
+
+**0.2 建立新筆記本：**
+```bash
+PYTHONIOENCODING=utf-8 notebooklm create "<影片標題>" --json 2>&1
+```
+記錄回傳的 Notebook ID。
+
+**0.3 切換到新筆記本：**
+```bash
+PYTHONIOENCODING=utf-8 notebooklm use <新筆記本ID前8碼> 2>&1
+```
+
+**0.4 加入影片來源：**
+```bash
+# YouTube URL
+PYTHONIOENCODING=utf-8 notebooklm source add "<youtube-url>" --type youtube 2>&1
+
+# 一般 URL
+PYTHONIOENCODING=utf-8 notebooklm source add "<url>" --type url 2>&1
+
+# 本地檔案
+PYTHONIOENCODING=utf-8 notebooklm source add "<local-path>" --type file --title "<標題>" 2>&1
+```
+
+確認來源加入後，繼續 Step 1（此時可跳過 Step 2-3，已在新筆記本中）。
 
 ### Step 1：確認 NotebookLM 登入狀態
 
@@ -79,6 +115,23 @@ PYTHONIOENCODING=utf-8 notebooklm download slide-deck "$OUTDIR/slides.pdf" 2>&1
 # Podcast（若有）
 PYTHONIOENCODING=utf-8 notebooklm download audio "$OUTDIR/podcast.mp3" 2>&1
 ```
+
+### Step 5.1（選用）：生成 Artifacts（若尚未生成）
+
+若 Step 4 顯示尚無 `completed` 的 artifacts，先生成再下載。**簡報生成時加入中文品質提示詞**：
+
+```bash
+# 簡報（含中文品質提示詞，減少句子黏連與斷句錯誤）
+PYTHONIOENCODING=utf-8 notebooklm generate slide-deck "注意每個句子要語意完整，標點符號正確，避免字詞黏連或斷句錯誤。" --wait --json 2>&1
+
+# 測驗
+PYTHONIOENCODING=utf-8 notebooklm generate quiz --difficulty hard --wait --json 2>&1
+
+# 影片摘要
+PYTHONIOENCODING=utf-8 notebooklm generate video --wait --json 2>&1
+```
+
+生成完成後繼續 Step 5 下載。
 
 ### Step 5.5：將 slides.pdf 轉為圖片並判斷是否可直接嵌入
 
@@ -152,8 +205,12 @@ ffmpeg -i "$OUTDIR/video.mp4" -vf "fps=1/5" "$OUTDIR/frames/frame_%03d.png" -y 2
 
 ### Step 9：更新課程主頁（`*-foundations.md` 或主頁）
 
-在「💡 學習建議」或「📝 重點筆記」區塊之前，加入 `## 📺 NotebookLM 生成學習素材` 區塊：
+**先偵測頁面是否已有 NotebookLM 區塊：**
 
+- **新建模式**（頁面無 `## 📺 NotebookLM 生成學習素材`）：在「💡 學習建議」或「📝 重點筆記」區塊之前插入完整區塊
+- **追加模式**（頁面已有此區塊）：在現有區塊內，先將現有內容用 `### <第 XX 課 標題>` 子標題包住，再新增一個 `### <新課堂標題>` 子章節
+
+**新建模式格式：**
 ```markdown
 ## 📺 NotebookLM 生成學習素材
 
@@ -171,15 +228,48 @@ NotebookLM 自動生成 N 道繁體中文測驗題。
 :::
 ```
 
+**追加模式格式（現有區塊追加子章節）：**
+```markdown
+## 📺 NotebookLM 生成學習素材
+
+### 第 01 課：<原有課堂標題>
+
+（原有內容不動）
+
+---
+
+### 第 XX 課：<新課堂標題>
+
+::: info 🎬 影片摘要
+（新課堂影片摘要）
+:::
+
+::: tip 📊 簡報概覽
+（新課堂簡報重點）
+:::
+
+::: tip 🧪 延伸測驗
+NotebookLM 自動生成 N 道繁體中文測驗題。
+前往 [練習頁 → NotebookLM 延伸測驗：第 XX 課](練習頁連結#notebooklm-延伸測驗-第xx課) 立即挑戰。
+:::
+```
+
 ### Step 10：更新練習頁（`*-practice.md`）
 
-**在 `<script setup>` 區塊**加入 10 個（或更多）選項陣列：
+**先偵測是否已有 NotebookLM 測驗區塊：**
+
+- **新建模式**（無現有 NotebookLM 測驗）：在 `<script setup>` 加入 `nlmQ1Options` 起的選項陣列，在頁面末尾新增測驗區塊
+- **追加模式**（已有 `## 🎓 NotebookLM 延伸測驗`）：在 `<script setup>` **追加**新選項陣列（接續現有編號），在頁面末尾**追加**新的測驗子區塊
+
+**在 `<script setup>` 區塊**加入選項陣列（新建從 `nlmQ1Options`，追加接續現有最後一個編號）：
 ```js
 const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 // ... 依題數繼續
 ```
 
 **在頁面末尾**（`💡 練習後建議` 之前）加入：
+
+新建模式：
 ```markdown
 ---
 
@@ -198,8 +288,27 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
   hint="提示文字（來自 questions[].hint）"
   explanation="解析文字（來自 rationale）"
 />
+```
 
-<!-- 其餘題目 -->
+追加模式（在現有測驗區塊末尾新增子區塊）：
+```markdown
+---
+
+## 🎓 NotebookLM 延伸測驗：第 XX 課 {#notebooklm-延伸測驗-第xx課}
+
+::: info 📌 關於這份測驗
+以下 N 道題目由 Google NotebookLM 根據「<新 Notebook 標題>」自動生成。
+:::
+
+### 測驗 N-1
+
+<Quiz
+  question="題目文字"
+  :options="nlmQNOptions"
+  :answer="正確答案索引"
+  hint="提示文字（來自 questions[].hint）"
+  explanation="解析文字（來自 rationale）"
+/>
 ```
 
 每道題目都必須加入 `hint` prop（對應 `quiz.json` 的 `questions[].hint` 欄位），讓使用者可以點擊提示按鈕查看。若該題目的 `hint` 為空字串或 null，則省略 `hint` prop。
