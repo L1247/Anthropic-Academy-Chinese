@@ -4,3 +4,6 @@ docs/.vitepress/cache/
 docs/.vitepress/dist/
 .DS_Store
 *.stackdump
+
+# NotebookLM 匯出的原始素材（大型二進位，可重新匯出）
+.claude/notebooklm-exports/
