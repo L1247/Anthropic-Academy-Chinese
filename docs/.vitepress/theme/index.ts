@@ -9,6 +9,7 @@ import MatchingPairs from './components/MatchingPairs.vue'
 import RankingExercise from './components/RankingExercise.vue'
 import MermaidLightbox from './components/MermaidLightbox.vue'
 import HeroCertBadge from './components/HeroCertBadge.vue'
+import TypewriterBadge from './components/TypewriterBadge.vue'
 
 export default {
   extends: DefaultTheme,
@@ -25,5 +26,6 @@ export default {
     app.component('DiligenceBuilder', DiligenceBuilder)
     app.component('MatchingPairs', MatchingPairs)
     app.component('RankingExercise', RankingExercise)
+    app.component('TypewriterBadge', TypewriterBadge)
   }
 }

@@ -34,11 +34,24 @@ features:
 ## 🧭 依你的身份，找到最適合的起點
 
 <div class="role-cards">
+  <a class="role-card role-card--featured" href="/ai-fluency/">
+    <TypewriterBadge />
+    <div class="role-icon">🧠</div>
+    <h3>我想建立 AI 素養</h3>
+    <p>無論你是哪種身份，AI 素養課程都是最紮實的起點。了解 AI 的本質、能力與限制，建立正確使用 AI 的核心觀念。</p>
+    <span class="role-card-cta"><strong>探索 AI 素養課程（6 門）→</strong></span>
+  </a>
   <a class="role-card" href="/claude-products/claude-101">
     <div class="role-icon">🌱</div>
     <h3>我是初學者</h3>
     <p>從未用過 Claude 或剛開始接觸 AI</p>
     <span class="role-card-cta"><strong>從 Claude 101 開始 →</strong></span>
+  </a>
+  <a class="role-card" href="/ai-fluency/for-students">
+    <div class="role-icon">🎓</div>
+    <h3>我是學生</h3>
+    <p>在學中，想用 AI 提升學習和職涯競爭力</p>
+    <span class="role-card-cta"><strong>從學生 AI 素養開始 →</strong></span>
   </a>
   <a class="role-card" href="/developer/building-with-api">
     <div class="role-icon">👩‍💻</div>
@@ -51,12 +64,6 @@ features:
     <h3>我是教育者</h3>
     <p>教師或教學設計師，想在課程中導入 AI</p>
     <span class="role-card-cta"><strong>從 AI 素養基礎開始 →</strong></span>
-  </a>
-  <a class="role-card" href="/ai-fluency/for-students">
-    <div class="role-icon">🎓</div>
-    <h3>我是學生</h3>
-    <p>在學中，想用 AI 提升學習和職涯競爭力</p>
-    <span class="role-card-cta"><strong>從學生 AI 素養開始 →</strong></span>
   </a>
 </div>
 
