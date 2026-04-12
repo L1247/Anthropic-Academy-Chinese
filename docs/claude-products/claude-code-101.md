@@ -103,8 +103,8 @@ Claude Code 是 Anthropic 推出的 **AI 編碼代理（Agentic Coding Assistant
   <summary>詳細說明</summary>
 
   Claude Code 設計了多層級的權限控制：
-  **批准模式（Approval Mode）** 下，每個工具呼叫都需要你手動確認才能執行；
-  **自動接受模式** 下，Claude 可以不需確認自動執行；
+  **批准模式（Approval Mode）** 下，每個工具呼叫都需要你手動確認才能執行；  
+  **自動接受模式** 下，Claude 可以不需確認自動執行；  
   你也可以只允許特定類型的工具（如只允許讀取，不允許寫入）。
   建議在不熟悉的程式碼庫或執行破壞性操作前，使用批准模式，確保 Claude 的每個動作都在你的掌控之中。
 
@@ -124,9 +124,9 @@ Claude Code 是 Anthropic 推出的 **AI 編碼代理（Agentic Coding Assistant
   <summary>詳細說明</summary>
 
   這是使用 Claude Code 完成功能的最佳實踐流程：
-  **Explore（探索）** — 先讓 Claude 閱讀相關程式碼、理解現有架構，不急著動手；
-  **Plan（規劃）** — 要求 Claude 說明它的實作方案（可使用計畫模式），你審核並確認方向；
-  **Code（實作）** — Claude 按計畫逐步執行，你在批准模式下監督每個關鍵步驟；
+  **Explore（探索）** — 先讓 Claude 閱讀相關程式碼、理解現有架構，不急著動手；  
+  **Plan（規劃）** — 要求 Claude 說明它的實作方案（可使用計畫模式），你審核並確認方向；  
+  **Code（實作）** — Claude 按計畫逐步執行，你在批准模式下監督每個關鍵步驟；  
   **Commit（提交）** — 確認結果正確後，讓 Claude 撰寫清楚的 commit message 並提交。
   跳過前兩步直接進入 Code，是導致輸出偏離預期的最常見原因。
 
@@ -158,8 +158,8 @@ Claude Code 是 Anthropic 推出的 **AI 編碼代理（Agentic Coding Assistant
 
 - 監控上下文使用量——Claude Code 在介面上會顯示目前上下文使用比例；當使用量超過 80% 時，建議主動執行 `/compact` 或考慮拆分任務。
 
-- 避免上下文溢出的策略——將大型任務拆成獨立的小任務分批完成；
-每個任務完成後用 `/clear` 重設；
+- 避免上下文溢出的策略——將大型任務拆成獨立的小任務分批完成；  
+每個任務完成後用 `/clear` 重設；  
 讀取大型檔案時指定只讀取相關的函數或區段，而非整個檔案。
 
 ### 📋 單元六：CLAUDE.md 專案記憶
