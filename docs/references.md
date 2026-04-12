@@ -75,7 +75,3 @@
   </div>
 
 </div>
-
-::: info 📌 關於這些連結
-以上連結均為第三方資源，內容由原作者維護。若有連結失效，歡迎至 [GitHub](https://github.com/anthropics/courses) 回報。
-:::
