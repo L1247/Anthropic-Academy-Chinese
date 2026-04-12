@@ -125,17 +125,47 @@ PYTHONIOENCODING=utf-8 notebooklm download audio "$OUTDIR/podcast.mp3" 2>&1
 
 ### Step 5.1（選用）：生成 Artifacts（若尚未生成）
 
-若 Step 4 顯示尚無 `completed` 的 artifacts，先生成再下載。**簡報生成時加入中文品質提示詞**：
+若 Step 4 顯示尚無 `completed` 的 artifacts，先生成再下載。
+
+**⚠️ 防止重複生成的標準流程（每種 artifact 類型都適用）：**
+
+**Step 5.1a：檢查是否已有 in_progress 的簡報**
+
+```bash
+PYTHONIOENCODING=utf-8 notebooklm artifact list --json 2>&1
+```
+
+- 若已有 `status: "in_progress"` 的 `slide_deck`：**跳過 generate，直接進行 5.1b 等待**
+- 若無任何 `slide_deck`（或只有 `completed` 的舊版英文簡報需重建）：執行 generate
+
+**Step 5.1b：生成簡報（無 --wait，避免 Bash timeout）**
 
 ```bash
 # 簡報（強制繁體中文輸出 + 品質提示詞）
-PYTHONIOENCODING=utf-8 notebooklm generate slide-deck "請以繁體中文（Traditional Chinese）撰寫所有簡報內容，包含標題、說明文字、條列項目與補充說明。注意每個句子要語意完整，標點符號正確，避免字詞黏連或斷句錯誤。禁止使用英文，所有術語應以繁體中文呈現並可在括號內附上英文原文。" --wait --json 2>&1
+PYTHONIOENCODING=utf-8 notebooklm generate slide-deck "請以繁體中文（Traditional Chinese）撰寫所有簡報內容，包含標題、說明文字、條列項目與補充說明。注意每個句子要語意完整，標點符號正確，避免字詞黏連或斷句錯誤。禁止使用英文，所有術語應以繁體中文呈現並可在括號內附上英文原文。" --json 2>&1
+```
 
-# 測驗
-PYTHONIOENCODING=utf-8 notebooklm generate quiz --difficulty hard --wait --json 2>&1
+記錄回傳的 `artifact_id`（或從 `artifact list` 取得）。
 
-# 影片摘要
-PYTHONIOENCODING=utf-8 notebooklm generate video --wait --json 2>&1
+**Step 5.1c：輪詢等待完成（每 30 秒檢查一次，最多等 10 分鐘）**
+
+```bash
+# 反覆執行，直到 status 變為 "completed"
+PYTHONIOENCODING=utf-8 notebooklm artifact list --json 2>&1
+```
+
+- `status: "in_progress"` → 繼續等待，再次查詢
+- `status: "completed"` → 進入 Step 5 下載
+- 若超過 10 分鐘仍未完成 → 提示使用者確認 NotebookLM 後台狀態
+
+**同理，測驗與影片摘要也使用相同的「先檢查再生成」流程：**
+
+```bash
+# 測驗（同樣先確認無 in_progress 才執行）
+PYTHONIOENCODING=utf-8 notebooklm generate quiz --difficulty hard --json 2>&1
+
+# 影片摘要（同樣先確認無 in_progress 才執行）
+PYTHONIOENCODING=utf-8 notebooklm generate video --json 2>&1
 ```
 
 生成完成後繼續 Step 5 下載。
