@@ -333,13 +333,36 @@ flowchart TD
 以下內容由 Google NotebookLM 根據本課程第一課影片自動生成，供延伸學習使用。
 
 ::: info 🎬 影片摘要：AI Fluency Framework
-**NotebookLM 影片概覽**（由 AI 生成自第 01 課課程影片）
+**NotebookLM 影片概覽**（內容萃取自影片畫面，94 秒）
 
-本課程的核心訊息：AI 素養不是關於工具本身，而是關於**人類如何與 AI 系統互動與協作**。
+**故事主軸：從恐懼到夥伴**
 
-課程希望幫助學員完成一個根本性的思維轉變——從「思考 AI」到**「與 AI 一起思考」**，將 AI 從外部工具提升為可信任的創意與創新協作夥伴（Trusted Partner）。
+| 時間點 | 畫面核心訊息 |
+|--------|------------|
+| 開場 | AI 已從「專業技術」快速滲透到學校與家庭等日常系統 |
+| 問題點 | 我們都感受到「AI 的可能性」與「實際使用的直覺感」之間存在鴻溝 |
+| 關鍵洞察 | 特定提示技巧（prompting fad）下個月就會過時；建立核心能力才能持久 |
+| 思維轉變 | **THINKING ABOUT AI → THINKING WITH AI**（從旁觀者到協作者） |
 
-框架強調建立**基礎能力**而非戰術技巧，因為特定提示語或設定很快就會過時，唯有 4D 核心能力才能應對持續演進的 AI 技術迭代。
+**AI Fluency 定義**（影片原文）：
+> *"The ability to engage with AI systems in ways that are **effective, efficient, ethical, and safe**."*
+
+**4D 四步驟流程**（影片畫面）：
+- Step 1 **Delegation** — When should humans do work and when should AI?
+- Step 2 **Description** — How do we communicate clearly with AI systems?
+- Step 3 **Discernment** — How do we evaluate what the AI gives us back?
+- Step 4 **Diligence** — How to ensure your AI work is responsible?
+
+**核心心態轉變**（影片結語）：
+> *"Treat AI not as a **spellchecker**, but as a trusted partner for **creative problem-solving**."*
+> *"The goal isn't to think **about** AI. It's to think **with** AI."*
+
+**學完這門課你將獲得**（影片畫面 What You Gain）：
+- 指引互動的完整框架
+- 深思熟慮協作的技能
+- 有效使用 AI 的信心
+- 為結果負責的能力
+- 應對未來變化的準備
 :::
 
 ::: tip 📊 簡報：Mastering AI Fluency（由 NotebookLM 生成）
