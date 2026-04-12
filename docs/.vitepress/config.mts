@@ -49,9 +49,9 @@ export default withMermaid(defineConfig({
           text: '📚 基礎課程',
           items: [
             { text: 'AI 素養：框架與基礎', link: '/ai-fluency/framework-foundations' },
-            { text: '└ 🎯4D 互動練習', link: '/ai-fluency/4d-practice' },
             { text: '└ 📓 第 01 課：AI 素養簡介', link: '/ai-fluency/framework-nlm-01' },
             { text: '└ 📓 第 02 課：4D 框架詳解', link: '/ai-fluency/framework-nlm-02' },
+            { text: '└ 🎯 4D 互動練習', link: '/ai-fluency/4d-practice' },
             { text: 'AI 能力與限制', link: '/ai-fluency/capabilities-limitations' },
             { text: '└ 🎯AI 能力練習', link: '/ai-fluency/capabilities-practice' },
           ],
