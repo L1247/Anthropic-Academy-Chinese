@@ -46,6 +46,17 @@ const quizOptions6 = [
   "把 AI 的分析拆散重組，讓它看起來像自己寫的"
 ]
 
+const nlmQ1Options = ["深入探討 AI 的底層技術架構與演算法", "人類如何與 AI 系統互動與協作", "學習最新的提示工程（Prompt Engineering）技巧", "研究 AI 歷史上的發展里程碑"]
+const nlmQ2Options = ["能夠編寫複雜的程式碼來開發 AI 系統的能力", "以有效、高效、倫理且安全的方式與 AI 系統互動的能力", "熟記所有 AI 相關的技術術語與定義", "在所有工作流程中完全以 AI 取代人類勞動的能力"]
+const nlmQ3Options = ["從「學習 AI」轉變為「使用 AI」", "從「思考 AI」轉變為「與 AI 一起思考」", "從「恐懼 AI」轉變為「無視 AI」", "從「手動操作」轉變為「全自動化」"]
+const nlmQ4Options = ["如何確保 AI 的產出符合法律規範", "如何將複雜的任務分解為細小的步驟", "何時應該由人類執行工作，何時應交由 AI 處理", "如何調整 AI 的參數以提高效率"]
+const nlmQ5Options = ["我們如何與 AI 系統進行清晰的溝通", "如何用文字描述 AI 的底層邏輯", "如何評估 AI 給出的資訊是否準確", "如何將 AI 的產出結果解釋給其他利害關係人"]
+const nlmQ6Options = ["選擇適合的 AI 模型進行部署", "判斷 AI 的回答是否具有創意", "評估與驗證 AI 所提供的產出結果", "區分人類寫的作品與 AI 寫的作品"]
+const nlmQ7Options = ["快速的反應時間與低延遲的產出", "負責任、透明且具備問責制", "產出結果的多樣性與豐富度", "能夠不間斷地 24 小時運行任務"]
+const nlmQ8Options = ["戰術性技能過於簡單，不值得教授", "戰術性技能（如特定設置或提示）很快就會過時", "建立框架是為了增加學術研究的嚴肅性", "目前的 AI 系統還不需要戰術性技能"]
+const nlmQ9Options = ["過度依賴 AI 導致硬體設備損毀", "人們對不完全理解的系統感到挫折感", "AI 會自動產生出超過人類理解能力的策略", "這能讓組織更快地達成數位轉型"]
+const nlmQ10Options = ["一種更進階的拼字檢查工具", "用於解決創意與創新問題的協作者", "完全不需要人類監督的獨立決策者", "儲存所有人類知識的靜態資料庫"]
+
 const emailKeywords = ["背景", "客戶", "目的", "語氣", "主旨", "格式"]
 const explainKeywords = ["對象", "程度", "範例", "格式", "長度", "用途"]
 
@@ -233,6 +244,106 @@ const sampleExplain = `請針對完全沒有技術背景的行銷部門同事（
 :::
 
 <DiligenceBuilder />
+
+---
+
+## 🎓 NotebookLM 延伸測驗 {#notebooklm-延伸測驗}
+
+::: info 📌 關於這份測驗
+以下 10 道題目由 **Google NotebookLM** 根據「The 4Ds of AI Fluency: A Foundation for Human-AI Partnership」課程影片自動生成，涵蓋 4D 框架的核心概念、定義與思維轉變。
+
+完成上方的基礎練習後，用這份測驗檢驗你對完整框架的理解深度。
+:::
+
+### 測驗 4-1
+
+<Quiz
+  question="根據課程內容，「AI 流暢力」（AI Fluency）課程的核心焦點主要在於什麼？"
+  :options="nlmQ1Options"
+  :answer="1"
+  explanation="課程強調這門課是關於「我們」以及人類與 AI 之間的合作關係。課程明確提到重點不在 AI 作為一種技術，而是人類如何與其互動。"
+/>
+
+### 測驗 4-2
+
+<Quiz
+  question="課程中提到的「AI 流暢力」定義為何？"
+  :options="nlmQ2Options"
+  :answer="1"
+  explanation="這是課程中對「AI 流暢力」的明確定義，涵蓋了效率與責任感。流暢力不是技術開發能力，而是廣泛的互動能力——有效、高效、倫理且安全。"
+/>
+
+### 測驗 4-3
+
+<Quiz
+  question="課程希望幫助學員達成哪種思維轉變？"
+  :options="nlmQ3Options"
+  :answer="1"
+  explanation="這反映了將 AI 從外部工具視為合作夥伴的根本性轉變。「與 AI 一起思考」意味著 AI 是思考過程的參與者，而非被動工具。"
+/>
+
+### 測驗 4-4
+
+<Quiz
+  question="在 AI 流暢力框架的「4D」核心能力中，「委派」（Delegation）主要處理什麼問題？"
+  :options="nlmQ4Options"
+  :answer="2"
+  explanation="「委派」關乎於人類與 AI 之間的工作權責分配——何時由人做、何時交給 AI、何時人機協作。這是 4D 中決策層面的能力。"
+/>
+
+### 測驗 4-5
+
+<Quiz
+  question="關於「描述」（Description）這項能力，其核心探討的問題是什麼？"
+  :options="nlmQ5Options"
+  :answer="0"
+  explanation="「描述」的核心在於溝通的清晰度，以便 AI 理解人類的意圖。這是 4D 中資訊輸入階段的能力，涵蓋如何設計有效提示。"
+/>
+
+### 測驗 4-6
+
+<Quiz
+  question="「辨識」（Discernment）能力在 AI 流暢力框架中扮演什麼角色？"
+  :options="nlmQ6Options"
+  :answer="2"
+  explanation="「辨識」要求使用者批判性地審視 AI 的回答，而非盲目接受。這包含事實查核、邏輯評估、以及持續改善協作品質。"
+/>
+
+### 測驗 4-7
+
+<Quiz
+  question="「勤勉」（Diligence）能力要求我們在與 AI 互動時確保哪些特質？"
+  :options="nlmQ7Options"
+  :answer="1"
+  explanation="「勤勉」旨在確保 AI 的使用是合乎倫理並對結果負責的。這包含透明揭露 AI 的參與、承擔最終責任、以及防範偏見與錯誤資訊。"
+/>
+
+### 測驗 4-8
+
+<Quiz
+  question="為什麼課程強調建立「基礎框架」而非僅學習戰術性技能（如特定提示語）？"
+  :options="nlmQ8Options"
+  :answer="1"
+  explanation="AI 領域變化極快，唯有核心能力能幫助使用者應對未來的技術迭代。特定的提示語或設定在模型更新後可能完全失效，但 4D 思維框架具有持久價值。"
+/>
+
+### 測驗 4-9
+
+<Quiz
+  question="課程提到的「組織採用 AI 但缺乏明確策略」會導致什麼後果？"
+  :options="nlmQ9Options"
+  :answer="1"
+  explanation="缺乏策略與理解會導致工具與人的期待之間產生斷層，使員工對不熟悉的系統感到挫折，反而降低效率與信任感。"
+/>
+
+### 測驗 4-10
+
+<Quiz
+  question="課程中提到的「信任夥伴」（Trusted Partner）概念，是希望將 AI 視為："
+  :options="nlmQ10Options"
+  :answer="1"
+  explanation="這反映了 AI 在更高階的思維與創新任務中所扮演的角色。信任夥伴不是被動工具，而是能與人類共同解決創意與複雜問題的協作者。"
+/>
 
 ---
 

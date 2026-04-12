@@ -328,6 +328,39 @@ flowchart TD
   Q4 -->|"否"| R5["先提升該領域知識<br/>再考慮委派"]
 ```
 
+## 📺 NotebookLM 生成學習素材
+
+以下內容由 Google NotebookLM 根據本課程第一課影片自動生成，供延伸學習使用。
+
+::: info 🎬 影片摘要：AI Fluency Framework
+**NotebookLM 影片概覽**（由 AI 生成自第 01 課課程影片）
+
+本課程的核心訊息：AI 素養不是關於工具本身，而是關於**人類如何與 AI 系統互動與協作**。
+
+課程希望幫助學員完成一個根本性的思維轉變——從「思考 AI」到**「與 AI 一起思考」**，將 AI 從外部工具提升為可信任的創意與創新協作夥伴（Trusted Partner）。
+
+框架強調建立**基礎能力**而非戰術技巧，因為特定提示語或設定很快就會過時，唯有 4D 核心能力才能應對持續演進的 AI 技術迭代。
+:::
+
+::: tip 📊 簡報：Mastering AI Fluency（由 NotebookLM 生成）
+簡報涵蓋 4D 框架完整架構，可作為課程重點的視覺化摘要：
+
+| 4D 核心能力 | 關鍵問題 |
+|------------|---------|
+| **委派** Delegation | 何時由人做？何時交給 AI？ |
+| **描述** Description | 如何清楚溝通你的需求？ |
+| **辨識** Discernment | 如何批判性評估 AI 輸出？ |
+| **勤勉** Diligence | 如何負責任、透明地使用 AI？ |
+
+> 簡報檔案（PDF）儲存於：`.claude/notebooklm-exports/4ds-ai-fluency/slides.pdf`
+:::
+
+::: tip 🧪 延伸測驗：AI 流暢力測驗（10 題）
+NotebookLM 根據課程內容自動生成 10 道繁體中文測驗題，涵蓋 4D 框架的核心概念、定義與應用情境。
+
+前往 [**4D 互動練習頁 → NotebookLM 延伸測驗**](/ai-fluency/4d-practice#notebooklm-延伸測驗) 立即挑戰。
+:::
+
 ## 💡 學習建議
 
 > **想立即動手練習？** 前往 [**4D 互動練習頁**](/ai-fluency/4d-practice)，透過選擇題、情境題、提示改寫和盡責聲明產生器，鞏固你對 4D 框架的理解。
