@@ -369,7 +369,8 @@ Step 4 **Diligence** — How to ensure your AI work is responsible?
 > *"The goal isn't to think **about** AI. It's to think **with** AI."*
 > 「目標不是思考 **AI 是什麼**，而是**與 AI 一起思考**。」
 
-**學完這門課你將獲得**（影片畫面 What You Gain）：
+**What You Gain**（影片畫面）
+學完這門課你將獲得：
 - 指引互動的完整框架
 - 深思熟慮協作的技能
 - 有效使用 AI 的信心
