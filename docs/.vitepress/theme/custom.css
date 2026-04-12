@@ -1459,6 +1459,17 @@ details > *:not(summary) {
   flex: 1;
 }
 
+/* 整塊可點擊連結卡片 */
+.ref-card-link {
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
+}
+
+.ref-card-link * {
+  text-decoration: none !important;
+}
+
 /* 平台標籤 */
 .ref-platform-tag {
   font-size: 0.78rem;
@@ -1473,37 +1484,6 @@ details > *:not(summary) {
   color: var(--vp-c-text-2);
   line-height: 1.6;
   flex: 1;
-}
-
-/* 造訪按鈕 — 實心 */
-.ref-visit-btn {
-  display: inline-block;
-  align-self: flex-start;
-  margin-top: 0.4rem;
-  padding: 0.38rem 1rem;
-  border-radius: 8px;
-  background: var(--vp-c-brand-1);
-  color: #fff !important;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-decoration: none !important;
-  transition: background 0.2s;
-}
-
-.ref-visit-btn:hover {
-  background: var(--vp-c-brand-2);
-}
-
-/* 造訪按鈕 — 線框（文章用） */
-.ref-visit-outline {
-  background: transparent;
-  border: 1.5px solid var(--vp-c-brand-1);
-  color: var(--vp-c-brand-1) !important;
-}
-
-.ref-visit-outline:hover {
-  background: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-2) !important;
 }
 
 /* 文章預覽區塊 */
