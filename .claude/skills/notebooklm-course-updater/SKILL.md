@@ -331,38 +331,41 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 - 練習頁的 Quiz 元件索引從 0 開始（`:answer="0"` 表示第一個選項）
 - ffmpeg 需已安裝（`where ffmpeg` 確認）
 
-### 中英文並陳規則
+### 中英文處理規則
 
-從 NotebookLM 素材擷取的英文原文，**不可單獨出現**，必須附上繁體中文翻譯。**中文翻譯一律在英文的下一行**，不縮排、不加括號包在同一行。
+從 NotebookLM 素材擷取的英文內容，依類型採用不同處理方式：
 
-**適用情境：**
-- 影片畫面中的英文短語（如步驟名稱、概念標題）
-- 影片或簡報中的英文引言／金句
-- 4D 各步驟的英文說明句
+#### 步驟 / 條列項目 → 只保留中文，刪除英文
 
-**格式範例：**
+英文步驟名稱與說明句直接翻譯為中文，原英文刪除。格式：`步驟N 中文名稱：中文說明`
 
 ```markdown
-<!-- 步驟：英文在前，中文下一行，不縮排 -->
+<!-- ✅ 正確：只顯示中文 -->
+步驟1 委派：何時由人類執行？何時交給 AI？
+步驟2 描述：如何與 AI 系統進行清晰、有效的溝通？
+
+<!-- ❌ 不可：保留英文步驟 -->
 Step 1 Delegation — When should humans do work and when should AI?
 委派：何時由人類執行？何時交給 AI？
+```
 
-<!-- 引言：英文原文下一行接中文翻譯 -->
+#### 引言 / 金句 → 英文原文保留，中文翻譯在下一行
+
+引言保留英文原文以示出處，緊接下一行加上中文翻譯（同為 blockquote）。
+
+```markdown
+<!-- ✅ 正確：英文原文 + 下一行中文 -->
 > *"The ability to engage with AI systems in ways that are effective, efficient, ethical, and safe."*
 > 「以有效、高效、合乎道德且安全的方式與 AI 系統互動的能力。」
 
-<!-- 短語標題（括號內補中文可接受） -->
-**THINKING ABOUT AI → THINKING WITH AI**（從旁觀者到協作者）
+<!-- ❌ 不可：純英文引言，缺少中文 -->
+> *"The ability to engage with AI systems..."*
 ```
 
-**不可接受的寫法：**
-```markdown
-<!-- ❌ 純英文，缺少中文翻譯 -->
-> *"The ability to engage with AI systems..."*
+#### 表格欄位 → 英文在前，中文括號補充（表格無法換行）
 
-<!-- ❌ 中文縮排在英文同一列表項目下 -->
-- Step 1 Delegation — When should humans do work and when should AI?
-  委派：何時由人類執行？何時交給 AI？
+```markdown
+| 思維轉變 | **THINKING ABOUT AI → THINKING WITH AI**（從旁觀者到協作者） |
 ```
 
 ---

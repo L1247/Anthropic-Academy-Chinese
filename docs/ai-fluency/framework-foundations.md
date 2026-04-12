@@ -350,17 +350,10 @@ flowchart TD
 
 **4D 四步驟流程**（影片畫面）：
 
-Step 1 **Delegation** — When should humans do work and when should AI?
-**委派**：何時由人類執行？何時交給 AI？
-
-Step 2 **Description** — How do we communicate clearly with AI systems?
-**描述**：如何與 AI 系統進行清晰、有效的溝通？
-
-Step 3 **Discernment** — How do we evaluate what the AI gives us back?
-**辨別**：如何客觀評估並判斷 AI 給出的內容？
-
-Step 4 **Diligence** — How to ensure your AI work is responsible?
-**盡責**：如何確保 AI 互動過程負責任且透明？
+步驟1 **委派**：何時由人類執行？何時交給 AI？
+步驟2 **描述**：如何與 AI 系統進行清晰、有效的溝通？
+步驟3 **辨別**：如何客觀評估並判斷 AI 給出的內容？
+步驟4 **盡責**：如何確保 AI 互動過程負責任且透明？
 
 **核心心態轉變**（影片結語）：
 > *"Treat AI not as a **spellchecker**, but as a trusted partner for **creative problem-solving**."*
