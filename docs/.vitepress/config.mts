@@ -92,12 +92,32 @@ export default withMermaid(defineConfig({
           text: '🛠️ 開發者課程',
           items: [
             { text: '課程總覽', link: '/developer/' },
+          ],
+        },
+        {
+          text: '💻 核心開發',
+          items: [
             { text: '使用 Claude API 開發', link: '/developer/building-with-api' },
+            { text: 'Claude Code 實戰', link: '/developer/claude-code-in-action' },
+          ],
+        },
+        {
+          text: '🔌 MCP 協定',
+          items: [
             { text: 'MCP 入門', link: '/developer/mcp-intro' },
             { text: 'MCP 進階主題', link: '/developer/mcp-advanced' },
-            { text: 'Claude Code 實戰', link: '/developer/claude-code-in-action' },
+          ],
+        },
+        {
+          text: '⚡ Claude Code 擴充',
+          items: [
             { text: 'Agent Skills 入門', link: '/developer/agent-skills' },
             { text: '子代理入門', link: '/developer/subagents' },
+          ],
+        },
+        {
+          text: '☁️ 雲端平台',
+          items: [
             { text: 'Claude × Amazon Bedrock', link: '/developer/amazon-bedrock' },
             { text: 'Claude × Google Vertex AI', link: '/developer/google-vertex' },
           ],
