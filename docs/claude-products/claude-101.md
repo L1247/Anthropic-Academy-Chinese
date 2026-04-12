@@ -61,7 +61,10 @@ Claude 101 是認識 Claude 最快速的入口課程，也是 Anthropic Academy 
 
 - 如何在 claude.ai 建立帳號、開始第一次對話——前往 [claude.ai](https://claude.ai) 以 Google 帳號或電子郵件註冊；免費方案每天有使用次數限制，Pro 方案可取得更多額度和進階功能。建立帳號後直接在對話框輸入你的第一個問題即可開始。
 
-- claude.ai 介面導覽——主畫面左側欄顯示所有過去的對話和 Projects；右上角可切換模型（Haiku/Sonnet/Opus）；對話框上方有上傳檔案按鈕，支援 PDF、Word、圖片等格式；部分回應右側會出現 Artifacts 面板，顯示獨立的程式碼或文件產出物。
+- claude.ai 介面導覽——主畫面左側欄顯示所有過去的對話和 Projects；
+右上角可切換模型（Haiku/Sonnet/Opus）；
+對話框上方有上傳檔案按鈕，支援 PDF、Word、圖片等格式；
+部分回應右側會出現 Artifacts 面板，顯示獨立的程式碼或文件產出物。
 
 **Claude 模型系列：**
 
