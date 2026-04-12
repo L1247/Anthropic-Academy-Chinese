@@ -197,108 +197,59 @@ flowchart LR
 
 ## 📊 簡報概覽
 
-::: tip 📊 簡報：AI 流暢度藍圖（由 NotebookLM 生成）
-以下為 NotebookLM 根據「The 4D Framework」課程自動生成的簡報重點，以中文重製呈現：
+::: tip 📊 簡報：駕馭 AI 協作的四大核心素養（由 NotebookLM 生成）
+以下為 NotebookLM 根據「The 4D Framework」課程自動生成的繁體中文簡報，共 12 張投影片。
 :::
 
-<div class="slide-card">
-  <h4>🎯 掌握 AI 流暢度的藍圖</h4>
-  <p>真正的 AI 流暢度需要超越基礎提示詞，建立一套<strong>與工具無關的持久方法論</strong>。特定應用程式和技術界面的淘汰速度極快，但基礎框架能確保你的協作能力隨技術進步無縫擴展。</p>
-</div>
-
-<div class="slide-card">
-  <h4>🔄 三種互動模式 × 流暢操作者</h4>
-  <div class="slide-columns">
-    <div>
-      <strong>輸入端</strong><br/>
-      自動化（AI 執行任務）<br/>
-      擴增（人機共同思考）<br/>
-      代理（AI 自主多步驟）
-    </div>
-    <div>
-      <strong>輸出端</strong><br/>
-      有效（Effective）<br/>
-      高效（Efficient）<br/>
-      倫理（Ethical）<br/>
-      安全（Safe）
-    </div>
+<div class="slide-image-gallery">
+  <div class="slide-image-item">
+    <img src="/images/ai-fluency/nlm02-slide-01-cover.png" alt="駕馭 AI 協作的四大核心素養（封面）" loading="lazy" />
+    <div class="slide-image-caption">封面：駕馭 AI 協作的四大核心素養——從被動使用到精準駕馭</div>
   </div>
-  <p><small>流暢的操作者能持續將複雜技術轉化為可靠、負責、高品質的成果。</small></p>
-</div>
-
-<div class="slide-card">
-  <h4>📋 四項核心能力總覽</h4>
-  <div class="slide-4d-grid">
-    <div class="d-card d-blue"><strong>委派</strong><br/><small>規劃人機分工</small></div>
-    <div class="d-card d-green"><strong>描述</strong><br/><small>精準溝通需求</small></div>
-    <div class="d-card d-yellow"><strong>辨識</strong><br/><small>評估 AI 產出</small></div>
-    <div class="d-card d-orange"><strong>盡責</strong><br/><small>負責任地使用</small></div>
+  <div class="slide-image-item">
+    <img src="/images/ai-fluency/nlm02-slide-02-ai-fluency.png" alt="真正的 AI 素養超越了對單一工具的熟練度" loading="lazy" />
+    <div class="slide-image-caption">AI 素養不等於熟練特定工具——非綁定工具、全面向駕馭、終極目標</div>
   </div>
-  <p><small>四項能力相互關聯，決定你如何規劃、執行、評估，並為 AI 協作承擔責任。</small></p>
-</div>
-
-<div class="slide-card">
-  <h4>1️⃣ 委派：建立協作的戰略邊界</h4>
-  <p>委派要求你理解整體目標，並根據能力深思熟慮地分配工作。</p>
-  <div class="slide-columns">
-    <div>
-      <strong>AI 理想任務</strong><br/>
-      審閱長篇文件與原始數據<br/>
-      進行廣泛影響的初步討論
-    </div>
-    <div>
-      <strong>人類必要職責</strong><br/>
-      執行發現的批判性分析<br/>
-      定義最終策略結論
-    </div>
+  <div class="slide-image-item">
+    <img src="/images/ai-fluency/nlm02-slide-03-4d-overview.png" alt="4D 框架總覽：成功的人機協作建立在四個基石上" loading="lazy" />
+    <div class="slide-image-caption">4D 框架總覽：委派、描述、辨識、盡責——四個不可或缺的基石</div>
   </div>
-</div>
-
-<div class="slide-card">
-  <h4>2️⃣ 描述：從基礎指令到富含背景的對話</h4>
-  <p>有效描述需要清楚表達你的需求，為雙方協作成功奠定基礎。</p>
-  <table>
-    <tr><td><strong>目標</strong></td><td>說明你想達成什麼</td></tr>
-    <tr><td><strong>背景</strong></td><td>提供任務的場景脈絡</td></tr>
-    <tr><td><strong>受眾</strong></td><td>說明輸出對象是誰</td></tr>
-    <tr><td><strong>格式</strong></td><td>指定期望的呈現方式</td></tr>
-    <tr><td><strong>語調</strong></td><td>設定互動的風格（如：導師、顧問）</td></tr>
-  </table>
-</div>
-
-<div class="slide-card">
-  <h4>3️⃣ 辨識：應用人類判斷，從噪音中分辨價值</h4>
-  <p>辨識要求你根據自己的專業標準，深思熟慮地評估生成的素材。</p>
-  <div class="slide-checklist">
-    <div>✅ 呈現的事實是否完全準確？</div>
-    <div>✅ 內部推理是否合乎邏輯？</div>
-    <div>✅ 建議是否符合品牌價值？</div>
-    <div>✅ 此素材是否真正推動專案進展？</div>
+  <div class="slide-image-item">
+    <img src="/images/ai-fluency/nlm02-slide-04-delegation.png" alt="委派確立了協作的全局視野與邊界" loading="lazy" />
+    <div class="slide-image-caption">委派（Delegation）：釐清最終目標、認知能力邊界、策略性分工</div>
   </div>
-</div>
-
-<div class="slide-card">
-  <h4>4️⃣ 盡責：負責任 AI 使用的基礎承諾</h4>
-  <p>盡責意味著對你的工作承擔全部所有權，並完全願意為最終產品背書。</p>
-  <div class="slide-columns">
-    <div>
-      <strong>⚖️ 公平性</strong><br/>確保無偏見，控制歧視風險
-    </div>
-    <div>
-      <strong>🔍 準確性</strong><br/>系統性驗證事實的正確性
-    </div>
-    <div>
-      <strong>🔒 安全性</strong><br/>保護敏感個人與企業數據
-    </div>
-    <div>
-      <strong>📢 透明度</strong><br/>明確揭露 AI 的參與程度
-    </div>
+  <div class="slide-image-item">
+    <img src="/images/ai-fluency/nlm02-slide-05-delegation-case.png" alt="策略性任務分工能極大化研究專案的執行效率" loading="lazy" />
+    <div class="slide-image-caption">委派實例：研究專案中 AI 負責文件閱讀與歸納，人類負責批判分析與最終決策</div>
   </div>
-</div>
-
-<div class="slide-card">
-  <h4>🔁 整合生態系統：非線性清單，而是協作迴圈</h4>
-  <p>委派和盡責建立了你專案的<strong>宏觀邊界</strong>（安全、策略性）；在這些邊界內，描述和辨識形成<strong>快速微迴圈</strong>（描述需求 → 評估輸出 → 精煉請求）。</p>
+  <div class="slide-image-item">
+    <img src="/images/ai-fluency/nlm02-slide-06-description.png" alt="描述需要建立富含脈絡的深度對話" loading="lazy" />
+    <div class="slide-image-caption">描述（Description）：目標與格式、語氣與風格、處理方法、背景脈絡——四層指令架構</div>
+  </div>
+  <div class="slide-image-item">
+    <img src="/images/ai-fluency/nlm02-slide-07-description-compare.png" alt="精準的指令結構能避免隨機產出並直接推進進度" loading="lazy" />
+    <div class="slide-image-caption">低效模糊互動 vs 具備素養的高效互動：指令精準度決定產出品質</div>
+  </div>
+  <div class="slide-image-item">
+    <img src="/images/ai-fluency/nlm02-slide-08-discernment.png" alt="辨識運用領域專業過濾出真正有價值的洞察" loading="lazy" />
+    <div class="slide-image-caption">辨識（Discernment）：事實準確度、邏輯一致性、品牌對齊度、實質進力——四個過濾維度</div>
+  </div>
+  <div class="slide-image-item">
+    <img src="/images/ai-fluency/nlm02-slide-09-loop.png" alt="描述與辨識交織而成的微型迴圈" loading="lazy" />
+    <div class="slide-image-caption">微型迴圈：描述需求 → 擷取產出 → 評估內容 → 提煉修正，持續循環直到目標達成</div>
+  </div>
+  <div class="slide-image-item">
+    <img src="/images/ai-fluency/nlm02-slide-10-diligence.png" alt="盡責是守護安全與道德底線的最後防線" loading="lazy" />
+    <div class="slide-image-caption">盡責（Diligence）：公平與防偏見、資訊查核、隱私保護、流程透明度、最終當責</div>
+  </div>
+  <div class="slide-image-item">
+    <img src="/images/ai-fluency/nlm02-slide-11-synthesis.png" alt="四大素養交織出兼顧效能與安全的立體防護網" loading="lazy" />
+    <div class="slide-image-caption">綜合洞察：委派＋描述確保效能與效率；辨識＋盡責確保道德與安全</div>
+  </div>
+  <div class="slide-image-item">
+    <img src="/images/ai-fluency/nlm02-slide-12-conclusion.png" alt="掌握底層框架，讓你與技術共同進化而非被淘汰" loading="lazy" />
+    <div class="slide-image-caption">結語：深刻掌握 4Ds 讓你成為真正掌控全局的協作者，而非被動的軟體使用者</div>
+  </div>
 </div>
 
 ## 🧪 延伸測驗
