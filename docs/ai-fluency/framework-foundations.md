@@ -19,6 +19,21 @@ description: 學習 4D AI 素養框架（委派、描述、辨識、盡責），
 
 適合所有背景的人——無論是 AI 新手還是已有使用經驗的人都能有所收穫。完成課程並通過測驗後，可取得 Anthropic 官方完成證書。
 
+<div class="slide-card">
+  <h4>📍 課程路線圖</h4>
+  <div class="slide-roadmap">
+    <div class="roadmap-step active">AI 素養框架<br/><small>4D 的四大核心能力</small></div>
+    <div class="roadmap-arrow">→</div>
+    <div class="roadmap-step">委派<br/><small>何時由人做？何時交給 AI？</small></div>
+    <div class="roadmap-arrow">→</div>
+    <div class="roadmap-step">描述<br/><small>如何清楚與 AI 溝通？</small></div>
+    <div class="roadmap-arrow">→</div>
+    <div class="roadmap-step">辨識<br/><small>如何評估 AI 的結果？</small></div>
+    <div class="roadmap-arrow">→</div>
+    <div class="roadmap-step">盡責<br/><small>如何負責任地使用 AI？</small></div>
+  </div>
+</div>
+
 ## ⚠️ 前置條件
 
 ::: info 前置條件
@@ -36,6 +51,16 @@ description: 學習 4D AI 素養框架（委派、描述、辨識、盡責），
 - 批判性地評估 AI 輸出，善用**描述—辨識循環**持續改進
 - 負責任地使用 AI，展現 Diligence（盡責）精神
 
+<div class="slide-card">
+  <h4>🎓 學習成果</h4>
+  <div class="slide-outcomes">
+    <div class="outcome-item">建立思考 AI 互動的完整框架</div>
+    <div class="outcome-item">具備在何時、如何與 AI 協作的判斷能力</div>
+    <div class="outcome-item">掌握更流暢的人機協作實務技巧</div>
+    <div class="outcome-item">自信地評估 AI 輸出並為結果負責</div>
+  </div>
+</div>
+
 ## 📋 課程大綱（12 堂課）
 
 ### 第 01 課：AI 素養簡介
@@ -51,6 +76,15 @@ description: 學習 4D AI 素養框架（委派、描述、辨識、盡責），
 
 </details>
 
+<div class="slide-card">
+  <h4>🔍 深度探討系列（第 03、07、10 課）</h4>
+  <div class="slide-deep-dives">
+    <div class="dive-item dive-beige">🤖 什麼是生成式 AI？——不需技術背景的 AI 原理介紹</div>
+    <div class="dive-item dive-blue">⚡ AI 的能力與限制——能力光譜、失敗模式與診斷修正</div>
+    <div class="dive-item dive-green">✍️ 有效提示技巧——六項提示技巧完整解析與實作練習</div>
+  </div>
+</div>
+
 ### 第 03 課：深度探討一：什麼是生成式 AI？
 不需要技術背景的生成式 AI 原理介紹：語言模型如何運作、訓練資料如何影響輸出、模型的「知識截止日」是什麼意思。建立你判斷 AI 能力邊界所需的心智模型。
 
@@ -58,6 +92,12 @@ description: 學習 4D AI 素養框架（委派、描述、辨識、盡責），
 <summary>詳細說明</summary>
 
 語言模型的核心是「根據前面的文字預測最可能的下一個詞」——反覆執行就能生成完整回應。這個簡單機制加上大規模訓練，讓模型具備了翻譯、推理、寫作等複雜能力。**但這也帶來兩個重要限制**：第一，模型的「知識」來自訓練資料，訓練截止日後的事件它完全不知道，且可能不會主動說明不確定性，而是產生聽起來合理但已過時的內容；第二，訓練資料中的偏見會被模型吸收，英文內容多於中文、主流觀點多於小眾觀點，冷門領域和特定文化脈絡的回應需要額外留意。了解這些基本原理，是後續第 04 課做出明智委派決策的知識基礎。
+
+**補充重要術語（來自官方術語表）：**
+
+- **上下文視窗（Context Window）**：AI 一次能「看到」的資訊總量，包含對話歷史和上傳的文件。超過上限後，最早的內容會被「遺忘」——這是 AI 的工作記憶，有上限，不是無限的。
+- **溫度（Temperature）**：控制 AI 回應隨機程度的設定。數值越高，輸出越多元有創意；數值越低，輸出越一致可預測。
+- **RAG（檢索增強生成，Retrieval Augmented Generation）**：讓 AI 連結外部知識來源（如搜尋結果、資料庫）的技術，可提升資訊準確度、減少幻覺。
 
 </details>
 
@@ -181,6 +221,35 @@ description: 學習 4D AI 素養框架（委派、描述、辨識、盡責），
 | **辨識** | Discernment | 準確評估 AI 輸出和行為的有用程度 |
 | **盡責** | Diligence | 對我們使用 AI 的方式以及 AI 的輸出負起責任 |
 
+```mermaid
+flowchart LR
+  D1["🎯 委派<br/>Delegation"] --> D2["✍️ 描述<br/>Description"]
+  D2 --> D3["🔍 辨識<br/>Discernment"]
+  D3 --> D4["🛡️ 盡責<br/>Diligence"]
+  D4 -.->|"持續循環"| D1
+```
+
+<div class="slide-card">
+  <div class="slide-grid-2x2">
+    <div class="grid-item" style="background: var(--slide-purple)">
+      <div class="grid-icon">🏛️</div>
+      <div class="grid-label">有效 Effective</div>
+    </div>
+    <div class="grid-item" style="background: var(--slide-blue)">
+      <div class="grid-icon">⏱️</div>
+      <div class="grid-label">高效 Efficient</div>
+    </div>
+    <div class="grid-item" style="background: var(--slide-green)">
+      <div class="grid-icon">⚖️</div>
+      <div class="grid-label">倫理 Ethical</div>
+    </div>
+    <div class="grid-item" style="background: var(--slide-teal)">
+      <div class="grid-icon">🛡️</div>
+      <div class="grid-label">安全 Safe</div>
+    </div>
+  </div>
+</div>
+
 ::: tip 4Ds 與 EEES 的關係
 課程的副標題是「有效、高效、合乎倫理且安全地（Effectively, Efficiently, Ethically, and Safely）」——這四個形容詞是**實踐 4Ds 之後所達成的結果**，而不是 4Ds 本身。熟練地委派、描述、辨識與盡責，就能讓你的 AI 使用達到有效、高效、倫理且安全的標準。
 :::
@@ -197,6 +266,20 @@ description: 學習 4D AI 素養框架（委派、描述、辨識、盡責），
 
 理解你在哪種模式下工作，有助於選擇最合適的 4Ds 應用方式。
 
+```mermaid
+flowchart LR
+  subgraph 自動化["🤖 自動化 Automation"]
+    A1["人類設定指令"] --> A2["AI 獨立執行"]
+  end
+  subgraph 擴增["🤝 擴增 Augmentation"]
+    B1["人類與 AI<br/>共同思考迭代"]
+  end
+  subgraph 代理["🚀 代理 Agency"]
+    C1["人類設定目標"] --> C2["AI 自主執行<br/>多步驟任務"]
+  end
+  自動化 --- 擴增 --- 代理
+```
+
 ### ✍️ 六項有效提示技巧
 
 第 07 課深度探討這六項技巧，可搭配使用：
@@ -212,14 +295,13 @@ description: 學習 4D AI 素養框架（委派、描述、辨識、盡責），
 
 「描述—辨識循環」是課程的核心互動模型：
 
-```
-描述你的需求（Description）
-       ↓
-AI 產出回應
-       ↓
-辨識輸出品質（Discernment）
-   ├─ 品質符合標準 → 完成 ✅
-   └─ 品質不足 → 根據評估調整提示 → 回到描述
+```mermaid
+flowchart TD
+  A["✍️ 描述需求<br/>Description"] --> B["AI 產出回應"]
+  B --> C{"🔍 辨識輸出品質<br/>Discernment"}
+  C -->|"品質符合標準"| D["完成 ✅"]
+  C -->|"品質不足"| E["根據評估<br/>調整提示"]
+  E --> A
 ```
 
 這個循環提醒我們：**好的 AI 使用不是一次性的完美提示，而是持續迭代的協作過程。**
@@ -232,6 +314,19 @@ AI 產出回應
 2. **錯誤的後果嚴重嗎？** 高風險任務需要更多人類監督。
 3. **需要獨特的人類判斷嗎？** 若涉及個人經驗、價值觀或關係，人類介入可能不可或缺。
 4. **我能有效評估輸出嗎？** 若你無法判斷好壞，委派可能帶來風險。
+
+```mermaid
+flowchart TD
+  START["考慮將任務委派給 AI"] --> Q1{"任務目標<br/>夠明確嗎？"}
+  Q1 -->|"否"| R1["先釐清任務目標<br/>再考慮委派"]
+  Q1 -->|"是"| Q2{"錯誤的後果<br/>嚴重嗎？"}
+  Q2 -->|"是"| R2["需要更多人類監督<br/>謹慎委派"]
+  Q2 -->|"否"| Q3{"需要獨特的<br/>人類判斷嗎？"}
+  Q3 -->|"是"| R3["人類主導<br/>AI 輔助"]
+  Q3 -->|"否"| Q4{"能有效評估<br/>AI 輸出嗎？"}
+  Q4 -->|"是"| R4["✅ 適合委派給 AI"]
+  Q4 -->|"否"| R5["先提升該領域知識<br/>再考慮委派"]
+```
 
 ## 💡 學習建議
 
