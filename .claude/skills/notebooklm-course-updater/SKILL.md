@@ -224,7 +224,7 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 
 ### 中英文並陳規則
 
-從 NotebookLM 素材擷取的英文原文，**不可單獨出現**，必須附上繁體中文翻譯。格式：英文在前，中文緊接在後（同行括號或下一行引言）。
+從 NotebookLM 素材擷取的英文原文，**不可單獨出現**，必須附上繁體中文翻譯。**中文翻譯一律在英文的下一行**，不縮排、不加括號包在同一行。
 
 **適用情境：**
 - 影片畫面中的英文短語（如步驟名稱、概念標題）
@@ -234,25 +234,26 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 **格式範例：**
 
 ```markdown
-<!-- 短語：英文 + 中文括號 -->
-**THINKING ABOUT AI → THINKING WITH AI**（從旁觀者到協作者）
+<!-- 步驟：英文在前，中文下一行，不縮排 -->
+Step 1 Delegation — When should humans do work and when should AI?
+委派：何時由人類執行？何時交給 AI？
 
-<!-- 引言：英文原文 + 中文翻譯各一行 -->
+<!-- 引言：英文原文下一行接中文翻譯 -->
 > *"The ability to engage with AI systems in ways that are effective, efficient, ethical, and safe."*
 > 「以有效、高效、合乎道德且安全的方式與 AI 系統互動的能力。」
 
-<!-- 步驟列表：英文說明 + 中文說明 -->
-- Step 1 **Delegation** — When should humans do work and when should AI?
-  委派：何時由人類執行？何時交給 AI？
+<!-- 短語標題（括號內補中文可接受） -->
+**THINKING ABOUT AI → THINKING WITH AI**（從旁觀者到協作者）
 ```
 
 **不可接受的寫法：**
 ```markdown
-<!-- ❌ 純英文，缺少中文 -->
+<!-- ❌ 純英文，缺少中文翻譯 -->
 > *"The ability to engage with AI systems..."*
 
-<!-- ❌ 中文說明但步驟全英文 -->
+<!-- ❌ 中文縮排在英文同一列表項目下 -->
 - Step 1 Delegation — When should humans do work and when should AI?
+  委派：何時由人類執行？何時交給 AI？
 ```
 
 ---
