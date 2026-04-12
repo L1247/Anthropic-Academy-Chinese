@@ -282,21 +282,18 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 
 ### Step 10：更新 Sidebar
 
-每次建立新 NLM 頁面後，更新 `docs/.vitepress/config.mts` 的 `📓 NotebookLM 延伸學習` 分組（位於 ai-fluency sidebar 最後）：
+每次建立新 NLM 頁面後，將連結插入 `docs/.vitepress/config.mts` 中**對應課程的 items 清單**，緊接在該課程的互動練習連結（`└ 🎯`）之後：
 
 ```typescript
-{
-  text: '📓 NotebookLM 延伸學習',
-  collapsed: false,
-  items: [
-    { text: '第 01 課：AI 素養簡介', link: '/ai-fluency/framework-nlm-01' },
-    // 新增：
-    { text: '第 NN 課：<標題>', link: '/ai-fluency/<course-slug>-nlm-NN' },
-  ],
-},
+{ text: 'AI 素養：框架與基礎', link: '/ai-fluency/framework-foundations' },
+{ text: '└ 🎯4D 互動練習', link: '/ai-fluency/4d-practice' },
+{ text: '└ 📓 第 01 課：AI 素養簡介', link: '/ai-fluency/framework-nlm-01' },
+{ text: '└ 📓 第 02 課：4D 框架詳解', link: '/ai-fluency/framework-nlm-02' },
+// 新增：
+{ text: '└ 📓 第 NN 課：<標題>', link: '/ai-fluency/<course-slug>-nlm-NN' },
 ```
 
-若 sidebar 尚無此分組，在對應課程類別（ai-fluency 或其他）的最後新增完整分組。
+NLM 頁面屬於對應課程的延伸內容，應放在課程項目底下，而非獨立分組。
 
 每道測驗題必須加入 `hint` prop（對應 `quiz.json` 的 `questions[].hint`）。若 `hint` 為空或 null，省略該 prop。
 

@@ -50,6 +50,8 @@ export default withMermaid(defineConfig({
           items: [
             { text: 'AI 素養：框架與基礎', link: '/ai-fluency/framework-foundations' },
             { text: '└ 🎯4D 互動練習', link: '/ai-fluency/4d-practice' },
+            { text: '└ 📓 第 01 課：AI 素養簡介', link: '/ai-fluency/framework-nlm-01' },
+            { text: '└ 📓 第 02 課：4D 框架詳解', link: '/ai-fluency/framework-nlm-02' },
             { text: 'AI 能力與限制', link: '/ai-fluency/capabilities-limitations' },
             { text: '└ 🎯AI 能力練習', link: '/ai-fluency/capabilities-practice' },
           ],
@@ -70,14 +72,6 @@ export default withMermaid(defineConfig({
             { text: '└ 🎯教授 AI 素養練習', link: '/ai-fluency/teaching-practice' },
             { text: '非營利組織的 AI 素養', link: '/ai-fluency/for-nonprofits' },
             { text: '└ 🎯非營利組織練習', link: '/ai-fluency/nonprofits-practice' },
-          ],
-        },
-        {
-          text: '📓 NotebookLM 延伸學習',
-          collapsed: false,
-          items: [
-            { text: '第 01 課：AI 素養簡介', link: '/ai-fluency/framework-nlm-01' },
-            { text: '第 02 課：4D 框架詳解', link: '/ai-fluency/framework-nlm-02' },
           ],
         },
       ],
