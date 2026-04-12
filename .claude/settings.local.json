@@ -19,7 +19,26 @@
       "Bash(rm /c/Users/User/.claude/projects/D--Git-Project-Side-Project-Anthropic-Academy-Chinese/memory/MEMORY.md)",
       "Bash(claude -p \"只回覆 ok\" --max-turns 1)",
       "Bash(curl -L -o /tmp/diagram_image.png \"https://storage.ghost.io/c/5e/61/5e6189f0-c5e0-49a0-97b4-5eddd3f43c77/content/images/2026/03/1-1.png\")",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(gh repo:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(pip install:*)",
+      "Bash(xargs grep:*)",
+      "Bash(python -m json.tool)",
+      "Bash(py -3.10 --version)",
+      "Bash(py -3.11 --version)",
+      "Bash(py -3.12 --version)",
+      "Bash(py:*)",
+      "Bash(where notebooklm:*)",
+      "Bash(where cli-anything-notebooklm:*)",
+      "Bash(notebooklm:*)",
+      "Bash(cli-anything-notebooklm:*)",
+      "Bash(cp \"C:/Users/User/.claude/plugins/marketplaces/cli-anything/cli-anything-plugin/commands/cli-anything.md\" \"C:/Users/User/.claude/commands/cli-anything.md\")",
+      "Bash(cp \"C:/Users/User/.claude/plugins/marketplaces/cli-anything/cli-anything-plugin/commands/refine.md\" \"C:/Users/User/.claude/commands/cli-anything:refine.md\")",
+      "Bash(cp \"C:/Users/User/.claude/plugins/marketplaces/cli-anything/cli-anything-plugin/commands/test.md\" \"C:/Users/User/.claude/commands/cli-anything:test.md\")",
+      "Bash(cp \"C:/Users/User/.claude/plugins/marketplaces/cli-anything/cli-anything-plugin/commands/validate.md\" \"C:/Users/User/.claude/commands/cli-anything:validate.md\")",
+      "Bash(cp \"C:/Users/User/.claude/plugins/marketplaces/cli-anything/cli-anything-plugin/commands/list.md\" \"C:/Users/User/.claude/commands/cli-anything:list.md\")"
     ]
   }
 }
