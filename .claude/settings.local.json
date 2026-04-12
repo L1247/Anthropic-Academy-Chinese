@@ -17,7 +17,9 @@
       "Bash(powershell:*)",
       "Bash(rm /c/Users/User/.claude/projects/D--Git-Project-Side-Project-Anthropic-Academy-Chinese/memory/feedback_design_dark_light_mode.md)",
       "Bash(rm /c/Users/User/.claude/projects/D--Git-Project-Side-Project-Anthropic-Academy-Chinese/memory/MEMORY.md)",
-      "Bash(claude -p \"只回覆 ok\" --max-turns 1)"
+      "Bash(claude -p \"只回覆 ok\" --max-turns 1)",
+      "Bash(curl -L -o /tmp/diagram_image.png \"https://storage.ghost.io/c/5e/61/5e6189f0-c5e0-49a0-97b4-5eddd3f43c77/content/images/2026/03/1-1.png\")",
+      "Read(//tmp/**)"
     ]
   }
 }
