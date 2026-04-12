@@ -274,13 +274,6 @@ flowchart TD
   Q4 -->|"否"| R5["先提升該領域知識<br/>再考慮委派"]
 ```
 
-::: tip 📓 NotebookLM 延伸學習
-Google NotebookLM 已根據本課程影片自動生成濃縮學習素材（影片摘要、簡報重點、測驗）：
-
-- [第 01 課：AI 素養簡介（4Ds 概覽）](/ai-fluency/framework-nlm-01)
-- [第 02 課：4D 框架詳解](/ai-fluency/framework-nlm-02)
-:::
-
 ## 💡 學習建議
 
 > **想立即動手練習？** 前往 [**4D 互動練習頁**](/ai-fluency/4d-practice)，透過選擇題、情境題、提示改寫和盡責聲明產生器，鞏固你對 4D 框架的理解。
