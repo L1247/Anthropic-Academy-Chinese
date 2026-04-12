@@ -330,6 +330,8 @@ flowchart TD
 
 ## 📺 NotebookLM 生成學習素材
 
+### 第 01 課：AI 素養簡介（4Ds 概覽）
+
 以下內容由 Google NotebookLM 根據本課程第一課影片自動生成，供延伸學習使用。
 
 ::: info 🎬 影片摘要：AI Fluency Framework
@@ -409,6 +411,150 @@ flowchart TD
 NotebookLM 根據課程內容自動生成 10 道繁體中文測驗題，涵蓋 4D 框架的核心概念、定義與應用情境。
 
 前往 [**4D 互動練習頁 → NotebookLM 延伸測驗**](/ai-fluency/4d-practice#notebooklm-延伸測驗) 立即挑戰。
+:::
+
+---
+
+### 第 02 課：4D 框架詳解
+
+以下內容由 Google NotebookLM 根據本課程第二課影片「The 4D Framework」自動生成，供延伸學習使用。
+
+::: info 🎬 影片摘要：Mastering AI Collaboration（約 5.5 分鐘）
+
+**影片主軸：從工具使用者到協作指揮家**
+
+| 時間段 | 畫面核心訊息 |
+|--------|------------|
+| 開場 | 標題「掌握 AI 協作」揭示本課核心目標 |
+| 困境對比 | 困惑的個人（盯著電腦、頭上問號）vs 指揮家（指揮眾多想法與齒輪） |
+| 第 1D：委派 | 你的戰略計畫——決定人類與 AI 各負責什麼 |
+| 第 2D：描述 | 掌握對話——從單向指令進化為雙向迴圈 |
+| 協作循環 | 描述 → 辨識 → 精煉（持續迭代的無限循環） |
+| 第 3D：辨識 | 深思熟慮地評估 AI 產出，區分有用與無用 |
+| 第 4D：盡責 | 以盾牌呈現四大責任支柱：公平、準確、安全、透明 |
+| 結語 | 樹根深根比喻：基礎框架讓你在 AI 快速演進中持續受益 |
+
+**課程核心主張：**
+> *"True mastery of artificial intelligence requires moving beyond basic prompts to develop a timeless, tool-agnostic methodology."*
+> 「真正的 AI 掌握，需要超越基礎提示詞，建立一套與工具無關的持久方法論。」
+
+**描述—辨識—精煉循環（影片動畫重點）：**
+
+步驟1 **描述**：清楚表達你的需求
+步驟2 **辨識**：評估 AI 的輸出
+步驟3 **精煉**：調整你的請求
+
+這個循環在每次 AI 互動中反覆進行，不斷優化結果。
+:::
+
+::: tip 📊 簡報：AI 流暢度藍圖（由 NotebookLM 生成）
+以下為 NotebookLM 根據「The 4D Framework」課程自動生成的簡報重點，以中文重製呈現：
+:::
+
+<div class="slide-card">
+  <h4>🎯 掌握 AI 流暢度的藍圖</h4>
+  <p>真正的 AI 流暢度需要超越基礎提示詞，建立一套<strong>與工具無關的持久方法論</strong>。特定應用程式和技術界面的淘汰速度極快，但基礎框架能確保你的協作能力隨技術進步無縫擴展。</p>
+</div>
+
+<div class="slide-card">
+  <h4>🔄 三種互動模式 × 流暢操作者</h4>
+  <div class="slide-columns">
+    <div>
+      <strong>輸入端</strong><br/>
+      自動化（AI 執行任務）<br/>
+      擴增（人機共同思考）<br/>
+      代理（AI 自主多步驟）
+    </div>
+    <div>
+      <strong>輸出端</strong><br/>
+      有效（Effective）<br/>
+      高效（Efficient）<br/>
+      倫理（Ethical）<br/>
+      安全（Safe）
+    </div>
+  </div>
+  <p><small>流暢的操作者能持續將複雜技術轉化為可靠、負責、高品質的成果。</small></p>
+</div>
+
+<div class="slide-card">
+  <h4>📋 四項核心能力總覽</h4>
+  <div class="slide-4d-grid">
+    <div class="d-card d-blue"><strong>委派</strong><br/><small>規劃人機分工</small></div>
+    <div class="d-card d-green"><strong>描述</strong><br/><small>精準溝通需求</small></div>
+    <div class="d-card d-yellow"><strong>辨識</strong><br/><small>評估 AI 產出</small></div>
+    <div class="d-card d-orange"><strong>盡責</strong><br/><small>負責任地使用</small></div>
+  </div>
+  <p><small>四項能力相互關聯，決定你如何規劃、執行、評估，並為 AI 協作承擔責任。</small></p>
+</div>
+
+<div class="slide-card">
+  <h4>1️⃣ 委派：建立協作的戰略邊界</h4>
+  <p>委派要求你理解整體目標，並根據能力深思熟慮地分配工作。</p>
+  <div class="slide-columns">
+    <div>
+      <strong>AI 理想任務</strong><br/>
+      審閱長篇文件與原始數據<br/>
+      進行廣泛影響的初步討論
+    </div>
+    <div>
+      <strong>人類必要職責</strong><br/>
+      執行發現的批判性分析<br/>
+      定義最終策略結論
+    </div>
+  </div>
+</div>
+
+<div class="slide-card">
+  <h4>2️⃣ 描述：從基礎指令到富含背景的對話</h4>
+  <p>有效描述需要清楚表達你的需求，為雙方協作成功奠定基礎。</p>
+  <table>
+    <tr><td><strong>目標</strong></td><td>說明你想達成什麼</td></tr>
+    <tr><td><strong>背景</strong></td><td>提供任務的場景脈絡</td></tr>
+    <tr><td><strong>受眾</strong></td><td>說明輸出對象是誰</td></tr>
+    <tr><td><strong>格式</strong></td><td>指定期望的呈現方式</td></tr>
+    <tr><td><strong>語調</strong></td><td>設定互動的風格（如：導師、顧問）</td></tr>
+  </table>
+</div>
+
+<div class="slide-card">
+  <h4>3️⃣ 辨識：應用人類判斷，從噪音中分辨價值</h4>
+  <p>辨識要求你根據自己的專業標準，深思熟慮地評估生成的素材。</p>
+  <div class="slide-checklist">
+    <div>✅ 呈現的事實是否完全準確？</div>
+    <div>✅ 內部推理是否合乎邏輯？</div>
+    <div>✅ 建議是否符合品牌價值？</div>
+    <div>✅ 此素材是否真正推動專案進展？</div>
+  </div>
+</div>
+
+<div class="slide-card">
+  <h4>4️⃣ 盡責：負責任 AI 使用的基礎承諾</h4>
+  <p>盡責意味著對你的工作承擔全部所有權，並完全願意為最終產品背書。</p>
+  <div class="slide-columns">
+    <div>
+      <strong>⚖️ 公平性</strong><br/>確保無偏見，控制歧視風險
+    </div>
+    <div>
+      <strong>🔍 準確性</strong><br/>系統性驗證事實的正確性
+    </div>
+    <div>
+      <strong>🔒 安全性</strong><br/>保護敏感個人與企業數據
+    </div>
+    <div>
+      <strong>📢 透明度</strong><br/>明確揭露 AI 的參與程度
+    </div>
+  </div>
+</div>
+
+<div class="slide-card">
+  <h4>🔁 整合生態系統：非線性清單，而是協作迴圈</h4>
+  <p>委派和盡責建立了你專案的<strong>宏觀邊界</strong>（安全、策略性）；在這些邊界內，描述和辨識形成<strong>快速微迴圈</strong>（描述需求 → 評估輸出 → 精煉請求）。</p>
+</div>
+
+::: tip 🧪 延伸測驗：4D 框架深度測驗（10 題）
+NotebookLM 根據「The 4D Framework」課程自動生成 10 道繁體中文測驗題，深度考驗 4D 各能力的定義、應用情境與循環機制。
+
+前往 [**4D 互動練習頁 → NotebookLM 延伸測驗：第 02 課**](/ai-fluency/4d-practice#notebooklm-延伸測驗-第02課) 立即挑戰。
 :::
 
 ## 💡 學習建議

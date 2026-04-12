@@ -35,6 +35,13 @@ triggers:
 - 影片/課堂的標題（用來作為筆記本名稱）
 - 影片來源（YouTube URL、直接 URL 或本地 .mp4 路徑）
 
+**AI Fluency 課程影片參考來源（若 Skilljar 頁面無法取得影片 URL）：**
+
+可根據課堂標題在以下 YouTube 播放清單中尋找對應影片：
+- [AI Fluency Course YouTube 播放清單](https://www.youtube.com/playlist?list=PLf2m23nhTg1NjL3-jL3s0qZCYzO07ZQPv)
+
+> 注意：此播放清單僅適用於 AI Fluency Course 課程內的影片。
+
 **0.2 建立新筆記本：**
 ```bash
 PYTHONIOENCODING=utf-8 notebooklm create "<影片標題>" --json 2>&1
