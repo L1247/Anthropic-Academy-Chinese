@@ -260,9 +260,9 @@ flowchart LR
 
 | 模式 | 英文 | 說明 | 範例 |
 |------|------|------|------|
-| **自動化** | Automation | AI 根據人類指令執行特定任務 | 讓 AI 整理電子郵件分類 |
-| **擴增** | Augmentation | 人類與 AI 作為思考夥伴共同協作 | 與 AI 腦力激盪、共同撰寫 |
-| **代理** | Agency | 人類設定目標，AI 獨立執行未來的多步驟任務 | 讓 AI 代理管理行程排程 |
+| <span style="white-space:nowrap">**自動化**</span> | Automation | AI 根據人類指令執行特定任務 | 讓 AI 整理電子郵件分類 |
+| <span style="white-space:nowrap">**擴增**</span> | Augmentation | 人類與 AI 作為思考夥伴共同協作 | 與 AI 腦力激盪、共同撰寫 |
+| <span style="white-space:nowrap">**代理**</span> | Agency | 人類設定目標，AI 獨立執行未來的多步驟任務 | 讓 AI 代理管理行程排程 |
 
 理解你在哪種模式下工作，有助於選擇最合適的 4Ds 應用方式。
 
