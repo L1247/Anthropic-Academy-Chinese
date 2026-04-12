@@ -14,7 +14,9 @@
       "Bash(npm install:*)",
       "Bash(npm run:*)",
       "Bash(powershell -c \"[System.Media.SystemSounds]::Beep.Play\\(\\)\")",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(rm /c/Users/User/.claude/projects/D--Git-Project-Side-Project-Anthropic-Academy-Chinese/memory/feedback_design_dark_light_mode.md)",
+      "Bash(rm /c/Users/User/.claude/projects/D--Git-Project-Side-Project-Anthropic-Academy-Chinese/memory/MEMORY.md)"
     ]
   }
 }
