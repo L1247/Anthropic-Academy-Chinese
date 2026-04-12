@@ -16,11 +16,10 @@
         allowfullscreen>
       </iframe>
     </div>
-    <div class="ref-card-body">
+    <a class="ref-card-body ref-card-link" href="https://youtu.be/3qkLBS70USY" target="_blank" rel="noopener noreferrer">
       <div class="ref-platform-tag">🎬 YouTube</div>
       <p class="ref-card-desc">Anthropic Academy 課程完整導覽影片，帶你快速了解所有課程架構與學習路徑。</p>
-      <a class="ref-visit-btn" href="https://youtu.be/3qkLBS70USY" target="_blank" rel="noopener noreferrer">在 YouTube 觀看</a>
-    </div>
+    </a>
   </div>
 
   <!-- YouTube Short 2 -->
@@ -35,15 +34,14 @@
         allowfullscreen>
       </iframe>
     </div>
-    <div class="ref-card-body">
+    <a class="ref-card-body ref-card-link" href="https://www.youtube.com/shorts/F_D4BNIbGRw" target="_blank" rel="noopener noreferrer">
       <div class="ref-platform-tag">📱 YouTube Shorts</div>
       <p class="ref-card-desc">60 秒快速了解 Claude 免費課程的核心亮點，適合分享給還不認識 Anthropic Academy 的朋友。</p>
-      <a class="ref-visit-btn" href="https://www.youtube.com/shorts/F_D4BNIbGRw" target="_blank" rel="noopener noreferrer">在 YouTube 觀看</a>
-    </div>
+    </a>
   </div>
 
   <!-- 文章 1 -->
-  <div class="ref-card ref-article-card">
+  <a class="ref-card ref-article-card ref-card-link" href="https://www.aiposthub.com/anthropic-academy-complete-guide/" target="_blank" rel="noopener noreferrer">
     <div class="ref-article-preview">
       <div class="ref-article-favicon">🌐</div>
       <div class="ref-article-meta">
@@ -54,12 +52,11 @@
     </div>
     <div class="ref-card-body">
       <div class="ref-platform-tag">📄 文章</div>
-      <a class="ref-visit-btn ref-visit-outline" href="https://www.aiposthub.com/anthropic-academy-complete-guide/" target="_blank" rel="noopener noreferrer">前往閱讀</a>
     </div>
-  </div>
+  </a>
 
   <!-- 文章 2 -->
-  <div class="ref-card ref-article-card">
+  <a class="ref-card ref-article-card ref-card-link" href="https://www.bnext.com.tw/article/90216/claude-13-free-lessons" target="_blank" rel="noopener noreferrer">
     <div class="ref-article-preview">
       <div class="ref-article-favicon">📰</div>
       <div class="ref-article-meta">
@@ -70,8 +67,7 @@
     </div>
     <div class="ref-card-body">
       <div class="ref-platform-tag">📄 文章</div>
-      <a class="ref-visit-btn ref-visit-outline" href="https://www.bnext.com.tw/article/90216/claude-13-free-lessons" target="_blank" rel="noopener noreferrer">前往閱讀</a>
     </div>
-  </div>
+  </a>
 
 </div>
