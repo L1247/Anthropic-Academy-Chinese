@@ -1371,3 +1371,194 @@ details > *:not(summary) {
 .mermaid .label text {
   font-family: 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
 }
+
+/* =============================
+   參考連結頁面 — Embed 卡片格局
+   ============================= */
+
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .ref-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 基本卡片 */
+.ref-card {
+  position: relative;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--vp-c-bg-soft);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.ref-card:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 6px 24px rgba(217, 119, 6, 0.15);
+  transform: translateY(-3px);
+}
+
+/* 重點推薦卡片（YouTube）邊框強調 */
+.ref-featured {
+  border-color: var(--vp-c-brand-soft);
+  box-shadow: 0 2px 12px rgba(217, 119, 6, 0.08);
+}
+
+/* 重點推薦徽章 */
+.ref-badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  z-index: 2;
+  background: var(--vp-c-brand-1);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+/* YouTube 16:9 響應式容器 */
+.ref-youtube-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  background: #000;
+}
+
+/* YouTube Shorts 垂直容器（稍微壓扁以保持卡片整齊） */
+.ref-youtube-shorts {
+  padding-top: 75%;
+}
+
+.ref-youtube-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 卡片下方內容區 */
+.ref-card-body {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+/* 平台標籤 */
+.ref-platform-tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  letter-spacing: 0.03em;
+}
+
+.ref-card-desc {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* 造訪按鈕 — 實心 */
+.ref-visit-btn {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 0.4rem;
+  padding: 0.38rem 1rem;
+  border-radius: 8px;
+  background: var(--vp-c-brand-1);
+  color: #fff !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background 0.2s;
+}
+
+.ref-visit-btn:hover {
+  background: var(--vp-c-brand-2);
+}
+
+/* 造訪按鈕 — 線框（文章用） */
+.ref-visit-outline {
+  background: transparent;
+  border: 1.5px solid var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1) !important;
+}
+
+.ref-visit-outline:hover {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-2) !important;
+}
+
+/* 文章預覽區塊 */
+.ref-article-preview {
+  display: flex;
+  gap: 0.85rem;
+  padding: 1rem 1rem 0.75rem;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.ref-article-favicon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+  padding-top: 0.15rem;
+}
+
+.ref-article-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.ref-article-domain {
+  font-size: 0.72rem;
+  color: var(--vp-c-text-3);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ref-article-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  line-height: 1.4;
+}
+
+.ref-article-excerpt {
+  font-size: 0.82rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.55;
+}
+
+/* 深色模式微調 */
+.dark .ref-card {
+  background: var(--vp-c-bg-soft);
+}
+
+.dark .ref-featured {
+  box-shadow: 0 2px 12px rgba(217, 119, 6, 0.12);
+}
+
+.dark .ref-article-preview {
+  border-color: var(--vp-c-divider);
+}

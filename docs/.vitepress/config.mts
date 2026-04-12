@@ -28,6 +28,7 @@ export default withMermaid(defineConfig({
       },
       { text: '🗺️ 學習路線', link: '/roadmap' },
       { text: '🎓 官方證書', link: '/certificates' },
+      { text: '📖 參考連結', link: '/references' },
       { text: '📎 額外資源', link: '/resources' },
       {
         text: '🔗 官方課程',
