@@ -72,6 +72,14 @@ export default withMermaid(defineConfig({
             { text: '└ 🎯非營利組織練習', link: '/ai-fluency/nonprofits-practice' },
           ],
         },
+        {
+          text: '📓 NotebookLM 延伸學習',
+          collapsed: false,
+          items: [
+            { text: '第 01 課：AI 素養簡介', link: '/ai-fluency/framework-nlm-01' },
+            { text: '第 02 課：4D 框架詳解', link: '/ai-fluency/framework-nlm-02' },
+          ],
+        },
       ],
       '/claude-products/': [
         {

@@ -210,83 +210,54 @@ ffmpeg -i "$OUTDIR/video.mp4" -vf "fps=1/5" "$OUTDIR/frames/frame_%03d.png" -y 2
 
 使用 Read 工具逐張讀取 PNG 畫面，萃取文字與視覺內容，整理成影片摘要。
 
-### Step 9：更新課程主頁（`*-foundations.md` 或主頁）
+### Step 9：建立獨立 NLM 頁面
 
-**先偵測頁面是否已有 NotebookLM 區塊：**
+為本次課堂建立獨立的 NotebookLM 延伸學習頁面（每堂課一個 `.md` 檔）。
 
-- **新建模式**（頁面無 `## 📺 NotebookLM 生成學習素材`）：在「💡 學習建議」或「📝 重點筆記」區塊之前插入完整區塊
-- **追加模式**（頁面已有此區塊）：在現有區塊內，先將現有內容用 `### <第 XX 課 標題>` 子標題包住，再新增一個 `### <新課堂標題>` 子章節
+**檔案命名**：`docs/<category>/<course-slug>-nlm-<NN>.md`
+- `<course-slug>`：取課程主頁檔名的第一段（如 `framework` 來自 `framework-foundations`）
+- `<NN>`：兩位數課號（如 `01`、`02`）
 
-**新建模式格式：**
+**頁面結構：**
 ```markdown
-## 📺 NotebookLM 生成學習素材
+---
+title: 'NLM 延伸：<課堂標題>'
+description: 'Google NotebookLM 根據第 NN 課影片自動生成的延伸學習素材'
+---
 
-::: info 🎬 影片摘要
+<script setup>
+const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
+// ... 依題數繼續（此頁從 nlmQ1Options 開始，獨立計號）
+</script>
+
+# 📓 第 NN 課：<課堂標題>
+
+<Badge type="tip" text="NotebookLM 生成" /> <Badge type="info" text="影片摘要 + 簡報 + 測驗" />
+
+> 以下內容由 Google NotebookLM 根據課程影片自動生成，作為延伸濃縮學習素材。
+> 📖 回到主課程：[<課程名稱>](/<category>/<course-main-page>)
+
+## 🎬 影片摘要
+
+::: info 🎬 影片摘要：<影片標題>
 （根據影片畫面萃取的完整摘要，含關鍵引言與故事結構）
 :::
 
-::: tip 📊 簡報概覽
-（根據 slide_deck 生成的重點表格）
+## 📊 簡報概覽
+
+::: tip 📊 簡報：<簡報標題>（由 NotebookLM 生成）
+（簡短說明）
 :::
 
-::: tip 🧪 延伸測驗
-NotebookLM 自動生成 N 道繁體中文測驗題。
-前往 [練習頁 → NotebookLM 延伸測驗](練習頁連結#notebooklm-延伸測驗) 立即挑戰。
-:::
-```
+（slide-card 元件 或 slide-image-gallery，依嵌入判斷規則）
 
-**追加模式格式（現有區塊追加子章節）：**
-```markdown
-## 📺 NotebookLM 生成學習素材
-
-### 第 01 課：<原有課堂標題>
-
-（原有內容不動）
-
----
-
-### 第 XX 課：<新課堂標題>
-
-::: info 🎬 影片摘要
-（新課堂影片摘要）
-:::
-
-::: tip 📊 簡報概覽
-（新課堂簡報重點）
-:::
-
-::: tip 🧪 延伸測驗
-NotebookLM 自動生成 N 道繁體中文測驗題。
-前往 [練習頁 → NotebookLM 延伸測驗：第 XX 課](練習頁連結#notebooklm-延伸測驗-第xx課) 立即挑戰。
-:::
-```
-
-### Step 10：更新練習頁（`*-practice.md`）
-
-**先偵測是否已有 NotebookLM 測驗區塊：**
-
-- **新建模式**（無現有 NotebookLM 測驗）：在 `<script setup>` 加入 `nlmQ1Options` 起的選項陣列，在頁面末尾新增測驗區塊
-- **追加模式**（已有 `## 🎓 NotebookLM 延伸測驗`）：在 `<script setup>` **追加**新選項陣列（接續現有編號），在頁面末尾**追加**新的測驗子區塊
-
-**在 `<script setup>` 區塊**加入選項陣列（新建從 `nlmQ1Options`，追加接續現有最後一個編號）：
-```js
-const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
-// ... 依題數繼續
-```
-
-**在頁面末尾**（`💡 練習後建議` 之前）加入：
-
-新建模式：
-```markdown
----
-
-## 🎓 NotebookLM 延伸測驗 {#notebooklm-延伸測驗}
+## 🧪 延伸測驗
 
 ::: info 📌 關於這份測驗
 以下 N 道題目由 Google NotebookLM 根據「<Notebook 標題>」自動生成。
 :::
 
-### 測驗 N-1
+### 測驗 <課號>-1
 
 <Quiz
   question="題目文字"
@@ -297,33 +268,43 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 />
 ```
 
-追加模式（在現有測驗區塊末尾新增子區塊）：
-```markdown
----
+**測驗編號規則**：每個 NLM 頁面內部從 `測驗 <課號>-1` 開始（如第 01 課為 `1-1`、`1-2`；第 02 課為 `2-1`、`2-2`）。`nlmQ*Options` 陣列在各頁面內部從 `nlmQ1Options` 開始，互不干涉。
 
-## 🎓 NotebookLM 延伸測驗：第 XX 課 {#notebooklm-延伸測驗-第xx課}
+**課程主頁處理**：
+- 若課程主頁尚無 NLM 導引連結，在 `## 💡 學習建議` 之前加入：
+  ```markdown
+  ::: tip 📓 NotebookLM 延伸學習
+  Google NotebookLM 已根據本課程影片自動生成濃縮學習素材：
+  - [第 NN 課：<標題>](/<category>/<course-slug>-nlm-NN)
+  :::
+  ```
+- 若已有導引區塊，在清單內追加新一行連結。
 
-::: info 📌 關於這份測驗
-以下 N 道題目由 Google NotebookLM 根據「<新 Notebook 標題>」自動生成。
-:::
+### Step 10：更新 Sidebar
 
-### 測驗 N-1
+每次建立新 NLM 頁面後，更新 `docs/.vitepress/config.mts` 的 `📓 NotebookLM 延伸學習` 分組（位於 ai-fluency sidebar 最後）：
 
-<Quiz
-  question="題目文字"
-  :options="nlmQNOptions"
-  :answer="正確答案索引"
-  hint="提示文字（來自 questions[].hint）"
-  explanation="解析文字（來自 rationale）"
-/>
+```typescript
+{
+  text: '📓 NotebookLM 延伸學習',
+  collapsed: false,
+  items: [
+    { text: '第 01 課：AI 素養簡介', link: '/ai-fluency/framework-nlm-01' },
+    // 新增：
+    { text: '第 NN 課：<標題>', link: '/ai-fluency/<course-slug>-nlm-NN' },
+  ],
+},
 ```
 
-每道題目都必須加入 `hint` prop（對應 `quiz.json` 的 `questions[].hint` 欄位），讓使用者可以點擊提示按鈕查看。若該題目的 `hint` 為空字串或 null，則省略 `hint` prop。
+若 sidebar 尚無此分組，在對應課程類別（ai-fluency 或其他）的最後新增完整分組。
+
+每道測驗題必須加入 `hint` prop（對應 `quiz.json` 的 `questions[].hint`）。若 `hint` 為空或 null，省略該 prop。
 
 ### Step 11：確認更新完成
 
 回報：
-- 已更新的檔案清單
+- 已建立的 NLM 頁面路徑
+- 已更新的 sidebar 項目
 - 新增的題目數量
 - 下載的素材清單與位置
 
