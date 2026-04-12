@@ -13,11 +13,15 @@ anthropic-academy-chinese/
 │   ├── settings.local.json            # 本地覆蓋設定（不納入版控）
 │   ├── agents/                        # 客製化 Sub-agent 定義
 │   │   ├── code-reviewer.md           # 內容品質與規範審查
+│   │   ├── content-translator.md      # 英文課程翻譯為繁體中文學習指南
 │   │   ├── debugger.md                # 建置錯誤診斷與修復
 │   │   ├── doc-writer.md              # 繁體中文課程頁面撰寫
+│   │   ├── explorer.md                # 專案結構探索與現狀查詢
 │   │   ├── git-commit.md              # 符合規範的 commit 產生
+│   │   ├── practice-builder.md        # 互動練習頁建立（Vue 元件組合）
 │   │   ├── refactor-assistant.md      # 內容結構重構
 │   │   ├── security-auditor.md        # 外部連結與依賴安全審查
+│   │   ├── sidebar-updater.md         # 新增課程後同步更新三個設定檔
 │   │   └── test-runner.md             # VitePress 建置驗證
 │   ├── rules/                         # 路徑感知的開發規則
 │   │   ├── git-commit.md              # Commit message 格式規則
@@ -36,7 +40,18 @@ anthropic-academy-chinese/
 │       └── archive/
 └── docs/                              # VitePress 內容根目錄
     ├── .vitepress/
-    │   └── config.mts                 # VitePress 核心設定（導覽、側邊欄、Mermaid）
+    │   ├── config.mts                 # VitePress 核心設定（導覽、側邊欄、Mermaid）
+    │   └── theme/
+    │       ├── index.ts               # 自訂主題入口，全域註冊 Vue 元件
+    │       └── components/            # 互動式 Vue 元件（用於練習頁）
+    │           ├── Quiz.vue           # 單選/多選題（question, options, answer, multi）
+    │           ├── MatchingPairs.vue  # 左右配對題（leftItems, rightItems, correctPairs）
+    │           ├── RankingExercise.vue# 排序題（items, correctOrder, explanation）
+    │           ├── PromptRewrite.vue  # Prompt 改寫練習（originalPrompt, requiredKeywords）
+    │           ├── DelegationChecklist.vue # AI 委派四問決策樹（scenario）
+    │           ├── DiligenceBuilder.vue    # AI 使用聲明建立器（工具選擇 + 用途 + 審查程度）
+    │           ├── HeroCertBadge.vue  # 首頁證書徽章裝飾元件（連結至 /certificates）
+    │           └── MermaidLightbox.vue# Mermaid 圖表放大燈箱（滾輪縮放、拖曳、ESC 關閉）
     ├── index.md                       # 首頁（layout: home，含課程總覽表格）
     ├── roadmap.md                     # 學習路線圖（含 Mermaid 流程圖）
     ├── resources.md                   # 額外學習資源
@@ -127,6 +142,34 @@ VitePress 使用**檔案系統路由**（File-based Routing）：
 ### 一般課程頁
 
 標準 Markdown 頁面，可包含 Mermaid 流程圖（`roadmap.md` 大量使用此功能）。
+
+### 互動練習頁（*-practice.md）
+
+互動練習頁在 Markdown 中直接使用全域註冊的 Vue 元件：
+
+```markdown
+<Quiz
+  question="問題文字"
+  :options="['選項A', '選項B']"
+  :answer="0"
+  explanation="解析文字"
+/>
+```
+
+**元件一覽：**
+
+| 元件 | Props | 用途 |
+|------|-------|------|
+| `Quiz` | `question`, `options`, `answer`(Number/Array), `explanation`, `multi`(Boolean) | 單選/多選題，作答後顯示解析 |
+| `MatchingPairs` | `leftItems`({id,text}[]), `rightItems`({id,text}[]), `correctPairs`([leftId,rightId][]), `explanation` | 左右配對拖曳題 |
+| `RankingExercise` | `items`(String[]), `correctOrder`(Number[]), `explanation` | 拖曳排序題 |
+| `PromptRewrite` | `originalPrompt`, `requiredKeywords`(String[]), `minLength`, `sampleAnswer` | Prompt 改寫文字輸入練習 |
+| `DelegationChecklist` | `scenario` | AI 委派四問決策樹，逐題引導判斷 |
+| `DiligenceBuilder` | 無 Props | AI 使用聲明建立器，多選工具/用途後產出聲明文字 |
+| `HeroCertBadge` | 無 Props | 裝飾性證書徽章，連結至 `/certificates` |
+| `MermaidLightbox` | 無 Props | 自動掛載於所有 Mermaid 圖表，點擊可放大 |
+
+**全域註冊位置**：`docs/.vitepress/theme/index.ts`，不需要在各頁面 import。
 
 ## Mermaid 整合
 

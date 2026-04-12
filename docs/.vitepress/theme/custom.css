@@ -1266,6 +1266,7 @@ details > *:not(summary) {
 
 /* 可點擊提示 */
 .mermaid {
+  position: relative;
   cursor: zoom-in;
   transition: box-shadow 0.2s;
   border-radius: 8px;
@@ -1273,6 +1274,32 @@ details > *:not(summary) {
 
 .mermaid:hover {
   box-shadow: 0 0 0 2px var(--vp-c-brand-1);
+}
+
+/* hover 時顯示「點擊放大」提示徽章 */
+.mermaid[data-lb-bound]::after {
+  content: '🔍 點擊放大';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 1;
+}
+
+.mermaid[data-lb-bound]:hover::after {
+  opacity: 1;
+}
+
+.dark .mermaid[data-lb-bound]::after {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
 /* 防止 foreignObject 裁切文字（即時 CSS 保護） */

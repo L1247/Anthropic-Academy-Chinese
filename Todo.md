@@ -2,7 +2,6 @@
  - 部署到 GitHub Pages → pages.github.com
   - 部署到 Cloudflare Pages → pages.cloudflare.com
 
-- 提示路線圖內的燈箱可以點擊放大
 
 - 開發者課程，可以再細分，雲端平台 https://www.aiposthub.com/anthropic-academy-complete-guide/
 

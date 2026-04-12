@@ -101,6 +101,38 @@ flowchart TD
 
 參考 `docs/roadmap.md` 的 4 個流程圖範例。
 
+## 新增 Vue 互動元件
+
+### 建立元件檔案
+
+在 `docs/.vitepress/theme/components/` 建立 `.vue` 檔案（Vue 3 `<script setup>` 語法）。
+
+### 全域註冊
+
+開啟 `docs/.vitepress/theme/index.ts`，在 `enhanceApp` 中註冊：
+
+```ts
+app.component('MyComponent', MyComponent)
+```
+
+### 在 Markdown 中使用
+
+元件全域註冊後，直接在任何 `.md` 檔案中使用標籤，無需 import：
+
+```markdown
+<MyComponent
+  :items="['A', 'B', 'C']"
+  explanation="解析文字"
+/>
+```
+
+### 設計規範
+
+- 使用 VitePress CSS 變數（`var(--vp-c-*)`），確保深色/淺色模式自動切換
+- Props 型別需明確聲明（TypeScript-friendly），必填 props 加 `required: true`
+- 互動狀態（選擇、提交）使用 `ref()`，計算結果使用 `computed()`
+- 不依賴外部 UI 函式庫，保持輕量
+
 ## 環境變數
 
 本專案為純靜態文件網站，**不使用任何環境變數**。所有設定均在 `config.mts` 中硬編碼。

@@ -26,6 +26,7 @@ npm run docs:preview   # 預覽建置結果
 - `./dev-docs/ARCHITECTURE.md` — 架構、目錄結構、VitePress 設定說明
 - `./dev-docs/DEVELOPMENT.md` — 開發規範、新增課程步驟
 - `./dev-docs/FEATURES.md` — 功能列表與完成狀態
+- `./dev-docs/TESTING.md` — 建置驗證與品質確認流程
 - `./dev-docs/CHANGELOG.md` — 更新日誌
 
 ## 必要遵守項目

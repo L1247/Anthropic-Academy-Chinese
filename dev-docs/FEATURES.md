@@ -15,6 +15,9 @@
 | 社群連結 | ✅ 完成 | GitHub 連結至 anthropics/courses |
 | 頁尾聲明 | ✅ 完成 | 非官方指南聲明 + 版權資訊 |
 | OG / SEO meta | ✅ 完成 | og:title、og:description、theme-color |
+| 官方證書頁 | ✅ 完成 | 17 門課程的證書資訊、CCA 認證說明、常見問題 |
+| HeroCertBadge | ✅ 完成 | 首頁裝飾性證書徽章元件，連結至 /certificates |
+| MermaidLightbox | ✅ 完成 | 點擊 Mermaid 圖表可放大，支援滾輪縮放與拖曳 |
 
 ## 內容功能
 
@@ -72,13 +75,16 @@
 - 讓學習者透過情境題實際演練 4D 框架（Discover、Decide、Design、Deliver）
 - 題目作答後即時顯示解析說明
 
-### Claude 產品（3 門）
+### Claude 產品（3 門 + 互動練習頁）
 
 | 課程 | 檔案 | 狀態 |
 |------|------|------|
 | Claude 101 | `claude-products/claude-101.md` | ✅ |
 | Claude Code 101 | `claude-products/claude-code-101.md` | ✅ |
 | Claude Cowork 入門 | `claude-products/claude-cowork.md` | ✅ |
+| Claude 101 互動練習 | `claude-products/claude-101-practice.md` | ✅ |
+| Claude Code 101 互動練習 | `claude-products/claude-code-101-practice.md` | ✅ |
+| Claude Cowork 互動練習 | `claude-products/claude-cowork-practice.md` | ✅ |
 
 ### 開發者（8 門）
 
