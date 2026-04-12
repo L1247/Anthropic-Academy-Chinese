@@ -60,7 +60,7 @@ const sampleExplain = `請針對完全沒有技術背景的行銷部門同事（
 
 <Badge type="tip" text="⭐ 初學者" /> <Badge type="info" text="約 30 分鐘" /> <Badge type="warning" text="對應第 04–10 課" />
 
-> **先修建議**：本練習涵蓋第 04–10 課的四大核心能力（委派、描述、辨識、盡責）。
+> **先修建議**：本練習涵蓋第 04–10 課的四大核心能力（委派、描述、辨識、盡責）。  
 > 請先閱讀 [AI 素養：框架與基礎](/ai-fluency/framework-foundations) 了解 4D 的理論後，再來這裡動手練習。
 
 ## 📖 練習說明
