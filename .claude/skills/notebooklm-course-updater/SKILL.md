@@ -222,6 +222,39 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 - 練習頁的 Quiz 元件索引從 0 開始（`:answer="0"` 表示第一個選項）
 - ffmpeg 需已安裝（`where ffmpeg` 確認）
 
+### 中英文並陳規則
+
+從 NotebookLM 素材擷取的英文原文，**不可單獨出現**，必須附上繁體中文翻譯。格式：英文在前，中文緊接在後（同行括號或下一行引言）。
+
+**適用情境：**
+- 影片畫面中的英文短語（如步驟名稱、概念標題）
+- 影片或簡報中的英文引言／金句
+- 4D 各步驟的英文說明句
+
+**格式範例：**
+
+```markdown
+<!-- 短語：英文 + 中文括號 -->
+**THINKING ABOUT AI → THINKING WITH AI**（從旁觀者到協作者）
+
+<!-- 引言：英文原文 + 中文翻譯各一行 -->
+> *"The ability to engage with AI systems in ways that are effective, efficient, ethical, and safe."*
+> 「以有效、高效、合乎道德且安全的方式與 AI 系統互動的能力。」
+
+<!-- 步驟列表：英文說明 + 中文說明 -->
+- Step 1 **Delegation** — When should humans do work and when should AI?
+  委派：何時由人類執行？何時交給 AI？
+```
+
+**不可接受的寫法：**
+```markdown
+<!-- ❌ 純英文，缺少中文 -->
+> *"The ability to engage with AI systems..."*
+
+<!-- ❌ 中文說明但步驟全英文 -->
+- Step 1 Delegation — When should humans do work and when should AI?
+```
+
 ---
 
 ## 生成新 Artifact（如尚未存在）

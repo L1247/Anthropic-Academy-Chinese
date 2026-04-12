@@ -346,16 +346,24 @@ flowchart TD
 
 **AI Fluency 定義**（影片原文）：
 > *"The ability to engage with AI systems in ways that are **effective, efficient, ethical, and safe**."*
+> 「以**有效、高效、合乎道德且安全**的方式與 AI 系統互動的能力。」
 
 **4D 四步驟流程**（影片畫面）：
 - Step 1 **Delegation** — When should humans do work and when should AI?
+  **委派**：何時由人類執行？何時交給 AI？
 - Step 2 **Description** — How do we communicate clearly with AI systems?
+  **描述**：如何與 AI 系統進行清晰、有效的溝通？
 - Step 3 **Discernment** — How do we evaluate what the AI gives us back?
+  **辨別**：如何客觀評估並判斷 AI 給出的內容？
 - Step 4 **Diligence** — How to ensure your AI work is responsible?
+  **盡責**：如何確保 AI 互動過程負責任且透明？
 
 **核心心態轉變**（影片結語）：
 > *"Treat AI not as a **spellchecker**, but as a trusted partner for **creative problem-solving**."*
+> 「不要把 AI 當作**拼字檢查器**，而要視為**創意解題**的值得信賴夥伴。」
+
 > *"The goal isn't to think **about** AI. It's to think **with** AI."*
+> 「目標不是思考 **AI 是什麼**，而是**與 AI 一起思考**。」
 
 **學完這門課你將獲得**（影片畫面 What You Gain）：
 - 指引互動的完整框架
