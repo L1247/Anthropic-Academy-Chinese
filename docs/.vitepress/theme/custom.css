@@ -1333,7 +1333,7 @@ details > *:not(summary) {
 .mermaid[data-lb-bound]::after {
   content: '🔍 點擊放大';
   position: absolute;
-  bottom: 10px;
+  top: 10px;
   right: 10px;
   background: rgba(0, 0, 0, 0.55);
   color: #fff;
