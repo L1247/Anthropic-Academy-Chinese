@@ -128,8 +128,8 @@ PYTHONIOENCODING=utf-8 notebooklm download audio "$OUTDIR/podcast.mp3" 2>&1
 若 Step 4 顯示尚無 `completed` 的 artifacts，先生成再下載。**簡報生成時加入中文品質提示詞**：
 
 ```bash
-# 簡報（含中文品質提示詞，減少句子黏連與斷句錯誤）
-PYTHONIOENCODING=utf-8 notebooklm generate slide-deck "注意每個句子要語意完整，標點符號正確，避免字詞黏連或斷句錯誤。" --wait --json 2>&1
+# 簡報（強制繁體中文輸出 + 品質提示詞）
+PYTHONIOENCODING=utf-8 notebooklm generate slide-deck "請以繁體中文（Traditional Chinese）撰寫所有簡報內容，包含標題、說明文字、條列項目與補充說明。注意每個句子要語意完整，標點符號正確，避免字詞黏連或斷句錯誤。禁止使用英文，所有術語應以繁體中文呈現並可在括號內附上英文原文。" --wait --json 2>&1
 
 # 測驗
 PYTHONIOENCODING=utf-8 notebooklm generate quiz --difficulty hard --wait --json 2>&1
