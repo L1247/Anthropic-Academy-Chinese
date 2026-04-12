@@ -1864,3 +1864,31 @@ details > *:not(summary) {
 .dive-beige { background: var(--slide-beige); }
 .dive-blue  { background: var(--slide-blue);  }
 .dive-green { background: var(--slide-green); }
+
+/* 簡報圖片容器 */
+.slide-image-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 1rem 0;
+}
+
+.slide-image-item {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--vp-c-bg-soft);
+}
+
+.slide-image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slide-image-caption {
+  padding: 0.6rem 1rem;
+  font-size: 0.84rem;
+  color: var(--vp-c-text-2);
+  border-top: 1px solid var(--vp-c-divider);
+}

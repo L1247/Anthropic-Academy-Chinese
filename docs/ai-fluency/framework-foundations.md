@@ -365,16 +365,43 @@ flowchart TD
 - 應對未來變化的準備
 :::
 
-::: tip 📊 簡報：Mastering AI Fluency（由 NotebookLM 生成）
-簡報涵蓋 4D 框架完整架構，可作為課程重點的視覺化摘要：
-
-| 4D 核心能力 | 關鍵問題 |
-|------------|---------|
-| **委派** Delegation | 何時由人做？何時交給 AI？ |
-| **描述** Description | 如何清楚溝通你的需求？ |
-| **辨識** Discernment | 如何批判性評估 AI 輸出？ |
-| **勤勉** Diligence | 如何負責任、透明地使用 AI？ |
+::: tip 📊 簡報：AI 流暢度核心概念（由 NotebookLM 生成）
+以下為 NotebookLM 根據課程自動生成的繁體中文簡報關鍵頁面：
 :::
+
+<div class="slide-image-gallery">
+
+<div class="slide-image-item">
+  <img src="/images/ai-fluency/slide-03-gap.png" alt="可能性與直覺之間的巨大落差" loading="lazy" />
+  <div class="slide-image-caption">為什麼需要框架？AI 能力與人類直覺之間存在日益擴大的落差。</div>
+</div>
+
+<div class="slide-image-item">
+  <img src="/images/ai-fluency/slide-04-strategy-comparison.png" alt="重新定義我們的 AI 學習策略" loading="lazy" />
+  <div class="slide-image-caption">戰術性技能 vs 核心素養：兩種截然不同的學習方向。</div>
+</div>
+
+<div class="slide-image-item">
+  <img src="/images/ai-fluency/slide-05-ai-fluency-definition.png" alt="定義標準：什麼是真正的 AI 流暢度？" loading="lazy" />
+  <div class="slide-image-caption">AI 流暢度的四個高標準：有效（Effective）、高效（Efficient）、道德（Ethical）、安全（Safe）。</div>
+</div>
+
+<div class="slide-image-item">
+  <img src="/images/ai-fluency/slide-06-4ds-framework.png" alt="人機協作的四大核心支柱：The 4Ds Framework" loading="lazy" />
+  <div class="slide-image-caption">4D 框架總覽：委派、描述、辨別、盡責，四大核心支柱。</div>
+</div>
+
+<div class="slide-image-item">
+  <img src="/images/ai-fluency/slide-11-interaction-loop.png" alt="動態循環：將 4D 轉化為工作流" loading="lazy" />
+  <div class="slide-image-caption">4D 不是單向清單，而是持續迭代的互動循環，讓你真正「與 AI 共同思考」。</div>
+</div>
+
+<div class="slide-image-item">
+  <img src="/images/ai-fluency/slide-12-conclusion.png" alt="掌握適應未來變局的持久能力" loading="lazy" />
+  <div class="slide-image-caption">課程結語：準備好迎接的不只是今天的 AI 系統，而是未來無限的變革。</div>
+</div>
+
+</div>
 
 ::: tip 🧪 延伸測驗：AI 流暢力測驗（10 題）
 NotebookLM 根據課程內容自動生成 10 道繁體中文測驗題，涵蓋 4D 框架的核心概念、定義與應用情境。
