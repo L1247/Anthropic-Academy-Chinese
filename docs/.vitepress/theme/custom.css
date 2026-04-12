@@ -1323,6 +1323,8 @@ details > *:not(summary) {
   cursor: zoom-in;
   transition: box-shadow 0.2s;
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
 }
 
 .mermaid:hover {
