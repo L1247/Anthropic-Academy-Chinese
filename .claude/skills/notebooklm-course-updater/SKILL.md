@@ -165,7 +165,7 @@ PYTHONIOENCODING=utf-8 notebooklm artifact list --json 2>&1
 PYTHONIOENCODING=utf-8 notebooklm generate quiz --difficulty hard --json 2>&1
 
 # 影片摘要（同樣先確認無 in_progress 才執行）
-PYTHONIOENCODING=utf-8 notebooklm generate video --json 2>&1
+PYTHONIOENCODING=utf-8 notebooklm generate video "請以繁體中文（Traditional Chinese）撰寫所有影片摘要內容，包含標題、重點整理、條列項目與說明文字。注意每個句子要語意完整，標點符號正確，避免字詞黏連或斷句錯誤。禁止使用英文，所有術語應以繁體中文呈現並可在括號內附上英文原文。" --json 2>&1
 ```
 
 生成完成後繼續 Step 5 下載。
@@ -404,6 +404,9 @@ PYTHONIOENCODING=utf-8 notebooklm generate quiz --difficulty hard 2>&1
 
 # 生成簡報
 PYTHONIOENCODING=utf-8 notebooklm generate slide-deck 2>&1
+
+# 生成影片摘要（繁體中文）
+PYTHONIOENCODING=utf-8 notebooklm generate video "請以繁體中文（Traditional Chinese）撰寫所有影片摘要內容，包含標題、重點整理、條列項目與說明文字。注意每個句子要語意完整，標點符號正確，避免字詞黏連或斷句錯誤。禁止使用英文，所有術語應以繁體中文呈現並可在括號內附上英文原文。" --json 2>&1
 
 # 生成 Podcast
 PYTHONIOENCODING=utf-8 notebooklm generate audio "make it engaging" --wait 2>&1
