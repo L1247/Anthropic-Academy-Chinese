@@ -60,7 +60,7 @@
           },
           {
             "type": "command",
-            "command": "claude -p \"請檢查 git status。若有未提交的變更，依照 .claude/rules/git-commit.md 規範分析變更、選擇 commit type，執行 git add 與 git commit（不要 push）。若無變更則直接結束。\" --allowedTools Bash --max-turns 8 2>/dev/null || true",
+            "command": "bash -c 'if [ -n \"$(git status --porcelain 2>/dev/null)\" ]; then claude -p \"請依照 .claude/rules/git-commit.md 規範分析 git 變更、選擇 commit type，執行 git add 與 git commit（不要 push）。\" --allowedTools Bash --max-turns 8 2>/dev/null || true; fi'",
             "statusMessage": "自動提交變更中...",
             "timeout": 120
           }
