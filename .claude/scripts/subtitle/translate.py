@@ -8,7 +8,7 @@ import time
 from pathlib import Path
 from typing import List
 
-from srt_utils import Cue, merge_bilingual, parse_srt, write_srt
+from srt_utils import Cue, merge_bilingual, parse_srt, split_bilingual_cues, write_srt, write_vtt_from_cues
 
 BATCH_SIZE = 40  # 每批送出的 cue 數
 MAX_RETRIES = 2  # 每批最多重試次數
@@ -95,6 +95,8 @@ def translate_srt(
     en_srt: Path,
     out_srt: Path,
     out_vtt: Path | None = None,
+    out_zh_vtt: Path | None = None,
+    out_en_vtt: Path | None = None,
 ) -> List[Cue]:
     """讀取英文 SRT，呼叫 Claude API 批次翻譯，寫出雙語 SRT（和可選的 VTT）。
 
@@ -144,6 +146,16 @@ def translate_srt(
 
     if out_vtt is not None:
         srt_to_vtt(out_srt, out_vtt)
-        print(f"  VTT 已寫出：{out_vtt.name}")
+        print(f"  雙語 VTT 已寫出：{out_vtt.name}")
+
+    # 拆出純繁中 / 純英文 VTT
+    if out_zh_vtt is not None or out_en_vtt is not None:
+        en_only_cues, zh_only_cues = split_bilingual_cues(bilingual_cues)
+        if out_zh_vtt is not None:
+            write_vtt_from_cues(zh_only_cues, out_zh_vtt)
+            print(f"  純繁中 VTT 已寫出：{out_zh_vtt.name}")
+        if out_en_vtt is not None:
+            write_vtt_from_cues(en_only_cues, out_en_vtt)
+            print(f"  純英文 VTT 已寫出：{out_en_vtt.name}")
 
     return bilingual_cues

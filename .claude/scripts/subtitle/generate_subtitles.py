@@ -68,12 +68,14 @@ def collect_videos(input_path: Optional[Path], force: bool) -> List[Path]:
         return []
 
     if not force:
-        # 過濾：已完成的跳過
+        # 過濾：三份 VTT 都已存在才跳過
         remaining = []
         for v in videos:
-            vtt = v.parent / "video.zh-Hant.vtt"
-            if vtt.exists():
-                print(f"  [跳過] {v.parent.name}（已有 .vtt）")
+            bi_vtt  = v.parent / "video.zh-Hant.vtt"
+            zh_vtt  = v.parent / "video.zh-Hant-only.vtt"
+            en_vtt2 = v.parent / "video.en.vtt"
+            if bi_vtt.exists() and zh_vtt.exists() and en_vtt2.exists():
+                print(f"  [跳過] {v.parent.name}（三份 VTT 均已存在）")
             else:
                 remaining.append(v)
         return remaining
@@ -94,7 +96,9 @@ def process_video(
 
     en_srt = video.parent / "video.en.srt"
     bi_srt = video.parent / "video.zh-Hant.srt"
-    bi_vtt = video.parent / "video.zh-Hant.vtt"
+    bi_vtt = video.parent / "video.zh-Hant.vtt"       # 雙語（英上中下）
+    zh_vtt = video.parent / "video.zh-Hant-only.vtt"  # 純繁中
+    en_vtt = video.parent / "video.en.vtt"            # 純英文
 
     t_start = time.time()
 
@@ -130,13 +134,19 @@ def process_video(
             )
 
         print(f"  [翻譯] 呼叫 Claude API…")
-        tl.translate_srt(en_srt=en_srt, out_srt=bi_srt, out_vtt=bi_vtt)
+        tl.translate_srt(
+            en_srt=en_srt,
+            out_srt=bi_srt,
+            out_vtt=bi_vtt,
+            out_zh_vtt=zh_vtt,
+            out_en_vtt=en_vtt,
+        )
 
         elapsed = time.time() - t_start
         return JobResult(
             video=video,
             status="success",
-            message="英文 SRT + 雙語 SRT + VTT",
+            message="英文 SRT + 雙語 SRT + 三份 VTT",
             elapsed=elapsed,
             cue_count=len(en_cues),
         )

@@ -72,6 +72,39 @@ def merge_bilingual(en_cues: List[Cue], zh_texts: List[str]) -> List[Cue]:
     return result
 
 
+def write_vtt_from_cues(cues: List[Cue], vtt_path: Path) -> None:
+    """將 Cue 清單直接寫出為 WebVTT 格式（不需中間 SRT 檔案）。"""
+    lines = ["WEBVTT", ""]
+    for cue in cues:
+        start_vtt = cue.start.replace(",", ".")
+        end_vtt = cue.end.replace(",", ".")
+        lines.append(str(cue.index))
+        lines.append(f"{start_vtt} --> {end_vtt}")
+        lines.append(cue.text)
+        lines.append("")
+    vtt_path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def split_bilingual_cues(bi_cues: List[Cue]) -> tuple[List[Cue], List[Cue]]:
+    """將雙語 cue（英文\\n中文）拆回 (en_only, zh_only) 兩組 cue。
+
+    拆分規則：text.split("\\n", 1) → 第一行為英文，其餘為中文。
+    若只有一行，英中兩組皆保留該行。
+
+    Returns:
+        (en_cues, zh_cues) 兩組 cue，與 bi_cues 等長且時間碼相同。
+    """
+    en_cues: List[Cue] = []
+    zh_cues: List[Cue] = []
+    for cue in bi_cues:
+        parts = cue.text.split("\n", 1)
+        en_text = parts[0].strip()
+        zh_text = parts[1].strip() if len(parts) > 1 else en_text
+        en_cues.append(Cue(index=cue.index, start=cue.start, end=cue.end, text=en_text))
+        zh_cues.append(Cue(index=cue.index, start=cue.start, end=cue.end, text=zh_text))
+    return en_cues, zh_cues
+
+
 def srt_to_vtt(srt_path: Path, vtt_path: Path) -> None:
     """將 SRT 檔案轉換為 WebVTT 格式。
 

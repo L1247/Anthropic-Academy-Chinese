@@ -2,560 +2,700 @@ WEBVTT
 
 1
 00:00:00.000 --> 00:00:03.080
+Hello everyone, today we are going to talk about a
 大家好，今天我們要談論一個
 
 2
 00:00:03.080 --> 00:00:08.480
+core framework that I think can completely change the way you interact with AI
 核心框架，我認為它可以完全改變你與 AI 互動的方式
 
 3
 00:00:08.480 --> 00:00:12.800
+Hey, this is not the kind of layer-by-layer technique that the king of learning will soon have
 嘿，這不是那種分層技術，學習之王很快就會擁有的
 
 4
 00:00:12.800 --> 00:00:15.280
+but a brand-new mode of thought
 而是一種全新的思維模式
 
 5
 00:00:15.280 --> 00:00:19.360
+so that we can really think with AI
 讓我們能夠真正與 AI 一起思考
 
 6
 00:00:19.360 --> 00:00:22.360
+Okay, let's get started
 好的，讓我們開始吧
 
 7
 00:00:22.360 --> 00:00:26.480
+I believe that many people are like me
 我相信許多人像我一樣
 
 8
 00:00:26.480 --> 00:00:29.160
+living in an era where AI changes every day
 生活在一個 AI 每天都在變化的時代
 
 9
 00:00:29.160 --> 00:00:32.240
+It feels like I've been pushed by the waves of the times
 感覺就像被時代的浪潮推著走
 
 10
 00:00:32.240 --> 00:00:34.920
+Sometimes it's really a bit out of control
 有時候真的有點無法控制
 
 11
 00:00:34.920 --> 00:00:36.840
+Do you also have this feeling?
 你也有這種感覺嗎？
 
 12
 00:00:36.840 --> 00:00:39.320
+The speed of AI development is really too fast
 AI 發展的速度真的太快了
 
 13
 00:00:39.320 --> 00:00:41.400
+It's so fast that we often ask ourselves
 快到我們經常問自己
 
 14
 00:00:41.400 --> 00:00:43.320
+How do we catch up?
 我們如何趕上？
 
 15
 00:00:43.320 --> 00:00:45.840
+To be honest, this sense of frustration is very anxious
 說實話，這種挫折感令人非常焦慮
 
 16
 00:00:45.840 --> 00:00:48.720
+We may have more or less
 我們多多少少可能都有
 
 17
 00:00:48.720 --> 00:00:51.520
+In fact, these feelings are normal
 實際上，這些感受都是正常的
 
 18
 00:00:51.520 --> 00:00:54.600
+You see, the world has changed so fast
 你看，世界變化太快了
 
 19
 00:00:54.600 --> 00:00:57.760
+Many companies or teams have not yet figured out the strategy
 許多公司或團隊還沒有想出策略
 
 20
 00:00:57.760 --> 00:00:59.560
+So we rushed into AI
 所以我們衝向了 AI
 
 21
 00:00:59.560 --> 00:01:04.800
+The result is that we often have to use some systems that we don't understand at all
 結果是我們經常不得不使用一些我們根本不理解的系統
 
 22
 00:01:04.800 --> 00:01:06.720
+That sense of helplessness is really heavy
 那種無助感真的很沉重
 
 23
 00:01:06.720 --> 00:01:10.720
+Then AI can do things that we can understand intuitively
 然後 AI 可以做一些我們能直觀理解的事情
 
 24
 00:01:10.720 --> 00:01:12.800
+The gap seems to be getting bigger
 差距似乎越來越大
 
 25
 00:01:12.800 --> 00:01:16.680
+Not to mention the so-called prompt density on the Internet
 更不用說網際網路上的所謂提示詞密度了
 
 26
 00:01:16.680 --> 00:01:19.680
+I've been learning for a long time and it's over
 我學了很久就結束了
 
 27
 00:01:19.680 --> 00:01:23.080
+So can we think about this from a different angle?
 那麼我們能否從不同的角度來考慮這個問題？
 
 28
 00:01:23.120 --> 00:01:26.160
+If we don't chase those
 如果我們不追逐那些
 
 29
 00:01:26.160 --> 00:01:28.320
+The technology of the sun, the moon and the sun
 日新月異的技術
 
 30
 00:01:28.320 --> 00:01:31.200
+Instead, pull the focus back to ourselves
 而是將焦點拉回到我們自己
 
 31
 00:01:31.200 --> 00:01:32.440
+To think
 去思考
 
 32
 00:01:32.440 --> 00:01:33.880
+As humans
 作為人類
 
 33
 00:01:33.880 --> 00:01:36.440
+How should we interact with AI
 我們應該如何與 AI 互動
 
 34
 00:01:36.440 --> 00:01:38.560
+Will we find a new way out?
 我們會找到新的出路嗎？
 
 35
 00:01:38.560 --> 00:01:42.840
+You see, these are actually two completely different forms
 你看，這實際上是兩種完全不同的形式
 
 36
 00:01:42.840 --> 00:01:46.280
+The old method is to focus on the technology itself
 舊方法是關注技術本身
 
 37
 00:01:46.280 --> 00:01:49.160
+I've been chasing those short-term techniques all day
 整天追趕那些短期技巧
 
 38
 00:01:49.160 --> 00:01:50.680
+What do you take AI as?
 你把 AI 當作什麼？
 
 39
 00:01:50.720 --> 00:01:55.160
+Well, it's probably a better way to do a拼字检查
 嗯，它可能只是一個更好的拼字檢查方式
 
 40
 00:01:55.160 --> 00:01:59.640
+But the new method is about human-machine cooperation
 但新方法是關於人機協作
 
 41
 00:01:59.640 --> 00:02:03.680
+It's about training our core ability to understand deeply
 這是關於培養我們深層理解的核心能力
 
 42
 00:02:03.680 --> 00:02:06.920
+To treat AI as a reliable partner
 把 AI 當作一個可靠的夥伴
 
 43
 00:02:06.920 --> 00:02:10.560
+So this brings out our core concept today
 所以這就引出了我們今天的核心概念
 
 44
 00:02:10.560 --> 00:02:12.360
+AI fluency
 AI 流暢度
 
 45
 00:02:12.360 --> 00:02:13.400
+To put it bluntly
 坦白說
 
 46
 00:02:13.400 --> 00:02:17.200
+This is an ability to make us able to use efficient
 這是一種能力，使我們能夠高效地使用
 
 47
 00:02:17.240 --> 00:02:21.840
+And also to work with AI in a moral and safe way
 並且以道德和安全的方式與 AI 合作
 
 48
 00:02:21.840 --> 00:02:23.720
+It's not just a skill
 這不只是一項技能
 
 49
 00:02:23.720 --> 00:02:27.600
+It's a stronger and more sustainable mode of cooperation
 這是一種更強大、更可持續的合作模式
 
 50
 00:02:27.600 --> 00:02:30.800
+This AI fluency sounds great
 這個 AI 流暢度聽起來不錯
 
 51
 00:02:30.800 --> 00:02:32.840
+How do we do it?
 我們如何做到呢？
 
 52
 00:02:32.840 --> 00:02:36.600
+The key is to master the four core abilities
 關鍵是掌握四個核心能力
 
 53
 00:02:36.600 --> 00:02:40.560
+Which is the 4D framework we're going to talk about
 這就是我們要談的 4D framework
 
 54
 00:02:40.560 --> 00:02:43.040
+Look at this table, so clear
 看這個表格，非常清楚
 
 55
 00:02:43.080 --> 00:02:45.760
+This whole framework is the core ability of the four Ds
 整個框架就是四個 D 的核心能力
 
 56
 00:02:45.760 --> 00:02:48.240
+Which are the initial English words
 這些是最初的英文字母
 
 57
 00:02:48.240 --> 00:02:50.240
+Fluency, description, recognition, and
 流暢度、描述、識別，以及
 
 58
 00:02:50.240 --> 00:02:51.760
+And intimacy
 以及親密度
 
 59
 00:02:51.760 --> 00:02:55.480
+Each ability corresponds to a key question
 每個能力都對應一個關鍵問題
 
 60
 00:02:55.480 --> 00:02:58.120
+That we must ask ourselves when interacting with AI
 這是我們在與 AI 互動時必須問自己的問題
 
 61
 00:02:58.120 --> 00:03:00.200
+Okay, the first D, fluency
 好的，第一個 D，流暢度
 
 62
 00:03:00.200 --> 00:03:01.200
+This is super important
 這非常重要
 
 63
 00:03:01.200 --> 00:03:03.000
+It's actually asking us a question
 它實際上是在問我們一個問題
 
 64
 00:03:03.000 --> 00:03:04.400
+When should I do it myself?
 我什麼時候應該自己做？
 
 65
 00:03:04.400 --> 00:03:06.600
+When should I let AI do it?
 我什麼時候應該讓 AI 來做？
 
 66
 00:03:06.600 --> 00:03:08.120
+This is a judgment
 這是一個判斷
 
 67
 00:03:08.120 --> 00:03:10.080
+For example, make a market report
 例如，製作市場報告
 
 68
 00:03:10.080 --> 00:03:12.080
+Previous data collection and organization
 先前的數據收集和整理
 
 69
 00:03:12.120 --> 00:03:13.720
+Can be completely handed over to AI
 可以完全交給 AI
 
 70
 00:03:13.720 --> 00:03:16.280
+But the final strategic judgment and decision
 但最終的戰略判斷和決策
 
 71
 00:03:16.280 --> 00:03:18.680
+Of course, it still has to be done by you, the human expert
 當然，還是得由你這位人類專家來做
 
 72
 00:03:18.680 --> 00:03:19.860
+Right?
 對吧？
 
 73
 00:03:19.860 --> 00:03:23.340
+Okay, when you decide what task you want to send
 好的，當你決定要發送什麼任務時
 
 74
 00:03:23.340 --> 00:03:24.300
+What's next?
 接下來呢？
 
 75
 00:03:24.300 --> 00:03:27.020
+Of course, you have to tell him clearly
 當然，你必須清楚地告訴他
 
 76
 00:03:27.020 --> 00:03:29.900
+This is our second D, description
 這是我們第二個 D，描述
 
 77
 00:03:29.900 --> 00:03:32.620
+This is a communication art
 這是一門溝通的藝術
 
 78
 00:03:32.620 --> 00:03:34.500
+How can we make our needs
 我們如何才能讓我們的需求
 
 79
 00:03:34.500 --> 00:03:35.580
+Our intentions
 我們的意圖
 
 80
 00:03:35.580 --> 00:03:37.420
+Speak clearly and accurately
 表達得清楚準確
 
 81
 00:03:37.420 --> 00:03:41.450
+Let AI really understand what we want
 讓 AI 真正理解我們想要什麼
 
 82
 00:03:42.130 --> 00:03:45.050
+But no matter how good your instructions are
 但無論你的指令有多好
 
 83
 00:03:45.050 --> 00:03:46.730
+What AI gives you
 AI 給你的東西
 
 84
 00:03:46.730 --> 00:03:49.090
+It may not be able to use it directly, right?
 可能無法直接使用，對吧？
 
 85
 00:03:49.090 --> 00:03:52.770
+So the third D, recognition
 所以第三個 D，辨識
 
 86
 00:03:52.770 --> 00:03:55.050
+Has become very critical
 變得非常關鍵
 
 87
 00:03:55.050 --> 00:03:58.450
+This requires us to not blindly accept the whole board
 這要求我們不要盲目地全盤接受
 
 88
 00:03:58.450 --> 00:04:01.490
+But with a kind of critical eye
 而是以一種批判的眼光
 
 89
 00:04:01.490 --> 00:04:04.810
+To assess and evaluate the output given by AI
 去評估和評價 AI 給出的輸出
 
 90
 00:04:04.810 --> 00:04:05.810
+Which is right
 哪些是正確的
 
 91
 00:04:05.810 --> 00:04:06.850
+Which is done
 哪些已經完成
 
 92
 00:04:06.850 --> 00:04:08.170
+Which needs to be modified
 哪些需要修改
 
 93
 00:04:08.170 --> 00:04:11.120
+This judgment is very important
 這種判斷非常重要
 
 94
 00:04:11.120 --> 00:04:13.360
+Okay, after you've identified, evaluated
 好的，當你識別、評估之後
 
 95
 00:04:13.360 --> 00:04:16.920
+Even modified the output of AI
 甚至修改了 AI 的輸出
 
 96
 00:04:16.920 --> 00:04:20.120
+The last step is also the most important one
 最後一步也是最重要的一步
 
 97
 00:04:20.120 --> 00:04:23.360
+That is, you have to take responsibility for the whole result
 那就是，你必須為整個結果負責
 
 98
 00:04:23.360 --> 00:04:26.320
+This is the last D, affection
 這是最後一個 D，責任
 
 99
 00:04:26.320 --> 00:04:27.640
+This is a sense of responsibility
 這是一種責任感
 
 100
 00:04:27.640 --> 00:04:30.600
+We have to make sure that the whole process of cooperation is transparent
 我們必須確保整個合作過程是透明的
 
 101
 00:04:30.600 --> 00:04:32.040
+Can be traced
 可以追蹤
 
 102
 00:04:32.040 --> 00:04:35.680
+And we are willing to be responsible for the final result
 而且我們願意為最終結果負責
 
 103
 00:04:35.680 --> 00:04:37.480
+So we just talked about
 所以我們剛才談到的
 
 104
 00:04:37.480 --> 00:04:40.880
+Description, description, identification, affection
 描述、說明、辨識、責任
 
 105
 00:04:40.880 --> 00:04:41.800
+You may think
 你可能會想
 
 106
 00:04:41.800 --> 00:04:42.800
+Learn these
 學習這些
 
 107
 00:04:42.800 --> 00:04:46.240
+What's the difference with those who teach you how to do PROMPT
 與那些教你怎麼做 PROMPT 的人有什麼區別
 
 108
 00:04:46.240 --> 00:04:48.440
+Hey, that's a big difference
 嘿，差別很大
 
 109
 00:04:48.440 --> 00:04:50.520
+This framework helps us to build
 這個框架幫助我們建立
 
 110
 00:04:50.520 --> 00:04:53.440
+Is a more objective and longer-term thought
 是一種更客觀且長期的思維
 
 111
 00:04:53.440 --> 00:04:55.440
+Not only to deal with today's AI
 不僅要應對今天的 AI
 
 112
 00:04:55.440 --> 00:04:57.720
+No matter what AI becomes in the future
 無論將來 AI 變成什麼樣子
 
 113
 00:04:57.720 --> 00:04:59.440
+You have a way to deal with it
 你都有辦法應對
 
 114
 00:04:59.440 --> 00:05:00.240
+You see
 你看
 
 115
 00:05:00.240 --> 00:05:04.040
+Once you have mastered this framework of AI fluency
 一旦你掌握了 AI 流暢性這個框架
 
 116
 00:05:04.040 --> 00:05:05.600
+What you get is not just
 你得到的不僅僅是
 
 117
 00:05:05.600 --> 00:05:07.120
+Write better PROMPT
 寫得更好的 PROMPT
 
 118
 00:05:07.120 --> 00:05:08.600
+This kind of skill
 這種技能
 
 119
 00:05:08.600 --> 00:05:10.960
+You will have a guide principle
 你會擁有一個指導原則
 
 120
 00:05:10.960 --> 00:05:14.080
+Use in any interaction with AI
 應用在任何與 AI 的互動中
 
 121
 00:05:14.080 --> 00:05:15.360
+You will be more confident
 你會更加自信
 
 122
 00:05:15.360 --> 00:05:17.040
+Know when to use
 知道何時使用
 
 123
 00:05:17.040 --> 00:05:18.800
+How to use AI
 如何使用 AI
 
 124
 00:05:18.800 --> 00:05:19.920
+More importantly
 更重要的是
 
 125
 00:05:19.920 --> 00:05:22.080
+What you cultivate is a profound
 你培養的是一種深刻的
 
 126
 00:05:22.080 --> 00:05:24.560
+And the ability to take away
 以及帶走的能力
 
 127
 00:05:24.560 --> 00:05:27.560
+At the same time, I also learned to be responsible for the result
 同時，我也學會了為結果負責
 
 128
 00:05:27.560 --> 00:05:30.640
+Actually, I think this sentence is very good
 實際上，我認為這句話非常好
 
 129
 00:05:30.640 --> 00:05:34.160
+It perfectly summarizes everything we talked about today
 它完美地總結了我們今天談論的一切
 
 130
 00:05:34.160 --> 00:05:37.120
+Our goal is to fundamentally change
 我們的目標是從根本上改變
 
 131
 00:05:37.120 --> 00:05:39.640
+The way we interact with AI
 我們與 AI 互動的方式
 
 132
 00:05:39.640 --> 00:05:43.000
+We don't just want to change how we think about AI
 我們不只是想改變我們對 AI 的看法
 
 133
 00:05:43.000 --> 00:05:46.440
+But to learn how to think with AI
 而是學習如何與 AI 一起思考
 
 134
 00:05:46.440 --> 00:05:49.120
+This is a layered leap
 這是一個分層的飛躍
 
 135
 00:05:49.120 --> 00:05:51.080
+So after listening to today's content
 所以聽完今天的內容後
 
 136
 00:05:51.080 --> 00:05:54.360
+I want to leave a question for everyone to go back and think about
 我想給大家留下一個問題，回去思考
 
 137
 00:05:54.360 --> 00:05:56.400
+In your work or study
 在你的工作或學習中
 
 138
 00:05:56.400 --> 00:06:01.400
+How do you plan to use the 4D framework that describes the identification surface
 你計畫如何使用描述識別表面的 4D framework
 
 139
 00:06:01.400 --> 00:06:04.280
+To establish a firm tacit understanding with AI
 與 AI 建立堅實的默契
 
 140
 00:06:04.280 --> 00:06:06.440
+What about stronger partner relationships?
 以及建立更強大的夥伴關係？

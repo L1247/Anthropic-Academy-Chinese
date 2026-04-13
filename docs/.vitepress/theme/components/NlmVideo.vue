@@ -27,17 +27,12 @@ const controlsVisible = ref(true)
 const currentCueLines = ref<string[]>([])
 
 const subtitleMode = ref<Mode>(props.defaultMode)
+const subtitleMenuOpen = ref(false)
+const subtitleFontSize = ref(24)
+const playbackRate = ref(1)
 
 let hideTimer: ReturnType<typeof setTimeout> | null = null
 let activeTrack: TextTrack | null = null
-
-// ── 字幕循環序列（依 props 動態組成）──────────────────
-const cycle = computed<Mode[]>(() => {
-  const seq: Mode[] = ['off', 'zh']
-  if (props.enVtt) seq.push('en')
-  if (props.biVtt) seq.push('bi')
-  return seq
-})
 
 const ccLabel = computed(() => {
   switch (subtitleMode.value) {
@@ -49,6 +44,13 @@ const ccLabel = computed(() => {
 })
 
 const captionsActive = computed(() => subtitleMode.value !== 'off')
+
+const subtitleOptions = computed(() => [
+  { value: 'zh' as Mode, label: '繁中',   disabled: !props.zhVtt },
+  { value: 'en' as Mode, label: '英文',   disabled: !props.enVtt },
+  { value: 'bi' as Mode, label: '中英',   disabled: !props.biVtt },
+  { value: 'off' as Mode, label: '無字幕', disabled: false },
+])
 
 // ── cuechange：讀取當前字幕行 ─────────────────────────
 function onCueChange(e: Event) {
@@ -93,13 +95,22 @@ function applyMode(mode: Mode) {
   }
 }
 
-function cycleSubtitle() {
-  const seq = cycle.value
-  const idx = seq.indexOf(subtitleMode.value)
-  subtitleMode.value = seq[(idx + 1) % seq.length]
+function toggleSubtitleMenu() {
+  subtitleMenuOpen.value = !subtitleMenuOpen.value
+}
+
+function selectSubtitleMode(m: Mode) {
+  subtitleMode.value = m
+}
+
+function closeSubtitleMenu() {
+  subtitleMenuOpen.value = false
 }
 
 watch(subtitleMode, applyMode, { flush: 'post' })
+watch(subtitleFontSize, (v) => {
+  try { localStorage.setItem('nlm-sub-size', String(v)) } catch (_) {}
+})
 
 // ── 播放控制 ───────────────────────────────────────────
 function togglePlay() {
@@ -120,6 +131,7 @@ function onTimeUpdate() {
 function onLoadedMetadata() {
   duration.value = videoEl.value!.duration
   applyMode(subtitleMode.value)
+  videoEl.value!.playbackRate = playbackRate.value
 }
 
 function onEnded() {
@@ -147,6 +159,12 @@ function onVolumeInput(e: Event) {
   v.volume = val
   v.muted = val === 0
   isMuted.value = v.muted
+}
+
+function onRateInput(e: Event) {
+  const v = parseFloat((e.target as HTMLInputElement).value)
+  playbackRate.value = v
+  if (videoEl.value) videoEl.value.playbackRate = v
 }
 
 // ── 全螢幕 ─────────────────────────────────────────────
@@ -190,6 +208,10 @@ function fmtTime(s: number): string {
 onMounted(() => {
   document.addEventListener('fullscreenchange', onFullscreenChange)
   applyMode(subtitleMode.value)
+  try {
+    const saved = localStorage.getItem('nlm-sub-size')
+    if (saved) subtitleFontSize.value = Math.max(14, Math.min(40, parseInt(saved)))
+  } catch (_) {}
 })
 
 onBeforeUnmount(() => {
@@ -209,6 +231,7 @@ onBeforeUnmount(() => {
     @mousemove="showControls"
     @mouseleave="scheduleHideControls"
     @touchstart.passive="showControls"
+    @click="closeSubtitleMenu"
   >
     <!-- 影片本體（無 controls，字幕由下方自訂區塊顯示） -->
     <video
@@ -239,7 +262,7 @@ onBeforeUnmount(() => {
       class="nlm-caption-area"
       :class="{ 'captions-active': captionsActive }"
     >
-      <div v-if="currentCueLines.length" class="nlm-caption">
+      <div v-if="currentCueLines.length" class="nlm-caption" :style="{ fontSize: subtitleFontSize + 'px' }">
         <span
           v-for="(line, i) in currentCueLines"
           :key="i"
@@ -303,16 +326,55 @@ onBeforeUnmount(() => {
           @input="onVolumeInput"
         >
 
-        <!-- 字幕按鈕（獨立，在全螢幕按鈕左邊） -->
-        <button
-          class="nlm-btn nlm-cc-btn"
-          :class="{ 'nlm-cc-on': subtitleMode !== 'off' }"
-          :title="'字幕：' + ccLabel + '（點擊切換）'"
-          @click.stop="cycleSubtitle"
+        <!-- 播放速度標籤 + 滑桿 -->
+        <span class="nlm-rate-label">{{ playbackRate.toFixed(2) }}x</span>
+        <input
+          type="range"
+          class="nlm-rate"
+          min="1"
+          max="2"
+          step="0.05"
+          :value="playbackRate"
+          title="播放速度"
+          @input.stop="onRateInput"
         >
-          <span class="nlm-btn-icon">CC</span>
-          <span v-if="subtitleMode !== 'off'" class="nlm-cc-badge">{{ ccLabel }}</span>
-        </button>
+
+        <!-- 字幕按鈕 + Popover -->
+        <div class="nlm-cc-wrap">
+          <button
+            class="nlm-btn nlm-cc-btn"
+            :class="{ 'nlm-cc-on': subtitleMode !== 'off' }"
+            :title="'字幕：' + ccLabel + '（點擊選單）'"
+            @click.stop="toggleSubtitleMenu"
+          >
+            <span class="nlm-btn-icon">CC</span>
+            <span v-if="subtitleMode !== 'off'" class="nlm-cc-badge">{{ ccLabel }}</span>
+          </button>
+
+          <!-- 字幕選單 Popover -->
+          <div v-if="subtitleMenuOpen" class="nlm-cc-popover" @click.stop>
+            <div class="nlm-cc-popover-title">字幕語言</div>
+            <div class="nlm-cc-options">
+              <button
+                v-for="opt in subtitleOptions"
+                :key="opt.value"
+                class="nlm-cc-option"
+                :class="{ 'is-active': subtitleMode === opt.value }"
+                :disabled="opt.disabled"
+                @click="selectSubtitleMode(opt.value)"
+              >{{ opt.label }}</button>
+            </div>
+            <div class="nlm-cc-popover-title">字幕大小：{{ subtitleFontSize }}px</div>
+            <input
+              type="range"
+              class="nlm-cc-size-slider"
+              min="14"
+              max="40"
+              step="1"
+              v-model.number="subtitleFontSize"
+            >
+          </div>
+        </div>
 
         <!-- 全螢幕 -->
         <button
@@ -419,7 +481,7 @@ onBeforeUnmount(() => {
 }
 
 .nlm-caption-area.captions-active {
-  max-height: 80px;
+  max-height: 120px;
   padding: 8px 16px;
 }
 
@@ -433,7 +495,6 @@ onBeforeUnmount(() => {
 }
 
 .nlm-caption-line {
-  font-size: 14px;
   line-height: 1.5;
   color: var(--vp-c-text-1);
   text-align: center;
@@ -532,7 +593,38 @@ onBeforeUnmount(() => {
   }
 }
 
+/* ── 播放速度 ─────────────────────────────────────────── */
+.nlm-rate-label {
+  font-size: 11px;
+  font-family: var(--vp-font-family-mono);
+  color: var(--vp-c-text-2);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 38px;
+  text-align: right;
+}
+
+.nlm-rate {
+  width: 70px;
+  height: 4px;
+  cursor: pointer;
+  accent-color: var(--vp-c-brand-1);
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .nlm-rate,
+  .nlm-rate-label {
+    display: none;
+  }
+}
+
 /* ── 字幕按鈕 ─────────────────────────────────────────── */
+.nlm-cc-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
 .nlm-cc-btn {
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -552,6 +644,80 @@ onBeforeUnmount(() => {
   border-radius: 3px;
   padding: 1px 4px;
   line-height: 1.4;
+}
+
+/* ── 字幕 Popover ──────────────────────────────────────── */
+.nlm-cc-popover {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  min-width: 160px;
+  background: var(--vp-c-bg-elv);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dark .nlm-cc-popover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.nlm-cc-popover-title {
+  font-size: 11px;
+  color: var(--vp-c-text-2);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+  margin-top: 8px;
+}
+
+.nlm-cc-popover-title:first-child {
+  margin-top: 0;
+}
+
+.nlm-cc-options {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.nlm-cc-option {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.nlm-cc-option:hover:not(:disabled) {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+}
+
+.nlm-cc-option.is-active {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-1);
+  color: #fff;
+}
+
+.nlm-cc-option:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.nlm-cc-size-slider {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  accent-color: var(--vp-c-brand-1);
+  display: block;
 }
 
 /* ── 全螢幕模式 ───────────────────────────────────────── */
@@ -589,5 +755,24 @@ onBeforeUnmount(() => {
   border-color: var(--vp-c-brand-light);
   color: var(--vp-c-brand-light);
   background: rgba(255, 255, 255, 0.12);
+}
+
+.nlm-fullscreen .nlm-cc-popover {
+  background: #2a2a2a;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.nlm-fullscreen .nlm-cc-popover-title {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nlm-fullscreen .nlm-cc-option {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #e0e0e0;
+}
+
+.nlm-fullscreen .nlm-rate-label {
+  color: rgba(255, 255, 255, 0.6);
 }
 </style>
