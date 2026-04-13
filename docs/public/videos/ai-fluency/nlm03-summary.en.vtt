@@ -1,0 +1,609 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.400
+Hi, today we're going to talk about a technology that you might be using every day, but it's a little bit mysterious.
+
+2
+00:00:06.400 --> 00:00:09.100
+That is,生成式AI.
+
+3
+00:00:09.100 --> 00:00:13.400
+We don't just talk about what chat GPT tools can do for us.
+
+4
+00:00:13.400 --> 00:00:20.040
+What's more important is that we have to open its engine cover together to see what's working inside.
+
+5
+00:00:20.040 --> 00:00:25.360
+That's right, you might have used it to write an email, think of ideas for you, or even make a report.
+
+6
+00:00:25.360 --> 00:00:33.640
+But have you ever stopped and thought about what magic happened in the black box after you typed a line and pressed send?
+
+7
+00:00:33.640 --> 00:00:36.400
+This is where we're going to explore today.
+
+8
+00:00:36.400 --> 00:00:39.960
+Okay, let's start with the most fundamental question.
+
+9
+00:00:39.960 --> 00:00:43.800
+What is生成式AI?
+
+10
+00:00:43.800 --> 00:00:48.200
+If we can only use one word to describe it, it's definitely creation.
+
+11
+00:00:48.200 --> 00:00:52.160
+It's the most different thing from the traditional AI we used to know.
+
+12
+00:00:52.160 --> 00:00:56.600
+It's the ability to create new things without any middle ground.
+
+13
+00:00:56.600 --> 00:01:00.040
+Look, this picture explains it very clearly.
+
+14
+00:01:00.040 --> 00:01:03.440
+Traditional AI is more like your garbage email filter.
+
+15
+00:01:03.440 --> 00:01:09.000
+Its job is to analyze a letter and then judge where to classify it.
+
+16
+00:01:09.000 --> 00:01:10.600
+But生成式AI is different.
+
+17
+00:01:10.600 --> 00:01:13.840
+It can directly help you create a new letter.
+
+18
+00:01:13.840 --> 00:01:16.040
+One is analysis, one is creation.
+
+19
+00:01:16.040 --> 00:01:18.760
+This is a huge difference.
+
+20
+00:01:18.760 --> 00:01:20.760
+Okay, here's the question.
+
+21
+00:01:20.800 --> 00:01:24.840
+How did such an amazing thing come about?
+
+22
+00:01:24.840 --> 00:01:26.960
+It didn't come out of nowhere.
+
+23
+00:01:26.960 --> 00:01:30.040
+It's actually the three key elements.
+
+24
+00:01:30.040 --> 00:01:37.960
+At the right time, they all come together to create this innovative, perfect storm.
+
+25
+00:01:37.960 --> 00:01:41.840
+The first element is that the algorithm has made a big breakthrough.
+
+26
+00:01:41.840 --> 00:01:44.440
+Although the concept of AI has been around for a long time,
+
+27
+00:01:44.440 --> 00:01:50.200
+in 2017, a structure called Transformer was launched.
+
+28
+00:01:50.200 --> 00:01:53.280
+Wow, the rules of the game have changed.
+
+29
+00:01:53.280 --> 00:01:58.840
+You can imagine it as a super ability for AI to read up and down.
+
+30
+00:01:58.840 --> 00:02:00.880
+When it's reading a long article,
+
+31
+00:02:00.880 --> 00:02:04.180
+it won't forget what it's saying at the end.
+
+32
+00:02:04.180 --> 00:02:07.340
+The second element is the amount of information.
+
+33
+00:02:07.340 --> 00:02:12.980
+Think about how many websites, articles, and city codes
+
+34
+00:02:12.980 --> 00:02:17.300
+have become the best fuel for training AI.
+
+35
+00:02:17.340 --> 00:02:21.980
+This is like giving AI the last 100 books in the world
+
+36
+00:02:21.980 --> 00:02:26.380
+so that it can learn all the knowledge and language models from inside.
+
+37
+00:02:26.380 --> 00:02:31.100
+The last element is of course to have a super powerful computer to run.
+
+38
+00:02:31.100 --> 00:02:35.820
+Like GPU, TPU, these chips designed specifically for AI
+
+39
+00:02:35.820 --> 00:02:38.740
+provide a very amazing computing power.
+
+40
+00:02:38.740 --> 00:02:40.500
+With these magical weapons,
+
+41
+00:02:40.500 --> 00:02:43.020
+we may be able to use so much information
+
+42
+00:02:43.060 --> 00:02:47.700
+to train these large and incredible models.
+
+43
+00:02:47.700 --> 00:02:51.060
+I didn't even dare to think about it a few years ago.
+
+44
+00:02:51.060 --> 00:02:54.060
+When these three things, super powerful computing power,
+
+45
+00:02:54.060 --> 00:02:56.940
+large amount of information, and huge computing power
+
+46
+00:02:56.940 --> 00:02:59.980
+are all put together and the scale is getting bigger and bigger,
+
+47
+00:02:59.980 --> 00:03:04.780
+scientists found a very magical phenomenon called the scale rule.
+
+48
+00:03:04.780 --> 00:03:08.020
+They found that models not only became more and more intelligent,
+
+49
+00:03:08.020 --> 00:03:10.100
+but even suddenly learned some new skills
+
+50
+00:03:10.140 --> 00:03:13.500
+that we have never clearly taught them.
+
+51
+00:03:13.500 --> 00:03:17.340
+For example, like humans, we can step by step analyze problems.
+
+52
+00:03:17.340 --> 00:03:20.260
+Okay, we know the secret to their success.
+
+53
+00:03:20.260 --> 00:03:23.060
+So how did they learn it?
+
+54
+00:03:23.060 --> 00:03:26.180
+In fact, we can simplify this very complicated process
+
+55
+00:03:26.180 --> 00:03:28.740
+into two very important steps.
+
+56
+00:03:28.740 --> 00:03:32.620
+These two steps are pre-training and maintenance.
+
+57
+00:03:32.620 --> 00:03:35.620
+Simply put, the pre-training stage
+
+58
+00:03:35.620 --> 00:03:39.860
+is to let models learn the various rules and modes of language first
+
+59
+00:03:39.860 --> 00:03:41.820
+and then in the maintenance stage,
+
+60
+00:03:41.820 --> 00:03:47.540
+we teach them how to become a helpful and useful helper to humans.
+
+61
+00:03:47.540 --> 00:03:51.100
+In pre-training, you can imagine that AI
+
+62
+00:03:51.100 --> 00:03:56.500
+is like reading all the words that can be found on the entire network.
+
+63
+00:03:56.500 --> 00:03:59.980
+But its purpose is not to die by the knowledge in it.
+
+64
+00:03:59.980 --> 00:04:01.260
+No.
+
+65
+00:04:01.260 --> 00:04:06.020
+It is to learn how words are connected between words and words.
+
+66
+00:04:06.020 --> 00:04:10.830
+In the brain, we build a super complicated language map.
+
+67
+00:04:10.830 --> 00:04:15.030
+The model after pre-training is a bit like a genius
+
+68
+00:04:15.030 --> 00:04:17.830
+who is very smart but does not understand human affairs.
+
+69
+00:04:17.830 --> 00:04:21.830
+So the maintenance stage is very important.
+
+70
+00:04:21.830 --> 00:04:25.110
+We will use a lot of artificial feedback to teach it,
+
+71
+00:04:25.110 --> 00:04:26.470
+to build it,
+
+72
+00:04:26.470 --> 00:04:30.070
+to tell it what kind of answer is good and helpful,
+
+73
+00:04:30.070 --> 00:04:32.350
+what kind of answer is not good,
+
+74
+00:04:32.350 --> 00:04:35.160
+to make it more in line with our expectations.
+
+75
+00:04:35.160 --> 00:04:36.120
+OK.
+
+76
+00:04:36.120 --> 00:04:39.800
+So far, we have probably understood its basic principles.
+
+77
+00:04:39.800 --> 00:04:43.400
+Now, let's think in a more interesting way.
+
+78
+00:04:43.400 --> 00:04:45.120
+Let's imagine it as
+
+79
+00:04:45.120 --> 00:04:50.200
+a new colleague with a super talented and brilliant company.
+
+80
+00:04:50.200 --> 00:04:53.360
+Let's help this AI colleague
+
+81
+00:04:53.360 --> 00:04:55.160
+do a performance evaluation
+
+82
+00:04:55.160 --> 00:04:58.720
+to see where his strengths and weaknesses are.
+
+83
+00:04:58.720 --> 00:04:59.480
+OK.
+
+84
+00:04:59.480 --> 00:05:03.200
+Let's take a look at this new colleague's performance report.
+
+85
+00:05:03.200 --> 00:05:05.920
+You see, his advantages are obvious.
+
+86
+00:05:05.920 --> 00:05:07.320
+He has a strong language ability,
+
+87
+00:05:07.320 --> 00:05:09.400
+can do any task a little,
+
+88
+00:05:09.400 --> 00:05:11.720
+can remember the content of our chat,
+
+89
+00:05:11.720 --> 00:05:14.320
+and even can use external tools.
+
+90
+00:05:14.320 --> 00:05:16.640
+But he also has some
+
+91
+00:05:16.640 --> 00:05:19.840
+places that need us to take care of.
+
+92
+00:05:19.840 --> 00:05:22.720
+For example, his knowledge has a deadline.
+
+93
+00:05:22.720 --> 00:05:25.960
+Sometimes it will be a serious nonsense.
+
+94
+00:05:25.960 --> 00:05:28.360
+We call it a hallucination,
+
+95
+00:05:28.360 --> 00:05:31.600
+and his short-term memory is also limited.
+
+96
+00:05:31.600 --> 00:05:33.680
+Let's take a look at it one by one.
+
+97
+00:05:33.680 --> 00:05:35.520
+Speaking of his advantages,
+
+98
+00:05:35.520 --> 00:05:40.000
+he has a really strong language ability.
+
+99
+00:05:40.000 --> 00:05:41.840
+He can help you write a letter,
+
+100
+00:05:41.840 --> 00:05:43.440
+do a report analysis,
+
+101
+00:05:43.440 --> 00:05:46.440
+and even talk to you about literature and poetry in the last second.
+
+102
+00:05:46.440 --> 00:05:50.600
+In the next second, he can switch to explain complex scientific concepts.
+
+103
+00:05:50.600 --> 00:05:51.640
+What's even better is that
+
+104
+00:05:51.640 --> 00:05:54.280
+he can remember the text of your conversation,
+
+105
+00:05:54.280 --> 00:05:56.240
+just like chatting with real people.
+
+106
+00:05:56.240 --> 00:05:59.120
+Even now, many models can still connect to the Internet
+
+107
+00:05:59.120 --> 00:06:01.590
+to check the latest information.
+
+108
+00:06:01.590 --> 00:06:04.150
+But he has the biggest problem,
+
+109
+00:06:04.150 --> 00:06:07.510
+which is the hallucination we just mentioned.
+
+110
+00:06:07.510 --> 00:06:09.830
+This sentence is super close.
+
+111
+00:06:09.830 --> 00:06:12.790
+Imagine that your friend tells you something
+
+112
+00:06:12.790 --> 00:06:14.230
+in a very certain tone,
+
+113
+00:06:14.230 --> 00:06:16.870
+and the details inside are completely wrong.
+
+114
+00:06:16.870 --> 00:06:18.870
+AI is sometimes like this.
+
+115
+00:06:18.870 --> 00:06:21.790
+This also reminds us of one of the most important things.
+
+116
+00:06:21.790 --> 00:06:23.030
+What he said is that
+
+117
+00:06:23.030 --> 00:06:26.590
+you must not collect 100% of the bill,
+
+118
+00:06:26.590 --> 00:06:28.190
+you must check it.
+
+119
+00:06:28.190 --> 00:06:30.310
+Another big limit
+
+120
+00:06:30.310 --> 00:06:33.790
+is the date of his knowledge.
+
+121
+00:06:33.790 --> 00:06:35.310
+This is like
+
+122
+00:06:35.310 --> 00:06:38.550
+a person from a specific day
+
+123
+00:06:38.550 --> 00:06:40.990
+went to the mountains to practice,
+
+124
+00:06:40.990 --> 00:06:43.390
+completely disconnected from the outside world.
+
+125
+00:06:43.390 --> 00:06:47.110
+So if all the news events that happened that day
+
+126
+00:06:47.110 --> 00:06:49.590
+are not checked by external tools,
+
+127
+00:06:49.590 --> 00:06:51.470
+he is not worth it.
+
+128
+00:06:51.470 --> 00:06:56.430
+Okay, after understanding the advantages and disadvantages of this new colleague,
+
+129
+00:06:56.430 --> 00:06:58.230
+you should have also found that
+
+130
+00:06:58.270 --> 00:07:03.430
+now the focus is not on who is better with AI,
+
+131
+00:07:03.430 --> 00:07:06.830
+but on how people cooperate with AI
+
+132
+00:07:06.830 --> 00:07:11.430
+to become a super team of human and AI.
+
+133
+00:07:11.430 --> 00:07:14.030
+You see, this picture is very clear.
+
+134
+00:07:14.030 --> 00:07:17.350
+We humans are strong in critical thinking,
+
+135
+00:07:17.350 --> 00:07:18.590
+value judgment,
+
+136
+00:07:18.590 --> 00:07:21.310
+and the creativity of the sky and the sky.
+
+137
+00:07:21.310 --> 00:07:22.470
+What about AI?
+
+138
+00:07:22.470 --> 00:07:25.350
+It is strong in the speed of comparison
+
+139
+00:07:25.350 --> 00:07:27.910
+and the ability to handle a lot of information.
+
+140
+00:07:27.910 --> 00:07:28.910
+Think about it,
+
+141
+00:07:28.910 --> 00:07:31.630
+when we combine the advantages of these two sides,
+
+142
+00:07:31.630 --> 00:07:34.030
+what kind of combination will it be?
+
+143
+00:07:34.030 --> 00:07:36.950
+So today we start with a mysterious black box
+
+144
+00:07:36.950 --> 00:07:38.030
+and explore all the way,
+
+145
+00:07:38.030 --> 00:07:41.270
+until we finally see it as a new colleague
+
+146
+00:07:41.270 --> 00:07:43.790
+that we are familiar with and a little unfamiliar with.
+
+147
+00:07:43.790 --> 00:07:45.310
+Now the final question
+
+148
+00:07:45.310 --> 00:07:47.550
+actually comes back to us.
+
+149
+00:07:47.550 --> 00:07:49.950
+AI, this powerful assistant,
+
+150
+00:07:49.950 --> 00:07:52.070
+is ready to work.
+
+151
+00:07:52.070 --> 00:07:53.150
+What about you?
+
+152
+00:07:53.150 --> 00:07:56.070
+Are you ready to work with him?

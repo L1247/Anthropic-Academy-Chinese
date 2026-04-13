@@ -1,0 +1,761 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.400
+Hi, today we're going to talk about a technology that you might be using every day, but it's a little bit mysterious.
+嗨，今天我們要談論一項你可能每天都在使用的技術，但它有點神祕。
+
+2
+00:00:06.400 --> 00:00:09.100
+That is,生成式AI.
+那就是生成式 AI。
+
+3
+00:00:09.100 --> 00:00:13.400
+We don't just talk about what chat GPT tools can do for us.
+我們不只談論 ChatGPT 工具能為我們做什麼。
+
+4
+00:00:13.400 --> 00:00:20.040
+What's more important is that we have to open its engine cover together to see what's working inside.
+更重要的是，我們必須一起打開它的引擎蓋，看看裡面在運作什麼。
+
+5
+00:00:20.040 --> 00:00:25.360
+That's right, you might have used it to write an email, think of ideas for you, or even make a report.
+沒錯，你可能用過它來寫電子郵件、為你想點子，甚至製作報告。
+
+6
+00:00:25.360 --> 00:00:33.640
+But have you ever stopped and thought about what magic happened in the black box after you typed a line and pressed send?
+但你是否曾停下來思考過，在你輸入一行文字並按下發送後，黑盒子內發生了什麼魔法？
+
+7
+00:00:33.640 --> 00:00:36.400
+This is where we're going to explore today.
+這就是我們今天要探索的地方。
+
+8
+00:00:36.400 --> 00:00:39.960
+Okay, let's start with the most fundamental question.
+好的，讓我們從最基礎的問題開始。
+
+9
+00:00:39.960 --> 00:00:43.800
+What is生成式AI?
+什麼是生成式 AI？
+
+10
+00:00:43.800 --> 00:00:48.200
+If we can only use one word to describe it, it's definitely creation.
+如果我們只能用一個詞來形容它，那肯定就是創造。
+
+11
+00:00:48.200 --> 00:00:52.160
+It's the most different thing from the traditional AI we used to know.
+它最不同於我們過去所知的傳統 AI。
+
+12
+00:00:52.160 --> 00:00:56.600
+It's the ability to create new things without any middle ground.
+它是無需任何中介就能創造新事物的能力。
+
+13
+00:00:56.600 --> 00:01:00.040
+Look, this picture explains it very clearly.
+看，這張圖表解釋得非常清楚。
+
+14
+00:01:00.040 --> 00:01:03.440
+Traditional AI is more like your garbage email filter.
+傳統 AI 更像是你的垃圾郵件過濾器。
+
+15
+00:01:03.440 --> 00:01:09.000
+Its job is to analyze a letter and then judge where to classify it.
+它的工作是分析一封信，然後判斷將它分類到哪裡。
+
+16
+00:01:09.000 --> 00:01:10.600
+But生成式AI is different.
+但生成式 AI 是不同的。
+
+17
+00:01:10.600 --> 00:01:13.840
+It can directly help you create a new letter.
+它可以直接幫助你創造一封新信。
+
+18
+00:01:13.840 --> 00:01:16.040
+One is analysis, one is creation.
+一個是分析，一個是創造。
+
+19
+00:01:16.040 --> 00:01:18.760
+This is a huge difference.
+這是一個巨大的差別。
+
+20
+00:01:18.760 --> 00:01:20.760
+Okay, here's the question.
+好的，問題來了。
+
+21
+00:01:20.800 --> 00:01:24.840
+How did such an amazing thing come about?
+這麼了不起的東西是如何產生的？
+
+22
+00:01:24.840 --> 00:01:26.960
+It didn't come out of nowhere.
+它不是憑空出現的。
+
+23
+00:01:26.960 --> 00:01:30.040
+It's actually the three key elements.
+實際上，它是三個關鍵要素。
+
+24
+00:01:30.040 --> 00:01:37.960
+At the right time, they all come together to create this innovative, perfect storm.
+在恰當的時刻，它們全部匯聚在一起，創造了這場創新的完美風暴。
+
+25
+00:01:37.960 --> 00:01:41.840
+The first element is that the algorithm has made a big breakthrough.
+第一個要素是演算法取得了巨大突破。
+
+26
+00:01:41.840 --> 00:01:44.440
+Although the concept of AI has been around for a long time,
+雖然 AI 的概念已經存在很久了，
+
+27
+00:01:44.440 --> 00:01:50.200
+in 2017, a structure called Transformer was launched.
+但在 2017 年，一個叫做 Transformer 的架構被推出。
+
+28
+00:01:50.200 --> 00:01:53.280
+Wow, the rules of the game have changed.
+哇，遊戲規則改變了。
+
+29
+00:01:53.280 --> 00:01:58.840
+You can imagine it as a super ability for AI to read up and down.
+你可以將它想像為 AI 上下文連貫閱讀的超級能力。
+
+30
+00:01:58.840 --> 00:02:00.880
+When it's reading a long article,
+當它在閱讀一篇長文章時，
+
+31
+00:02:00.880 --> 00:02:04.180
+it won't forget what it's saying at the end.
+它不會忘記在結尾說的是什麼。
+
+32
+00:02:04.180 --> 00:02:07.340
+The second element is the amount of information.
+第二個要素是資訊量。
+
+33
+00:02:07.340 --> 00:02:12.980
+Think about how many websites, articles, and city codes
+想想有多少網站、文章和城市代碼
+
+34
+00:02:12.980 --> 00:02:17.300
+have become the best fuel for training AI.
+已經成為訓練 AI 的最佳燃料。
+
+35
+00:02:17.340 --> 00:02:21.980
+This is like giving AI the last 100 books in the world
+這就像給 AI 世界上最後的 100 本書
+
+36
+00:02:21.980 --> 00:02:26.380
+so that it can learn all the knowledge and language models from inside.
+讓它能學習其中的所有知識和語言模型。
+
+37
+00:02:26.380 --> 00:02:31.100
+The last element is of course to have a super powerful computer to run.
+最後一個要素當然是要有超級強大的電腦來運行。
+
+38
+00:02:31.100 --> 00:02:35.820
+Like GPU, TPU, these chips designed specifically for AI
+像 GPU、TPU，這些專為 AI 設計的晶片
+
+39
+00:02:35.820 --> 00:02:38.740
+provide a very amazing computing power.
+提供了非常驚人的運算能力。
+
+40
+00:02:38.740 --> 00:02:40.500
+With these magical weapons,
+有了這些魔法武器，
+
+41
+00:02:40.500 --> 00:02:43.020
+we may be able to use so much information
+我們或許能夠使用這麼多的資訊
+
+42
+00:02:43.060 --> 00:02:47.700
+to train these large and incredible models.
+來訓練這些龐大且令人難以置信的模型。
+
+43
+00:02:47.700 --> 00:02:51.060
+I didn't even dare to think about it a few years ago.
+幾年前我甚至不敢想像這一點。
+
+44
+00:02:51.060 --> 00:02:54.060
+When these three things, super powerful computing power,
+當這三樣東西──超級強大的運算能力、
+
+45
+00:02:54.060 --> 00:02:56.940
+large amount of information, and huge computing power
+大量的資訊和龐大的計算能力
+
+46
+00:02:56.940 --> 00:02:59.980
+are all put together and the scale is getting bigger and bigger,
+全部結合在一起，規模不斷擴大時，
+
+47
+00:02:59.980 --> 00:03:04.780
+scientists found a very magical phenomenon called the scale rule.
+科學家們發現了一種非常神奇的現象，稱為規模法則。
+
+48
+00:03:04.780 --> 00:03:08.020
+They found that models not only became more and more intelligent,
+他們發現模型不僅變得越來越聰慧，
+
+49
+00:03:08.020 --> 00:03:10.100
+but even suddenly learned some new skills
+甚至突然學到了一些全新的技能
+
+50
+00:03:10.140 --> 00:03:13.500
+that we have never clearly taught them.
+是我們從未明確教過它們的。
+
+51
+00:03:13.500 --> 00:03:17.340
+For example, like humans, we can step by step analyze problems.
+例如，就像人類一樣，我們可以一步步分析問題。
+
+52
+00:03:17.340 --> 00:03:20.260
+Okay, we know the secret to their success.
+好的，我們已經知道了它們成功的秘訣。
+
+53
+00:03:20.260 --> 00:03:23.060
+So how did they learn it?
+那麼它們是如何學會的呢？
+
+54
+00:03:23.060 --> 00:03:26.180
+In fact, we can simplify this very complicated process
+實際上，我們可以將這個非常複雜的過程簡化
+
+55
+00:03:26.180 --> 00:03:28.740
+into two very important steps.
+為兩個非常重要的步驟。
+
+56
+00:03:28.740 --> 00:03:32.620
+These two steps are pre-training and maintenance.
+這兩個步驟是預訓練和微調。
+
+57
+00:03:32.620 --> 00:03:35.620
+Simply put, the pre-training stage
+簡單來說，預訓練階段
+
+58
+00:03:35.620 --> 00:03:39.860
+is to let models learn the various rules and modes of language first
+是讓模型先學習語言的各種規則和模式
+
+59
+00:03:39.860 --> 00:03:41.820
+and then in the maintenance stage,
+然後在微調階段，
+
+60
+00:03:41.820 --> 00:03:47.540
+we teach them how to become a helpful and useful helper to humans.
+我們教導它們如何成為人類有用且有幫助的助手。
+
+61
+00:03:47.540 --> 00:03:51.100
+In pre-training, you can imagine that AI
+在預訓練中，你可以想像 AI
+
+62
+00:03:51.100 --> 00:03:56.500
+is like reading all the words that can be found on the entire network.
+就像閱讀整個網路上能找到的所有文字。
+
+63
+00:03:56.500 --> 00:03:59.980
+But its purpose is not to die by the knowledge in it.
+但它的目的並不是死記其中的知識。
+
+64
+00:03:59.980 --> 00:04:01.260
+No.
+不是。
+
+65
+00:04:01.260 --> 00:04:06.020
+It is to learn how words are connected between words and words.
+它是學習詞與詞之間如何相互連接。
+
+66
+00:04:06.020 --> 00:04:10.830
+In the brain, we build a super complicated language map.
+在大腦中，我們構建了一個超級複雜的語言地圖。
+
+67
+00:04:10.830 --> 00:04:15.030
+The model after pre-training is a bit like a genius
+預訓練後的模型有點像一個天才
+
+68
+00:04:15.030 --> 00:04:17.830
+who is very smart but does not understand human affairs.
+非常聰明但不懂人類事務。
+
+69
+00:04:17.830 --> 00:04:21.830
+So the maintenance stage is very important.
+所以微調階段非常重要。
+
+70
+00:04:21.830 --> 00:04:25.110
+We will use a lot of artificial feedback to teach it,
+我們將使用大量的人工反饋來教導它，
+
+71
+00:04:25.110 --> 00:04:26.470
+to build it,
+來建構它，
+
+72
+00:04:26.470 --> 00:04:30.070
+to tell it what kind of answer is good and helpful,
+告訴它什麼樣的答案是好的且有幫助的，
+
+73
+00:04:30.070 --> 00:04:32.350
+what kind of answer is not good,
+什麼樣的答案不好，
+
+74
+00:04:32.350 --> 00:04:35.160
+to make it more in line with our expectations.
+使其更符合我們的期望。
+
+75
+00:04:35.160 --> 00:04:36.120
+OK.
+好的。
+
+76
+00:04:36.120 --> 00:04:39.800
+So far, we have probably understood its basic principles.
+到目前為止，我們大概已經理解了它的基本原理。
+
+77
+00:04:39.800 --> 00:04:43.400
+Now, let's think in a more interesting way.
+現在，讓我們以一個更有趣的方式來思考。
+
+78
+00:04:43.400 --> 00:04:45.120
+Let's imagine it as
+讓我們把它想像成
+
+79
+00:04:45.120 --> 00:04:50.200
+a new colleague with a super talented and brilliant company.
+一位才華超群、才華洋溢的新同事。
+
+80
+00:04:50.200 --> 00:04:53.360
+Let's help this AI colleague
+讓我們幫助這位 AI 同事
+
+81
+00:04:53.360 --> 00:04:55.160
+do a performance evaluation
+進行績效評估
+
+82
+00:04:55.160 --> 00:04:58.720
+to see where his strengths and weaknesses are.
+看看他的優點和缺點在哪裡。
+
+83
+00:04:58.720 --> 00:04:59.480
+OK.
+好的。
+
+84
+00:04:59.480 --> 00:05:03.200
+Let's take a look at this new colleague's performance report.
+讓我們看看這位新同事的績效報告。
+
+85
+00:05:03.200 --> 00:05:05.920
+You see, his advantages are obvious.
+你看，他的優勢是顯而易見的。
+
+86
+00:05:05.920 --> 00:05:07.320
+He has a strong language ability,
+他具有很強的語言能力，
+
+87
+00:05:07.320 --> 00:05:09.400
+can do any task a little,
+能做任何任務都能稍微涉獵一些，
+
+88
+00:05:09.400 --> 00:05:11.720
+can remember the content of our chat,
+能記住我們聊天的內容，
+
+89
+00:05:11.720 --> 00:05:14.320
+and even can use external tools.
+甚至還能使用外部工具。
+
+90
+00:05:14.320 --> 00:05:16.640
+But he also has some
+但他也有一些
+
+91
+00:05:16.640 --> 00:05:19.840
+places that need us to take care of.
+需要我們照顧的地方。
+
+92
+00:05:19.840 --> 00:05:22.720
+For example, his knowledge has a deadline.
+例如，他的知識有一個時間期限。
+
+93
+00:05:22.720 --> 00:05:25.960
+Sometimes it will be a serious nonsense.
+有時候會說一些很嚴重的胡話。
+
+94
+00:05:25.960 --> 00:05:28.360
+We call it a hallucination,
+我們稱之為幻覺，
+
+95
+00:05:28.360 --> 00:05:31.600
+and his short-term memory is also limited.
+而且他的短期記憶也是有限的。
+
+96
+00:05:31.600 --> 00:05:33.680
+Let's take a look at it one by one.
+讓我們一個接一個地看一下。
+
+97
+00:05:33.680 --> 00:05:35.520
+Speaking of his advantages,
+說到他的優勢，
+
+98
+00:05:35.520 --> 00:05:40.000
+he has a really strong language ability.
+他確實具有非常強的語言能力。
+
+99
+00:05:40.000 --> 00:05:41.840
+He can help you write a letter,
+他可以幫你寫一封信，
+
+100
+00:05:41.840 --> 00:05:43.440
+do a report analysis,
+做一份報告分析，
+
+101
+00:05:43.440 --> 00:05:46.440
+and even talk to you about literature and poetry in the last second.
+甚至在上一秒可以和你討論文學和詩歌。
+
+102
+00:05:46.440 --> 00:05:50.600
+In the next second, he can switch to explain complex scientific concepts.
+下一秒，他可以轉向解釋複雜的科學概念。
+
+103
+00:05:50.600 --> 00:05:51.640
+What's even better is that
+更棒的是
+
+104
+00:05:51.640 --> 00:05:54.280
+he can remember the text of your conversation,
+他能記住你們對話的文本，
+
+105
+00:05:54.280 --> 00:05:56.240
+just like chatting with real people.
+就像和真人聊天一樣。
+
+106
+00:05:56.240 --> 00:05:59.120
+Even now, many models can still connect to the Internet
+現在，許多模型甚至還能連接互聯網
+
+107
+00:05:59.120 --> 00:06:01.590
+to check the latest information.
+來查詢最新信息。
+
+108
+00:06:01.590 --> 00:06:04.150
+But he has the biggest problem,
+但他有一個最大的問題，
+
+109
+00:06:04.150 --> 00:06:07.510
+which is the hallucination we just mentioned.
+就是我們剛才提到的幻覺。
+
+110
+00:06:07.510 --> 00:06:09.830
+This sentence is super close.
+這句話非常恰當。
+
+111
+00:06:09.830 --> 00:06:12.790
+Imagine that your friend tells you something
+想像一下你的朋友告訴你什麼事
+
+112
+00:06:12.790 --> 00:06:14.230
+in a very certain tone,
+語氣非常肯定，
+
+113
+00:06:14.230 --> 00:06:16.870
+and the details inside are completely wrong.
+但裡面的細節完全是錯的。
+
+114
+00:06:16.870 --> 00:06:18.870
+AI is sometimes like this.
+AI 有時候就是這樣。
+
+115
+00:06:18.870 --> 00:06:21.790
+This also reminds us of one of the most important things.
+這也提醒我們一件最重要的事。
+
+116
+00:06:21.790 --> 00:06:23.030
+What he said is that
+那就是
+
+117
+00:06:23.030 --> 00:06:26.590
+you must not collect 100% of the bill,
+你一定不能100%相信它說的，
+
+118
+00:06:26.590 --> 00:06:28.190
+you must check it.
+你必須檢查它。
+
+119
+00:06:28.190 --> 00:06:30.310
+Another big limit
+另一個很大的限制
+
+120
+00:06:30.310 --> 00:06:33.790
+is the date of his knowledge.
+是他的知識的時間期限。
+
+121
+00:06:33.790 --> 00:06:35.310
+This is like
+這就像
+
+122
+00:06:35.310 --> 00:06:38.550
+a person from a specific day
+某個特定日期的人
+
+123
+00:06:38.550 --> 00:06:40.990
+went to the mountains to practice,
+去山裡修行，
+
+124
+00:06:40.990 --> 00:06:43.390
+completely disconnected from the outside world.
+完全與外界隔絕。
+
+125
+00:06:43.390 --> 00:06:47.110
+So if all the news events that happened that day
+所以如果那天發生的所有新聞事件
+
+126
+00:06:47.110 --> 00:06:49.590
+are not checked by external tools,
+都沒有通過外部工具檢查，
+
+127
+00:06:49.590 --> 00:06:51.470
+he is not worth it.
+他就不值得。
+
+128
+00:06:51.470 --> 00:06:56.430
+Okay, after understanding the advantages and disadvantages of this new colleague,
+好的，在了解了這位新同事的優缺點後，
+
+129
+00:06:56.430 --> 00:06:58.230
+you should have also found that
+你應該也發現了
+
+130
+00:06:58.270 --> 00:07:03.430
+now the focus is not on who is better with AI,
+現在的焦點不在於誰比AI更強，
+
+131
+00:07:03.430 --> 00:07:06.830
+but on how people cooperate with AI
+而在於人如何與AI合作
+
+132
+00:07:06.830 --> 00:07:11.430
+to become a super team of human and AI.
+成為人類與AI的超級團隊。
+
+133
+00:07:11.430 --> 00:07:14.030
+You see, this picture is very clear.
+你看，這張圖很清楚。
+
+134
+00:07:14.030 --> 00:07:17.350
+We humans are strong in critical thinking,
+我們人類在批判性思維方面很強，
+
+135
+00:07:17.350 --> 00:07:18.590
+value judgment,
+價值判斷，
+
+136
+00:07:18.590 --> 00:07:21.310
+and the creativity of the sky and the sky.
+以及天馬行空的創意。
+
+137
+00:07:21.310 --> 00:07:22.470
+What about AI?
+那AI呢？
+
+138
+00:07:22.470 --> 00:07:25.350
+It is strong in the speed of comparison
+它在比較速度方面很強
+
+139
+00:07:25.350 --> 00:07:27.910
+and the ability to handle a lot of information.
+以及處理大量資訊的能力。
+
+140
+00:07:27.910 --> 00:07:28.910
+Think about it,
+想想看，
+
+141
+00:07:28.910 --> 00:07:31.630
+when we combine the advantages of these two sides,
+當我們結合這兩方的優勢時，
+
+142
+00:07:31.630 --> 00:07:34.030
+what kind of combination will it be?
+會是什麼樣的組合呢？
+
+143
+00:07:34.030 --> 00:07:36.950
+So today we start with a mysterious black box
+所以今天我們從一個神秘的黑箱開始
+
+144
+00:07:36.950 --> 00:07:38.030
+and explore all the way,
+一路探索，
+
+145
+00:07:38.030 --> 00:07:41.270
+until we finally see it as a new colleague
+直到最後我們把它看作一位新同事
+
+146
+00:07:41.270 --> 00:07:43.790
+that we are familiar with and a little unfamiliar with.
+既熟悉又陌生的同事。
+
+147
+00:07:43.790 --> 00:07:45.310
+Now the final question
+現在最後的問題
+
+148
+00:07:45.310 --> 00:07:47.550
+actually comes back to us.
+實際上回到了我們身上。
+
+149
+00:07:47.550 --> 00:07:49.950
+AI, this powerful assistant,
+AI，這位強大的助手，
+
+150
+00:07:49.950 --> 00:07:52.070
+is ready to work.
+已經準備好工作了。
+
+151
+00:07:52.070 --> 00:07:53.150
+What about you?
+那你呢？
+
+152
+00:07:53.150 --> 00:07:56.070
+Are you ready to work with him?
+你準備好與他一起工作了嗎？
