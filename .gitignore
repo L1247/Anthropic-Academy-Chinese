@@ -10,3 +10,7 @@ docs/.vitepress/dist/
 
 # 字幕腳本虛擬環境
 .claude/scripts/subtitle/.venv/
+
+# Python 編譯快取
+__pycache__/
+*.pyc
