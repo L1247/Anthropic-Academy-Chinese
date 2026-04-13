@@ -15,7 +15,7 @@
 
 /* Sidebar 內容往右內縮，靠近捲動條 */
 .VPSidebar .nav {
-  padding-left: 60px;
+  padding-left: 24px;
   padding-right: 4px;
 }
 
