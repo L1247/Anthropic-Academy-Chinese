@@ -1,0 +1,777 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.440
+Hello everyone, today we are going to talk about a super important skill
+
+2
+00:00:03.440 --> 00:00:06.080
+How to communicate with your AI colleagues
+
+3
+00:00:06.080 --> 00:00:08.840
+That's right, you didn't hear wrong, it's a colleague
+
+4
+00:00:08.840 --> 00:00:13.240
+Learn to give instructions is equivalent to mastering the key to working with this new partner
+
+5
+00:00:13.240 --> 00:00:15.360
+Have you ever had this experience
+
+6
+00:00:15.360 --> 00:00:17.560
+You think you've made it very clear
+
+7
+00:00:17.560 --> 00:00:19.760
+But that AI assistant
+
+8
+00:00:19.760 --> 00:00:22.840
+I don't seem to understand what you're saying
+
+9
+00:00:22.840 --> 00:00:25.040
+It's really a little crazy, right?
+
+10
+00:00:25.040 --> 00:00:26.960
+Don't worry, this is normal
+
+11
+00:00:26.960 --> 00:00:28.800
+A lot of people are like you
+
+12
+00:00:28.840 --> 00:00:30.160
+What about the solution
+
+13
+00:00:30.160 --> 00:00:33.040
+In fact, it's as expected
+
+14
+00:00:33.040 --> 00:00:37.600
+You imagine it as a new colleague who just reported
+
+15
+00:00:37.600 --> 00:00:40.240
+He is super active and full of enthusiasm
+
+16
+00:00:40.240 --> 00:00:41.960
+I want to do things well
+
+17
+00:00:41.960 --> 00:00:45.760
+But he needs you to give him a very clear direction
+
+18
+00:00:45.760 --> 00:00:47.560
+As long as you remember this core concept
+
+19
+00:00:47.560 --> 00:00:50.040
+All the skills we're going to talk about later today
+
+20
+00:00:50.040 --> 00:00:52.280
+You will be able to communicate immediately
+
+21
+00:00:52.280 --> 00:00:53.760
+Okay, let's get started
+
+22
+00:00:53.760 --> 00:00:58.200
+Imagine today is your first day of work as an AI colleague
+
+23
+00:00:58.200 --> 00:01:00.440
+We will help him do a newbie training
+
+24
+00:01:00.440 --> 00:01:04.640
+Make sure we can work smoothly from the first day
+
+25
+00:01:04.640 --> 00:01:07.920
+OK, you may have heard a very powerful word
+
+26
+00:01:07.920 --> 00:01:11.920
+It's called prompt engineering
+
+27
+00:01:11.920 --> 00:01:13.880
+Wow, it sounds like it's going to be written as a word
+
+28
+00:01:13.880 --> 00:01:15.240
+It's complicated, right?
+
+29
+00:01:15.240 --> 00:01:16.280
+But wait
+
+30
+00:01:16.280 --> 00:01:20.800
+In fact, what we are talking about today is more like an effective communication skill
+
+31
+00:01:20.800 --> 00:01:22.560
+This really has nothing to do with writing
+
+32
+00:01:22.560 --> 00:01:27.280
+The point is how you clearly and instinctively express your thoughts
+
+33
+00:01:27.280 --> 00:01:30.640
+It's exactly the same as you communicate with real people
+
+34
+00:01:30.640 --> 00:01:35.200
+Okay, next we're going to take a look at six super basic skills step by step
+
+35
+00:01:35.200 --> 00:01:37.120
+Really, as long as you master these six points
+
+36
+00:01:37.120 --> 00:01:40.280
+You will find that your communication quality with AI
+
+37
+00:01:40.280 --> 00:01:43.000
+Wow, it's going to be a leap forward
+
+38
+00:01:43.000 --> 00:01:45.160
+Okay, let's get into the main topic
+
+39
+00:01:45.160 --> 00:01:50.360
+This is like you want to handle the first project for that new colleague
+
+40
+00:01:50.360 --> 00:01:54.880
+The first step is to give a super clear task report
+
+41
+00:01:54.880 --> 00:01:57.760
+The first skill is also the most important
+
+42
+00:01:57.760 --> 00:02:00.520
+Be sure to give the situation and purpose
+
+43
+00:02:00.520 --> 00:02:03.400
+You see, this comparison is super obvious
+
+44
+00:02:03.400 --> 00:02:05.720
+On the left, if you only say to AI
+
+45
+00:02:05.720 --> 00:02:08.000
+Hey, tell me about climate change
+
+46
+00:02:08.000 --> 00:02:09.440
+Oh my god, the scope is so big
+
+47
+00:02:09.440 --> 00:02:12.280
+He can only guess what you want to know
+
+48
+00:02:12.280 --> 00:02:13.480
+But look at the right
+
+49
+00:02:13.480 --> 00:02:15.680
+The instructions are completely different
+
+50
+00:02:15.680 --> 00:02:20.280
+He said I was preparing for a job interview for agricultural research in Indonesia
+
+51
+00:02:20.320 --> 00:02:22.080
+And then the specific requirements
+
+52
+00:02:22.080 --> 00:02:26.280
+Climate change has three main effects on tropical agriculture
+
+53
+00:02:26.280 --> 00:02:27.480
+You see, when you give this
+
+54
+00:02:27.480 --> 00:02:30.760
+Why and where to use the background information
+
+55
+00:02:30.760 --> 00:02:33.880
+The answer given by AI will be really accurate
+
+56
+00:02:33.880 --> 00:02:35.400
+And then the second skill
+
+57
+00:02:35.400 --> 00:02:38.280
+Define a role for AI
+
+58
+00:02:38.280 --> 00:02:40.680
+This method is really, really super useful
+
+59
+00:02:40.680 --> 00:02:42.960
+We call it the human color hint
+
+60
+00:02:42.960 --> 00:02:46.240
+You can directly specify that AI plays a certain expert
+
+61
+00:02:46.240 --> 00:02:47.600
+For example, you tell him
+
+62
+00:02:47.600 --> 00:02:50.760
+Please play an experienced science teacher
+
+63
+00:02:50.760 --> 00:02:52.840
+Then use a smart 10-year-old child
+
+64
+00:02:52.840 --> 00:02:54.280
+Also understand the method
+
+65
+00:02:54.280 --> 00:02:57.080
+Explain to me how the rainbow is formed
+
+66
+00:02:57.080 --> 00:02:59.040
+Wow, you set it up like this
+
+67
+00:02:59.040 --> 00:03:02.520
+The tone, use of words and the depth of explanation given by AI
+
+68
+00:03:02.520 --> 00:03:04.280
+Will be completely different
+
+69
+00:03:04.280 --> 00:03:06.240
+Become super in place
+
+70
+00:03:06.240 --> 00:03:09.760
+OK, we've set up the background and role
+
+71
+00:03:09.760 --> 00:03:11.200
+What about the next step
+
+72
+00:03:11.200 --> 00:03:13.600
+Of course, you have to tell him very specifically
+
+73
+00:03:13.600 --> 00:03:14.880
+The finished product you want
+
+74
+00:03:14.880 --> 00:03:18.320
+That is, what does the deliverable look like
+
+75
+00:03:18.320 --> 00:03:19.480
+The third skill
+
+76
+00:03:19.480 --> 00:03:21.120
+Do it directly for him
+
+77
+00:03:21.120 --> 00:03:22.800
+Don't just say it
+
+78
+00:03:22.800 --> 00:03:26.000
+Well, as the saying goes, the voice is more important than the words
+
+79
+00:03:26.000 --> 00:03:27.440
+Sometimes you give an example
+
+80
+00:03:27.440 --> 00:03:29.400
+It's really more than a thousand words
+
+81
+00:03:29.400 --> 00:03:32.240
+This is called a few sample hint on a professional
+
+82
+00:03:32.240 --> 00:03:33.440
+It sounds great
+
+83
+00:03:33.440 --> 00:03:34.960
+But the concept is very simple
+
+84
+00:03:34.960 --> 00:03:36.640
+Just like this example on the screen
+
+85
+00:03:36.640 --> 00:03:40.080
+You give him a sentence that is full of technical words before editing
+
+86
+00:03:40.080 --> 00:03:42.880
+Then give him a modified version
+
+87
+00:03:42.920 --> 00:03:44.160
+AI just look
+
+88
+00:03:44.160 --> 00:03:47.040
+Oh, so this is the style you want
+
+89
+00:03:47.040 --> 00:03:48.560
+I'll learn it right away
+
+90
+00:03:48.560 --> 00:03:49.680
+The fourth skill
+
+91
+00:03:49.680 --> 00:03:53.600
+It is important to clearly specify the limit of output
+
+92
+00:03:53.600 --> 00:03:55.360
+For example, you can't just tell him
+
+93
+00:03:55.360 --> 00:03:56.640
+Help me design a website
+
+94
+00:03:56.640 --> 00:03:57.960
+It's too blurry
+
+95
+00:03:57.960 --> 00:03:59.960
+You have to give him specific conditions like this
+
+96
+00:03:59.960 --> 00:04:02.520
+For example, the guide list must be fixed on top
+
+97
+00:04:02.520 --> 00:04:04.440
+The color should be the kind of sunset color
+
+98
+00:04:04.440 --> 00:04:07.400
+And there should be a dark and light color mode to switch
+
+99
+00:04:07.400 --> 00:04:09.480
+The clearer the frame you give
+
+100
+00:04:09.480 --> 00:04:10.680
+What he does
+
+101
+00:04:10.720 --> 00:04:13.080
+The more it will be the way you want
+
+102
+00:04:13.080 --> 00:04:14.720
+Okay, the fifth skill
+
+103
+00:04:14.720 --> 00:04:18.320
+Solve the complex tasks one by one
+
+104
+00:04:18.320 --> 00:04:19.800
+This method is also very famous
+
+105
+00:04:19.800 --> 00:04:22.440
+It's called a thought chain hint
+
+106
+00:04:22.440 --> 00:04:24.680
+Don't just throw a big question to him
+
+107
+00:04:24.680 --> 00:04:27.240
+Like helping me analyze the sales data of this season
+
+108
+00:04:27.240 --> 00:04:29.200
+So he might miss the focus
+
+109
+00:04:29.200 --> 00:04:32.320
+You can try to list your thinking process like this
+
+110
+00:04:32.320 --> 00:04:34.880
+The first step is to find the best product
+
+111
+00:04:34.880 --> 00:04:36.920
+The second step is to compare with the previous season
+
+112
+00:04:36.920 --> 00:04:39.640
+The third step is to find out which trends are very special
+
+113
+00:04:39.640 --> 00:04:41.920
+The fourth step is to try to guess the reason
+
+114
+00:04:41.920 --> 00:04:44.320
+You see, when you take him step by step
+
+115
+00:04:44.320 --> 00:04:45.920
+He can follow your logic
+
+116
+00:04:45.920 --> 00:04:48.440
+The analysis report of output will of course be more in-depth
+
+117
+00:04:48.440 --> 00:04:49.680
+There are more regulations
+
+118
+00:04:49.680 --> 00:04:50.280
+Okay, here we go
+
+119
+00:04:50.280 --> 00:04:52.080
+Everyone must remember one key point
+
+120
+00:04:52.080 --> 00:04:53.200
+Working with AI
+
+121
+00:04:53.200 --> 00:04:56.080
+It's not a one-way guide that I say you do
+
+122
+00:04:56.080 --> 00:05:00.480
+It's more like a process of coming back and forth, constantly communicating, constantly optimizing
+
+123
+00:05:00.480 --> 00:05:02.720
+This is also the fourth part we are going to enter
+
+124
+00:05:02.720 --> 00:05:04.080
+Cooperation
+
+125
+00:05:04.080 --> 00:05:05.360
+The sixth skill
+
+126
+00:05:05.360 --> 00:05:07.160
+This is an advanced method
+
+127
+00:05:07.160 --> 00:05:09.480
+Is to ask him to think first
+
+128
+00:05:09.480 --> 00:05:10.280
+It's wonderful, right?
+
+129
+00:05:10.280 --> 00:05:13.440
+You can add a sentence in front of your real instructions
+
+130
+00:05:13.440 --> 00:05:15.000
+Like before answering
+
+131
+00:05:15.000 --> 00:05:18.520
+Please think about this question step by step
+
+132
+00:05:18.520 --> 00:05:21.080
+Describe all kinds of factors and possible restrictions
+
+133
+00:05:21.080 --> 00:05:23.120
+It's like you're telling your colleague
+
+134
+00:05:23.120 --> 00:05:24.400
+Don't rush to do it
+
+135
+00:05:24.400 --> 00:05:27.200
+Take five minutes to think about the whole plan
+
+136
+00:05:27.200 --> 00:05:28.840
+You give him the space to think
+
+137
+00:05:28.840 --> 00:05:32.120
+The quality that is usually produced at the end will really be much better
+
+138
+00:05:32.120 --> 00:05:34.520
+Okay, we just talked about six skills, right?
+
+139
+00:05:34.520 --> 00:05:38.280
+But if there is one of the most powerful and powerful
+
+140
+00:05:38.280 --> 00:05:41.400
+What do you think will be the ultimate skill?
+
+141
+00:05:41.400 --> 00:05:42.440
+The answer is
+
+142
+00:05:42.440 --> 00:05:44.480
+Our secret weapon is
+
+143
+00:05:44.480 --> 00:05:46.440
+Please ask AI to help you
+
+144
+00:05:46.440 --> 00:05:47.000
+That's right
+
+145
+00:05:47.000 --> 00:05:49.520
+When you are stuck and don't know how to give instructions
+
+146
+00:05:49.520 --> 00:05:51.120
+You just tell him honestly
+
+147
+00:05:51.120 --> 00:05:53.760
+I'm not sure how to ask
+
+148
+00:05:53.760 --> 00:05:55.480
+To get the best result
+
+149
+00:05:55.480 --> 00:05:56.800
+You can help me
+
+150
+00:05:56.800 --> 00:05:59.120
+Design a better hint
+
+151
+00:05:59.120 --> 00:06:00.200
+What will you do
+
+152
+00:06:00.200 --> 00:06:01.960
+The moment you ask this question
+
+153
+00:06:01.960 --> 00:06:03.760
+AI uses an instruction tool
+
+154
+00:06:03.760 --> 00:06:07.280
+Immediately upgraded to your personal advisor and assistant
+
+155
+00:06:07.280 --> 00:06:11.400
+So the key is to constantly adjust and optimize
+
+156
+00:06:11.400 --> 00:06:12.720
+The first result is not perfect
+
+157
+00:06:12.720 --> 00:06:14.320
+That's super normal
+
+158
+00:06:14.320 --> 00:06:16.120
+You can try these methods
+
+159
+00:06:16.120 --> 00:06:19.040
+Tell him to give me three different styles of versions
+
+160
+00:06:19.040 --> 00:06:21.240
+Or help me change the form
+
+161
+00:06:21.240 --> 00:06:23.080
+You can even challenge him and ask him
+
+162
+00:06:23.080 --> 00:06:25.520
+How much confidence do you have in your answer?
+
+163
+00:06:25.520 --> 00:06:27.200
+Oh, by the way, there is a little skips
+
+164
+00:06:27.200 --> 00:06:29.400
+If you feel that the conversation is too strong
+
+165
+00:06:29.400 --> 00:06:32.040
+Don't hesitate to start a new conversation directly
+
+166
+00:06:32.040 --> 00:06:33.800
+Sometimes the effect is better
+
+167
+00:06:33.800 --> 00:06:35.960
+Okay, let's sum it up
+
+168
+00:06:35.960 --> 00:06:36.800
+You will find
+
+169
+00:06:36.840 --> 00:06:38.120
+What we learned today
+
+170
+00:06:38.120 --> 00:06:41.440
+It's not just some tips to give instructions
+
+171
+00:06:41.440 --> 00:06:43.720
+It's also a change of mentality
+
+172
+00:06:43.720 --> 00:06:45.880
+That is, how can we become
+
+173
+00:06:45.880 --> 00:06:48.760
+A better AI assistant
+
+174
+00:06:48.760 --> 00:06:49.600
+This summary table
+
+175
+00:06:49.600 --> 00:06:51.200
+I think it's very well organized
+
+176
+00:06:51.200 --> 00:06:52.480
+You can take a look
+
+177
+00:06:52.480 --> 00:06:53.920
+What to do
+
+178
+00:06:53.920 --> 00:06:56.640
+Is to give a clear task description
+
+179
+00:06:56.640 --> 00:06:58.840
+Provide a rich background
+
+180
+00:06:58.840 --> 00:07:00.520
+Don't do anything
+
+181
+00:07:00.520 --> 00:07:02.760
+Just don't think that AI will read your mind
+
+182
+00:07:02.760 --> 00:07:05.120
+Don't give that kind of blurry instruction
+
+183
+00:07:05.120 --> 00:07:07.080
+And please don't put a few
+
+184
+00:07:07.080 --> 00:07:08.240
+Irrelevant questions
+
+185
+00:07:08.240 --> 00:07:10.640
+All mixed in the same dialogue
+
+186
+00:07:10.640 --> 00:07:12.760
+It's easy to mess it up
+
+187
+00:07:12.760 --> 00:07:14.600
+Finally, I want to leave a question
+
+188
+00:07:14.600 --> 00:07:16.560
+Let's go back and think about it
+
+189
+00:07:16.560 --> 00:07:19.400
+You see, the evolution of AI is so fast
+
+190
+00:07:19.400 --> 00:07:21.840
+In the future, we really need to spend more effort
+
+191
+00:07:21.840 --> 00:07:24.160
+To learn to adapt
+
+192
+00:07:24.160 --> 00:07:27.280
+Is it a machine or are we human beings?
+
+193
+00:07:27.280 --> 00:07:30.600
+Maybe how to improve our own communication ability
+
+194
+00:07:30.600 --> 00:07:35.080
+Is the ultimate key to truly grasp the era of human-machine cooperation in the future

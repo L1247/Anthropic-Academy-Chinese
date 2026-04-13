@@ -1,0 +1,886 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.200
+Do you feel that communication with AI
+你是否感覺到與 AI 的溝通
+
+2
+00:00:02.200 --> 00:00:05.240
+seems to always be separated into something?
+似乎總是被分隔成某些東西？
+
+3
+00:00:05.240 --> 00:00:07.040
+Today, let's talk about
+今天，讓我們談談
+
+4
+00:00:07.040 --> 00:00:09.640
+how to master such a detailed art
+如何掌握這樣一門精細的藝術
+
+5
+00:00:09.640 --> 00:00:12.520
+to turn AI from a tool that only listens to instructions
+將 AI 從一個只能聽命行事的工具
+
+6
+00:00:12.520 --> 00:00:15.920
+to become the strongest thinking partner around you.
+變成你身邊最強大的思維夥伴。
+
+7
+00:00:15.920 --> 00:00:17.320
+Have you ever had this experience?
+你有過這樣的經驗嗎？
+
+8
+00:00:17.320 --> 00:00:20.000
+It's just that you got into your mind and asked a question.
+就是你腦子裡想到的，問了一個問題。
+
+9
+00:00:20.000 --> 00:00:21.560
+As a result, the answer given by AI
+結果 AI 給出的答案
+
+10
+00:00:21.560 --> 00:00:23.800
+is completely wrong.
+完全是錯的。
+
+11
+00:00:23.800 --> 00:00:25.400
+You ask Dong, he answers Qi.
+你問東，他答西。
+
+12
+00:00:25.400 --> 00:00:28.960
+The whole thing is super speechless, right?
+整個事情都超級無語，對吧？
+
+13
+00:00:29.040 --> 00:00:31.040
+Don't worry, you're not alone.
+別擔心，你不是一個人。
+
+14
+00:00:31.040 --> 00:00:32.680
+The difference in communication
+溝通的差異
+
+15
+00:00:32.680 --> 00:00:35.600
+is the core problem we're going to solve today.
+是我們今天要解決的核心問題。
+
+16
+00:00:35.600 --> 00:00:36.880
+What should we do?
+我們應該怎麼做？
+
+17
+00:00:36.880 --> 00:00:37.920
+The key is that
+關鍵是
+
+18
+00:00:37.920 --> 00:00:39.920
+we have to build a communication bridge
+我們必須建立一座溝通橋梁
+
+19
+00:00:39.920 --> 00:00:41.920
+between the ideas in your head
+在你腦海中的想法
+
+20
+00:00:41.920 --> 00:00:43.920
+and the execution capabilities of AI.
+和 AI 的執行能力之間。
+
+21
+00:00:43.920 --> 00:00:45.560
+And the technology to build this bridge
+而建立這座橋梁的技術
+
+22
+00:00:45.560 --> 00:00:48.360
+is the core ability we're going to talk about today.
+是我們今天要談的核心能力。
+
+23
+00:00:48.360 --> 00:00:51.640
+That's right, we call this core ability description.
+沒錯，我們稱這個核心能力為描述。
+
+24
+00:00:51.640 --> 00:00:53.240
+But wait a minute,
+但等等，
+
+25
+00:00:53.240 --> 00:00:57.640
+this is not just as simple as writing a prompt as we usually say.
+這不僅僅是像我們通常說的那樣寫一個提示詞那麼簡單。
+
+26
+00:00:57.680 --> 00:01:01.240
+It's actually a more comprehensive communication technique
+它實際上是一種更全面的溝通技巧
+
+27
+00:01:01.240 --> 00:01:04.680
+that allows us to accurately explain tasks to AI
+使我們能夠准確地向 AI 解釋任務
+
+28
+00:01:04.680 --> 00:01:06.800
+and provide him with the background information he needs.
+並向他提供他需要的背景信息。
+
+29
+00:01:06.800 --> 00:01:09.040
+Then, in the entire interaction process,
+然後，在整個互動過程中，
+
+30
+00:01:09.040 --> 00:01:11.880
+guide him to achieve the goal we want.
+引導他達到我們想要的目標。
+
+31
+00:01:11.880 --> 00:01:14.440
+Is it going to be difficult to master this art?
+掌握這門藝術會很難嗎？
+
+32
+00:01:14.440 --> 00:01:15.920
+In fact, to put it bluntly,
+實際上，坦率地說，
+
+33
+00:01:15.920 --> 00:01:18.120
+you only need to grasp three key concepts.
+你只需要掌握三個關鍵概念。
+
+34
+00:01:18.120 --> 00:01:19.520
+Really, just these three.
+真的，就這三個。
+
+35
+00:01:19.520 --> 00:01:20.920
+And once you understand,
+一旦你理解了，
+
+36
+00:01:20.920 --> 00:01:22.720
+the way you interact with AI
+你與 AI 互動的方式
+
+37
+00:01:22.720 --> 00:01:24.800
+will be completely different.
+會完全不同。
+
+38
+00:01:24.800 --> 00:01:26.640
+Okay, what are these three pillars?
+好的，這三個支柱是什麼？
+
+39
+00:01:26.640 --> 00:01:27.840
+They are
+它們是
+
+40
+00:01:27.840 --> 00:01:30.920
+First, the product description of the product produced by force.
+首先，由強制力生產的產品的產品描述。
+
+41
+00:01:30.920 --> 00:01:33.880
+Second, the process description of the guidance method.
+第二，引導方法的過程描述。
+
+42
+00:01:33.880 --> 00:01:34.840
+And third,
+第三，
+
+43
+00:01:34.840 --> 00:01:35.840
+this is very interesting,
+這非常有趣，
+
+44
+00:01:35.840 --> 00:01:38.440
+the performance description of the setting atmosphere.
+設定氛圍的效能描述。
+
+45
+00:01:38.440 --> 00:01:40.880
+As long as you cover these three pillars tightly,
+只要你緊緊掌握這三個支柱，
+
+46
+00:01:40.880 --> 00:01:44.440
+your communication with AI will be stable.
+你與 AI 的溝通就會很穩定。
+
+47
+00:01:44.440 --> 00:01:47.640
+Okay, let's start with the first one.
+好的，讓我們從第一個開始。
+
+48
+00:01:47.640 --> 00:01:51.640
+How exactly do you want to accurately describe what you want?
+你究竟要如何準確地描述你想要的東西？
+
+49
+00:01:51.640 --> 00:01:54.400
+This is the so-called product description.
+這就是所謂的產品描述。
+
+50
+00:01:54.400 --> 00:01:55.320
+To put it simply,
+簡單來說，
+
+51
+00:01:55.320 --> 00:01:56.840
+the ability of product description
+產品描述的能力
+
+52
+00:01:56.840 --> 00:02:00.120
+is that you have to be able to clearly define
+就是你必須能夠清楚地定義
+
+53
+00:02:00.120 --> 00:02:03.720
+what kind of product you want AI to create in the end.
+你最終想讓 AI 創造什麼樣的產品。
+
+54
+00:02:03.720 --> 00:02:05.040
+Not just roughly,
+不只是粗略地，
+
+55
+00:02:05.040 --> 00:02:06.600
+but very accurately.
+而是非常準確。
+
+56
+00:02:06.600 --> 00:02:08.760
+How big is the difference?
+差異有多大呢？
+
+57
+00:02:08.760 --> 00:02:10.480
+Come on, let's imagine
+來吧，讓我們想像一下
+
+58
+00:02:10.480 --> 00:02:11.560
+you tell AI,
+你告訴 AI，
+
+59
+00:02:11.560 --> 00:02:13.720
+hey, help me prepare dinner.
+嘿，幫我準備晚餐。
+
+60
+00:02:13.720 --> 00:02:15.880
+This is too vague.
+這太模糊了。
+
+61
+00:02:15.880 --> 00:02:17.640
+How does he know what you want to eat?
+他怎麼知道你想吃什麼？
+
+62
+00:02:17.640 --> 00:02:19.480
+But if you change the way you say,
+但如果你改變說法，
+
+63
+00:02:19.480 --> 00:02:21.800
+hey, I want to make Italian chicken noodles.
+嘿，我想做義大利雞肉麵。
+
+64
+00:02:21.800 --> 00:02:23.080
+Give me a recipe.
+給我一份食譜。
+
+65
+00:02:23.080 --> 00:02:24.720
+You have to have all the ingredients
+你必須有所有的食材
+
+66
+00:02:24.720 --> 00:02:27.240
+and super detailed cooking steps on it.
+和超詳細的烹飪步驟在上面。
+
+67
+00:02:27.240 --> 00:02:29.480
+Look, is this super clear?
+看，這是不是超清楚？
+
+68
+00:02:29.480 --> 00:02:32.160
+This is a 100% product description.
+這就是 100% 的產品描述。
+
+69
+00:02:32.160 --> 00:02:33.400
+So the point is,
+所以重點是，
+
+70
+00:02:33.400 --> 00:02:37.440
+please don't let AI guess what you want.
+請不要讓 AI 猜測你想要什麼。
+
+71
+00:02:37.440 --> 00:02:39.200
+You have to tell him clearly,
+你必須清楚地告訴他，
+
+72
+00:02:39.200 --> 00:02:41.320
+hey, what is the background of this job?
+嘿，這份工作的背景是什麼？
+
+73
+00:02:41.320 --> 00:02:42.760
+What do you want him to do?
+你想讓他做什麼？
+
+74
+00:02:42.760 --> 00:02:44.440
+Make it clear step by step.
+逐步說清楚。
+
+75
+00:02:44.440 --> 00:02:46.360
+What kind of format do you want to use in the end?
+你最終想要什麼格式？
+
+76
+00:02:46.360 --> 00:02:47.920
+Wordang or簡報?
+Word 文檔還是簡報？
+
+77
+00:02:47.920 --> 00:02:49.720
+Then who wants to see this thing?
+那麼誰想看這個東西？
+
+78
+00:02:49.720 --> 00:02:52.200
+Is it for the boss or the client?
+是給老闆還是客戶？
+
+79
+00:02:52.200 --> 00:02:53.640
+What kind of style do you want in the end?
+你最終想要什麼樣的風格？
+
+80
+00:02:53.640 --> 00:02:55.640
+More shocking or more lively?
+更震撼還是更生動？
+
+81
+00:02:55.640 --> 00:02:57.360
+These things have to be said clearly.
+這些事情必須說清楚。
+
+82
+00:02:57.360 --> 00:02:59.800
+Okay, it's not enough to know what you want.
+好的，僅僅知道你想要什麼是不夠的。
+
+83
+00:02:59.800 --> 00:03:01.840
+Sometimes more importantly,
+有時候更重要的是，
+
+84
+00:03:01.840 --> 00:03:04.560
+how do you guide AI to do?
+你如何指導 AI 去做？
+
+85
+00:03:04.560 --> 00:03:06.720
+This brings us to the second pillar,
+這引出了第二個支柱，
+
+86
+00:03:06.720 --> 00:03:08.240
+the process description.
+流程描述。
+
+87
+00:03:08.240 --> 00:03:09.680
+The process description,
+流程描述，
+
+88
+00:03:09.680 --> 00:03:10.640
+in private,
+私下裡，
+
+89
+00:03:10.640 --> 00:03:11.760
+is to guide AI
+是指導 AI
+
+90
+00:03:11.760 --> 00:03:14.320
+on how to do this thing.
+如何做這件事。
+
+91
+00:03:14.320 --> 00:03:15.760
+Remember, sometimes
+記住，有時候
+
+92
+00:03:15.760 --> 00:03:17.160
+give AI a map,
+給 AI 一張地圖，
+
+93
+00:03:17.160 --> 00:03:18.520
+that is, that process,
+也就是說那個流程，
+
+94
+00:03:18.520 --> 00:03:20.160
+will be more important
+會比更重要
+
+95
+00:03:20.160 --> 00:03:21.360
+than you just tell him the end,
+你只是告訴他最終結果，
+
+96
+00:03:21.400 --> 00:03:22.400
+more important,
+更重要，
+
+97
+00:03:22.400 --> 00:03:23.800
+and more efficient.
+也更高效。
+
+98
+00:03:23.800 --> 00:03:25.640
+How to guide?
+怎樣指導？
+
+99
+00:03:25.640 --> 00:03:27.480
+There are probably several ways.
+大概有幾種方式。
+
+100
+00:03:27.480 --> 00:03:29.440
+You can give him a manual,
+你可以給他一份手冊，
+
+101
+00:03:29.440 --> 00:03:31.720
+which is a guide to some major directions.
+即某些主要方向的指南。
+
+102
+00:03:31.720 --> 00:03:34.080
+Or you can give him a recipe,
+或者你可以給他一個食譜，
+
+103
+00:03:34.080 --> 00:03:36.200
+telling him in detail
+詳細地告訴他
+
+104
+00:03:36.200 --> 00:03:37.320
+what to do first,
+先做什麼，
+
+105
+00:03:37.320 --> 00:03:38.560
+what to do second.
+再做什麼。
+
+106
+00:03:38.560 --> 00:03:42.040
+You can even show it to him in person
+你甚至可以親身示範給他
+
+107
+00:03:42.040 --> 00:03:43.120
+and use some examples
+並用一些例子
+
+108
+00:03:43.120 --> 00:03:45.280
+to let him learn your method.
+讓他學習你的方法。
+
+109
+00:03:45.280 --> 00:03:46.280
+Think about it.
+想一想。
+
+110
+00:03:46.280 --> 00:03:48.160
+Although AI's knowledge library is wide,
+雖然 AI 的知識庫很廣泛，
+
+111
+00:03:48.160 --> 00:03:51.080
+but he doesn't know the unique situation you have.
+但他不知道你所處的獨特情況。
+
+112
+00:03:51.080 --> 00:03:52.640
+So you can tell him
+所以你可以告訴他
+
+113
+00:03:52.640 --> 00:03:54.720
+I have some specific information here,
+我這裡有一些特定的信息，
+
+114
+00:03:54.720 --> 00:03:56.520
+please use these to analyze.
+請用這些來分析。
+
+115
+00:03:56.520 --> 00:03:58.560
+Or you have to deal with these problems
+或者你必須按照之後的順序
+
+116
+00:03:58.560 --> 00:03:59.840
+in the order after.
+處理這些問題。
+
+117
+00:03:59.840 --> 00:04:01.160
+Or I need you to use
+或者我需要你使用
+
+118
+00:04:01.160 --> 00:04:02.960
+a specific analysis style,
+一個特定的分析風格，
+
+119
+00:04:02.960 --> 00:04:04.440
+or we have a standard
+或者我們公司有一套標準的
+
+120
+00:04:04.440 --> 00:04:05.920
+working process in our company,
+工作流程，
+
+121
+00:04:05.920 --> 00:04:07.040
+you have to follow it.
+你必須遵循它。
+
+122
+00:04:07.040 --> 00:04:07.920
+Tell you what,
+告訴你吧，
+
+123
+00:04:07.920 --> 00:04:10.040
+take some time to talk about these details.
+花一些時間來討論這些細節。
+
+124
+00:04:10.040 --> 00:04:11.960
+The result will be much worse.
+結果會糟糕得多。
+
+125
+00:04:11.960 --> 00:04:13.840
+Okay, now we come to the third,
+好，現在我們談到第三點，
+
+126
+00:04:13.840 --> 00:04:15.560
+which is also the most
+這也是最
+
+127
+00:04:15.560 --> 00:04:16.120
+um,
+嗯，
+
+128
+00:04:16.120 --> 00:04:17.040
+the most delicate,
+最微妙的，
+
+129
+00:04:17.040 --> 00:04:19.400
+the most interesting pillar.
+最有趣的支柱。
+
+130
+00:04:19.400 --> 00:04:22.480
+How to set the atmosphere of your interaction with AI?
+如何設定你與 AI 互動的氛圍？
+
+131
+00:04:22.480 --> 00:04:24.440
+We call it performance description.
+我們稱之為性能描述。
+
+132
+00:04:24.440 --> 00:04:27.200
+If you can only remember one sentence in today's content,
+如果你今天的內容中只能記住一句話，
+
+133
+00:04:27.200 --> 00:04:28.840
+then I hope it's this sentence.
+那我希望就是這句話。
+
+134
+00:04:28.840 --> 00:04:30.640
+AI tools are not database,
+AI 工具不是資料庫，
+
+135
+00:04:30.640 --> 00:04:32.320
+nor automatic vending machines.
+也不是自動販賣機。
+
+136
+00:04:32.320 --> 00:04:34.080
+They are interactive systems
+它們是互動系統，
+
+137
+00:04:34.080 --> 00:04:35.840
+that have different behavior modes
+因為你給它們的不同情況
+
+138
+00:04:35.840 --> 00:04:37.680
+because of the different circumstances you give them.
+而具有不同的行為模式。
+
+139
+00:04:37.680 --> 00:04:39.600
+Really, it's very similar to people.
+真的，這非常像人類。
+
+140
+00:04:39.600 --> 00:04:43.200
+This is the most important part of performance description.
+這是性能描述最重要的部分。
+
+141
+00:04:43.200 --> 00:04:46.040
+You have to define the behavior mode
+你必須定義行為模式
+
+142
+00:04:46.040 --> 00:04:48.640
+when AI interacts with you.
+當 AI 與你互動時。
+
+143
+00:04:48.640 --> 00:04:49.600
+In other words,
+換句話說，
+
+144
+00:04:49.600 --> 00:04:51.880
+you don't just tell him what to do,
+你不只是告訴它做什麼，
+
+145
+00:04:51.880 --> 00:04:52.880
+how to do,
+如何做，
+
+146
+00:04:52.880 --> 00:04:54.120
+you also tell him
+你還要告訴它
+
+147
+00:04:54.120 --> 00:04:57.000
+what role you are going to play today.
+你今天要它扮演什麼角色。
+
+148
+00:04:57.000 --> 00:04:59.280
+So next time you open AI,
+所以下次你打開 AI 時，
+
+149
+00:04:59.280 --> 00:05:00.680
+you can ask yourself
+你可以問自己
+
+150
+00:05:00.680 --> 00:05:03.840
+what kind of thinking partner do I need now?
+我現在需要什麼樣的思考夥伴？
+
+151
+00:05:03.840 --> 00:05:06.960
+Do I need a partner who will challenge me and refute me?
+我需要一個會挑戰我、反駁我的夥伴嗎？
+
+152
+00:05:06.960 --> 00:05:10.080
+Or do I need someone who is obedient and follows me?
+還是我需要一個順從並跟隨我的人？
+
+153
+00:05:10.080 --> 00:05:13.120
+I want him to give me super detailed information
+我想要它給我超詳細的信息
+
+154
+00:05:13.120 --> 00:05:13.720
+or
+還是
+
+155
+00:05:13.720 --> 00:05:15.520
+just focus on the point.
+只關注重點。
+
+156
+00:05:15.520 --> 00:05:18.360
+I need him to explain the thinking process of each step
+我需要它解釋每一步的思考過程
+
+157
+00:05:18.360 --> 00:05:20.440
+or just give me the answer directly.
+還是直接給我答案。
+
+158
+00:05:20.440 --> 00:05:21.240
+You see,
+你看，
+
+159
+00:05:21.240 --> 00:05:22.800
+these choices will create
+這些選擇會創造
+
+160
+00:05:22.800 --> 00:05:24.800
+completely different AI partners.
+完全不同的 AI 夥伴。
+
+161
+00:05:24.800 --> 00:05:27.250
+Okay, we've finished reading the three pillars.
+好的，我們已經讀完了三個支柱。
+
+162
+00:05:28.650 --> 00:05:31.770
+When you combine the three descriptions
+當你結合這三個描述時
+
+163
+00:05:31.770 --> 00:05:34.130
+of the product, process, and performance
+關於你剛才提到的產品、流程和績效
+
+164
+00:05:34.130 --> 00:05:35.930
+that you just mentioned,
+你剛才提到的
+
+165
+00:05:35.930 --> 00:05:38.370
+what magical things will happen?
+會發生什麼神奇的事情？
+
+166
+00:05:38.370 --> 00:05:39.810
+The final result is
+最終的結果是
+
+167
+00:05:39.810 --> 00:05:41.210
+you turn AI from
+你把 AI 從
+
+168
+00:05:41.210 --> 00:05:42.810
+an assistant you know
+一個你認識的助手
+
+169
+00:05:42.810 --> 00:05:44.450
+who is very common, like a can,
+一個非常普遍的，就像罐頭一樣
+
+170
+00:05:44.450 --> 00:05:46.130
+into a person who is completely
+轉變成一個完全的人
+
+171
+00:05:46.170 --> 00:05:47.330
+a person who knows you
+一個認識你的人
+
+172
+00:05:47.330 --> 00:05:50.170
+and can help you solve those super complicated problems.
+能幫你解決那些超級複雜的問題。
+
+173
+00:05:50.170 --> 00:05:52.010
+A super powerful tool.
+一個超級強大的工具。
+
+174
+00:05:52.010 --> 00:05:54.770
+So this brings a question that is worth thinking about.
+所以這提出了一個值得思考的問題。
+
+175
+00:05:54.770 --> 00:05:56.210
+After listening to these today,
+聽了今天的這些內容之後
+
+176
+00:05:56.210 --> 00:05:58.170
+what kind of thinking partner
+你想首先創造什麼樣的思考夥伴
+
+177
+00:05:58.170 --> 00:06:00.170
+do you want to create first?
+？
