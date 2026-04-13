@@ -11,7 +11,7 @@ triggers:
 ## 使用方式
 
 ```
-/notebooklm-update <notebook名稱或ID|Skilljar-URL> [課程檔案路徑]
+/notebooklm-update <notebook名稱或ID> [課程檔案路徑]
 /notebooklm-update <course-key> <lesson-number>
 ```
 
@@ -19,7 +19,6 @@ triggers:
 ```
 /notebooklm-update "The 4Ds of AI Fluency"
 /notebooklm-update 208e3044 docs/ai-fluency/framework-foundations.md
-/notebooklm-update https://anthropic.skilljar.com/ai-fluency-framework-foundations/291876
 
 # 課程編號模式（自動查表 → 建立 NLM → 產出延伸頁）
 /notebooklm-update framework 03
@@ -43,8 +42,7 @@ triggers:
 在所有步驟之前，先判斷輸入類型：
 
 1. **若輸入為 `<course-key> <lesson-number>` 格式**（如 `framework 03`）→ **進入課程編號模式**（見下方）
-2. **若輸入以 `https://` 開頭** → 進入 Step 0（Skilljar URL 模式）
-3. **其他** → 進入 Step 1-3（現有 Notebook 名稱 / ID 模式）
+2. **其他** → 進入 Step 1-3（現有 Notebook 名稱 / ID 模式）
 
 ---
 
@@ -66,23 +64,8 @@ triggers:
 
 從 JSON 條目中取得：
 - `title_zh`：課堂中文標題（必要）
-- `videos`：影片陣列，每個元素含 `part`、`url`、`title`、`duration_minutes`
 - `description_zh`：一行簡介（必要）
 - `nlm_page_exists`：若為 `true` → 提示 NLM 頁已存在，詢問是否繼續覆蓋
-
-**videos 陣列驗證規則**：
-- 必須至少有一個元素；只取 `videos[0]`，多元素視為設定錯誤並終止
-- `videos[0].url` 不可為空，為空時終止並提示填寫
-- `part` 欄位已棄用，每課只允許單一影片來源
-
-若 `videos[0].url` 為空，提示：
-```
-❌ 第 NN 課的影片 URL 尚未填寫：
-  - videos[0].url: ❌ 未填寫
-請至 YouTube 播放清單找到對應影片 URL，填入：
-.claude/skills/notebooklm-course-updater/lessons/<course-key>.json
-播放清單：https://www.youtube.com/playlist?list=PLf2m23nhTg1NjL3-jL3s0qZCYzO07ZQPv
-```
 
 **0.C 建立 NotebookLM 筆記本**
 
@@ -98,19 +81,13 @@ PYTHONIOENCODING=utf-8 notebooklm create "<筆記本名稱>" --json 2>&1
 
 記錄回傳的 Notebook ID。
 
-**0.D 切換到新筆記本並加入所有影片來源**
+**0.D 切換到新筆記本**
 
 ```bash
 PYTHONIOENCODING=utf-8 notebooklm use <新筆記本ID前8碼> 2>&1
 ```
 
-加入 `videos[0]` 的影片來源：
-
-```bash
-PYTHONIOENCODING=utf-8 notebooklm source add "<videos[0].url>" --type youtube 2>&1
-```
-
-加入完成後執行 `notebooklm source list` 確認來源已就緒，再進入 Step 1。
+執行 `notebooklm source list` 確認現有來源，再進入 Step 1。
 
 **0.E 確認後跳至 Step 1**
 
@@ -123,50 +100,6 @@ PYTHONIOENCODING=utf-8 notebooklm source add "<videos[0].url>" --type youtube 2>
 - `MAIN_PAGE`：`main_page`（如 `docs/ai-fluency/framework-foundations.md`）
 
 確認後繼續 **Step 1**（已在新筆記本中，可跳過 Step 2-3）。
-
----
-
-### Step 0：從 Skilljar URL 建立新筆記本（若輸入為 URL）
-
-若使用者提供的是 Skilljar 課程 URL（以 `https://` 開頭），執行以下流程：
-
-**0.1 嘗試 WebFetch 提取影片標題：**
-
-由於 Skilljar 頁面採動態載入且需要認證，WebFetch 通常無法取得影片標題。若失敗，請直接詢問使用者：
-- 影片/課堂的標題（用來作為筆記本名稱）
-- 影片來源（YouTube URL、直接 URL 或本地 .mp4 路徑）
-
-**AI Fluency 課程影片參考來源（若 Skilljar 頁面無法取得影片 URL）：**
-
-可根據課堂標題在以下 YouTube 播放清單中尋找對應影片：
-- [AI Fluency Course YouTube 播放清單](https://www.youtube.com/playlist?list=PLf2m23nhTg1NjL3-jL3s0qZCYzO07ZQPv)
-
-> 注意：此播放清單僅適用於 AI Fluency Course 課程內的影片。
-
-**0.2 建立新筆記本：**
-```bash
-PYTHONIOENCODING=utf-8 notebooklm create "<影片標題>" --json 2>&1
-```
-記錄回傳的 Notebook ID。
-
-**0.3 切換到新筆記本：**
-```bash
-PYTHONIOENCODING=utf-8 notebooklm use <新筆記本ID前8碼> 2>&1
-```
-
-**0.4 加入影片來源：**
-```bash
-# YouTube URL
-PYTHONIOENCODING=utf-8 notebooklm source add "<youtube-url>" --type youtube 2>&1
-
-# 一般 URL
-PYTHONIOENCODING=utf-8 notebooklm source add "<url>" --type url 2>&1
-
-# 本地檔案
-PYTHONIOENCODING=utf-8 notebooklm source add "<local-path>" --type file --title "<標題>" 2>&1
-```
-
-確認來源加入後，繼續 Step 1（此時可跳過 Step 2-3，已在新筆記本中）。
 
 ### Step 1：確認 NotebookLM 登入狀態
 
@@ -571,7 +504,7 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 - ffmpeg 需已安裝（`where ffmpeg` 確認）
 - 影片摘要檔案需先用 ffmpeg 壓縮（CRF 28、720p、AAC 96k）再 commit 到 `docs/public/videos/<category>/`；原始 `video.mp4` 留在 `.claude/notebooklm-exports/`（已 gitignore），不進版控
 - 所有 bash 命令使用**絕對路徑**（避免因 `cd` 造成相對路徑跑到錯誤目錄）
-- 每課只支援單一影片來源；若課程有多支影片，請選擇主要影片，**不再支援多 source 自動合併流程**
+- 每課只支援單一影片來源
 
 ### 重新生成同一課的「清空 → 放入」規則
 
