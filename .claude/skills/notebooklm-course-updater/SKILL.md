@@ -340,16 +340,51 @@ doc.close()
 
 確認找到的檔案後回報給使用者。
 
-### Step 8：讀取影片畫面（若有 video artifact）
+### Step 8：下載影片、讀取畫面、嵌入頁面
 
-下載影片並用 ffmpeg 擷取關鍵畫面：
+#### 8.a 下載影片到 exports 目錄
+
 ```bash
 PYTHONIOENCODING=utf-8 notebooklm download video "$OUTDIR/video.mp4" 2>&1
+```
+
+#### 8.b 擷取 poster 封面圖（第 2 秒畫面）
+
+```bash
+PROJ_ROOT="<專案絕對路徑>"
+CATEGORY="<分類目錄名，如 ai-fluency>"
+NN="<課號，如 02>"
+
+ffmpeg -i "$OUTDIR/video.mp4" \
+  -ss 00:00:02 -vframes 1 -update 1 \
+  "$PROJ_ROOT/docs/public/images/$CATEGORY/nlm${NN}-video-poster.png" -y 2>&1
+```
+
+#### 8.c 壓縮影片至 720p / CRF 28（≤ 10MB 後才 commit）
+
+```bash
+mkdir -p "$PROJ_ROOT/docs/public/videos/$CATEGORY"
+
+ffmpeg -i "$OUTDIR/video.mp4" \
+  -vcodec libx264 -crf 28 -preset medium \
+  -vf "scale=-2:720" \
+  -acodec aac -b:a 96k \
+  "$PROJ_ROOT/docs/public/videos/$CATEGORY/nlm${NN}-summary.mp4" -y 2>&1
+```
+
+- 目標輸出 ≤ 10MB；若仍過大，將 `-crf` 調高至 30 或將解析度降為 540p（`scale=-2:540`）。
+- 原始 `video.mp4` 留在 `$OUTDIR`（已 gitignore），**不 commit**。
+
+> **影片資源放置規則**：壓縮後的 mp4 放 `docs/public/videos/<category>/nlm<NN>-summary.mp4`，poster 圖放 `docs/public/images/<category>/nlm<NN>-video-poster.png`，兩者都需 commit 進 git（非 gitignore 的 exports 目錄）。
+
+#### 8.d 擷取關鍵畫面供 Claude 讀取（選用，用於生成文字摘要）
+
+```bash
 mkdir -p "$OUTDIR/frames"
 ffmpeg -i "$OUTDIR/video.mp4" -vf "fps=1/5" "$OUTDIR/frames/frame_%03d.png" -y 2>&1
 ```
 
-使用 Read 工具逐張讀取 PNG 畫面，萃取文字與視覺內容，整理成影片摘要。
+使用 Read 工具逐張讀取 PNG 畫面，萃取文字與視覺內容，整理成影片重點。
 
 **多影片課的處理**（課程編號模式 + `videos` 陣列長度 > 1）：
 
@@ -400,20 +435,41 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 
 ## 🎬 影片摘要
 
-::: info 🎬 影片摘要：<課堂標題>
-**來源影片**（共 N 段，已合併由 NotebookLM 處理）：
-
-| Part | 標題 | 時長 |
-|------|------|------|
-| A | <videos[0].title> | <videos[0].duration_minutes> 分鐘 |
-| B | <videos[1].title> | <videos[1].duration_minutes> 分鐘 |
-
----
-
-（根據影片畫面萃取的完整摘要，含關鍵引言與故事結構。多影片課可使用 `### Part A`、`### Part B` 子節區隔不同影片的內容；單影片課省略 Part 子節。）
+::: info 🎬 NotebookLM 影片摘要：<課堂標題>
+由 Google NotebookLM 根據課程影片自動生成的繁體中文動態摘要。
 :::
 
-> **單影片課簡化範本**：若 `videos` 陣列只有 1 個元素，省略上方的「來源影片」表格與 Part 子節，直接寫摘要即可。
+<video controls preload="metadata" playsinline class="nlm-video" src="/videos/<category>/nlm<NN>-summary.mp4" poster="/images/<category>/nlm<NN>-video-poster.png" />
+
+### 📝 影片重點整理
+
+（根據影片畫面萃取的重點表格與金句。多影片課可使用 `#### Part A`、`#### Part B` 子節區隔不同影片的內容；單影片課省略 Part 子節。）
+
+> **CSS 依賴**：第一次使用 `<video>` 嵌入前，確認 `docs/.vitepress/theme/custom.css` 已有 `.nlm-video` 樣式（深淺模式）：
+> ```css
+> .nlm-video {
+>   width: 100%;
+>   max-width: 860px;
+>   border-radius: 12px;
+>   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+>   margin: 16px auto;
+>   display: block;
+>   background: var(--vp-c-bg-alt);
+> }
+> .dark .nlm-video {
+>   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+> }
+> ```
+
+> **多影片課來源表格**（`videos` 陣列長度 > 1 時，在 `### 📝 影片重點整理` 前加入）：
+> ```markdown
+> **來源影片**（共 N 段，已合併由 NotebookLM 處理）：
+>
+> | Part | 標題 | 時長 |
+> |------|------|------|
+> | A | <videos[0].title> | <videos[0].duration_minutes> 分鐘 |
+> | B | <videos[1].title> | <videos[1].duration_minutes> 分鐘 |
+> ```
 
 ## 📊 簡報概覽
 
@@ -522,6 +578,8 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 - 不要修改 `docs/.vitepress/dist/`（建置產物）
 - 練習頁的 Quiz 元件索引從 0 開始（`:answer="0"` 表示第一個選項）
 - ffmpeg 需已安裝（`where ffmpeg` 確認）
+- 影片摘要檔案需先用 ffmpeg 壓縮（CRF 28、720p、AAC 96k）再 commit 到 `docs/public/videos/<category>/`；原始 `video.mp4` 留在 `.claude/notebooklm-exports/`（已 gitignore），不進版控
+- 所有 bash 命令使用**絕對路徑**（避免因 `cd` 造成相對路徑跑到錯誤目錄）
 
 ### 中英文處理規則
 

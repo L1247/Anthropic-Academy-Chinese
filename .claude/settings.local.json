@@ -54,7 +54,10 @@
       "Bash(python3 -m json.tool)",
       "Bash(python3 -c \"import sys, json; print\\(json.dumps\\(json.load\\(sys.stdin\\), indent=2\\)\\)\")",
       "Bash(python3 -c \"import sys, json; [print\\(json.dumps\\(json.loads\\(l\\), indent=2\\)\\) for l in sys.stdin]\")",
-      "Bash(python3 -c ':*)"
+      "Bash(python3 -c ':*)",
+      "Bash(mkdir -p \"docs/public/videos/ai-fluency\")",
+      "Bash(mkdir -p \".claude/notebooklm-exports/the-4d-framework-v2/slides\")",
+      "Bash(ffmpeg -i .claude/notebooklm-exports/the-4d-framework-v2/video.mp4 -vcodec libx264 -crf 28 -preset medium -vf scale=-2:720 -acodec aac -b:a 96k docs/public/videos/ai-fluency/nlm02-summary.mp4 -y)"
     ],
     "additionalDirectories": [
       "D:\\Git Project\\Side Project\\Anthropic Academy Chinese\\.claude\\notebooklm-exports\\the-4ds-of-ai-fluency"

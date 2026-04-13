@@ -1892,3 +1892,18 @@ details > *:not(summary) {
   color: var(--vp-c-text-2);
   border-top: 1px solid var(--vp-c-divider);
 }
+
+/* NotebookLM 影片摘要播放器 */
+.nlm-video {
+  width: 100%;
+  max-width: 860px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  margin: 16px auto;
+  display: block;
+  background: var(--vp-c-bg-alt);
+}
+
+.dark .nlm-video {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
