@@ -53,6 +53,15 @@ def _translate_batch(
 
     raw = response.content[0].text.strip()
 
+    # 剝除 markdown 代碼框（```json ... ``` 或 ``` ... ```）
+    if raw.startswith("```"):
+        lines = raw.splitlines()
+        # 移除第一行（```json 或 ```）和最後一行（```）
+        inner_lines = lines[1:]
+        if inner_lines and inner_lines[-1].strip() == "```":
+            inner_lines = inner_lines[:-1]
+        raw = "\n".join(inner_lines).strip()
+
     # 嘗試解析 JSON
     try:
         parsed = json.loads(raw)

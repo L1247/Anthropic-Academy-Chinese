@@ -14,6 +14,7 @@ anthropic-academy-chinese/
 │   ├── agents/                        # 客製化 Sub-agent 定義
 │   │   ├── code-reviewer.md           # 內容品質與規範審查
 │   │   ├── content-translator.md      # 英文課程翻譯為繁體中文學習指南
+│   │   ├── course-image-integrator.md # 截圖/PDF 整合為中文視覺化課程元件
 │   │   ├── debugger.md                # 建置錯誤診斷與修復
 │   │   ├── doc-writer.md              # 繁體中文課程頁面撰寫
 │   │   ├── explorer.md                # 專案結構探索與現狀查詢
@@ -51,13 +52,18 @@ anthropic-academy-chinese/
     │           ├── DelegationChecklist.vue # AI 委派四問決策樹（scenario）
     │           ├── DiligenceBuilder.vue    # AI 使用聲明建立器（工具選擇 + 用途 + 審查程度）
     │           ├── HeroCertBadge.vue  # 首頁證書徽章裝飾元件（連結至 /certificates）
-    │           └── MermaidLightbox.vue# Mermaid 圖表放大燈箱（滾輪縮放、拖曳、ESC 關閉）
+    │           ├── MermaidLightbox.vue# Mermaid 圖表放大燈箱（滾輪縮放、拖曳、ESC 關閉）
+    │           ├── TypewriterBadge.vue# 首頁打字機動畫徽章元件
+    │           └── SlideViewer.vue    # 投影片翻頁瀏覽器（上下頁、全螢幕、鍵盤控制）
     ├── index.md                       # 首頁（layout: home，含課程總覽表格）
     ├── roadmap.md                     # 學習路線圖（含 Mermaid 流程圖）
     ├── resources.md                   # 額外學習資源
+    ├── references.md                  # 專案參考連結清單
     ├── ai-fluency/
     │   ├── index.md                   # AI 素養課程總覽
     │   ├── framework-foundations.md   # AI 素養：框架與基礎
+    │   ├── framework-nlm-01.md        # NLM 延伸：第 01 課學習素材
+    │   ├── framework-nlm-02.md        # NLM 延伸：第 02 課 4D 框架詳解
     │   ├── capabilities-limitations.md # AI 能力與限制
     │   ├── for-educators.md           # 教育者的 AI 素養
     │   ├── for-students.md            # 學生的 AI 素養
@@ -168,6 +174,8 @@ VitePress 使用**檔案系統路由**（File-based Routing）：
 | `DiligenceBuilder` | 無 Props | AI 使用聲明建立器，多選工具/用途後產出聲明文字 |
 | `HeroCertBadge` | 無 Props | 裝飾性證書徽章，連結至 `/certificates` |
 | `MermaidLightbox` | 無 Props | 自動掛載於所有 Mermaid 圖表，點擊可放大 |
+| `TypewriterBadge` | 無 Props | 首頁打字機動畫徽章，顯示 AI 素養精選標語 |
+| `SlideViewer` | `slides`({src,caption}[]) | 投影片翻頁瀏覽器，支援上下頁、全螢幕、鍵盤 ◀▶ 控制 |
 
 **全域註冊位置**：`docs/.vitepress/theme/index.ts`，不需要在各頁面 import。
 
