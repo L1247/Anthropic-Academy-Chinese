@@ -137,6 +137,43 @@ app.component('MyComponent', MyComponent)
 
 本專案為純靜態文件網站，**不使用任何環境變數**。所有設定均在 `config.mts` 中硬編碼。
 
+## Skills 使用方式
+
+Skills 是預先定義在 `.claude/skills/` 的可呼叫工作流程，在 Claude Code 提示列輸入斜線指令觸發。
+
+### 現有 Skills
+
+| Skill | 觸發指令 | 說明 |
+|---|---|---|
+| `video-subtitle` | `/subtitle [course] [--force] [--skip-translate]` | 以 faster-whisper 轉錄 + Claude Haiku 翻譯，產出三份 VTT（純繁中、純英文、雙語） |
+| `notebooklm-course-updater` | `/notebooklm-update <course>` | 讀取 NotebookLM 匯出（測驗、簡報、影片摘要），更新對應課程頁 |
+
+### 影片字幕工作流程
+
+```
+1. /subtitle <course>          → 在 .claude/notebooklm-exports/<course>/ 產出 5 個字幕檔
+2. 複製三份 VTT 到 docs/public/videos/<course>/，依命名規則改名
+3. 在課程 .md 中使用 <NlmVideo> 元件嵌入（見下方）
+```
+
+### NlmVideo 元件嵌入方式
+
+```html
+<NlmVideo
+  src="/videos/<course>/<name>.mp4"
+  poster="/images/<course>/<name>-poster.png"
+  zh-vtt="/videos/<course>/<name>.zh-Hant.vtt"
+  en-vtt="/videos/<course>/<name>.en.vtt"
+  bi-vtt="/videos/<course>/<name>.bilingual.vtt"
+  default-mode="zh"
+/>
+```
+
+- `zh-vtt`（必填）：純繁中字幕
+- `en-vtt`、`bi-vtt`（選填）：省略則 Popover 中對應選項為 disabled
+
+---
+
 ## 計畫歸檔流程
 
 1. **命名格式**：`dev-docs/plans/YYYY-MM-DD-<feature-name>.md`

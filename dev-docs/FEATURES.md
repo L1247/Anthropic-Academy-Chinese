@@ -20,6 +20,8 @@
 | MermaidLightbox | ✅ 完成 | 點擊 Mermaid 圖表可放大，支援滾輪縮放與拖曳 |
 | TypewriterBadge | ✅ 完成 | 首頁打字機動畫徽章，顯示 AI 素養精選標語 |
 | SlideViewer | ✅ 完成 | 投影片翻頁瀏覽器，上下頁 + 全螢幕 + 鍵盤 ◀▶ 控制 |
+| NlmVideo 播放器 | ✅ 完成 | 自訂影片播放器，CC 字幕 Popover + 字幕字級調整（14–40px，localStorage 持久化）+ 播放速度 Bar（1–2×）|
+| NlmVideo 三語字幕 | ✅ 完成 | 繁中 / 英文 / 中英 三種字幕軌道，依 prop 提供決定 Popover 選項是否 enabled |
 
 ## 內容功能
 
@@ -79,6 +81,8 @@
 - 由 `notebooklm-course-updater` skill 從 NotebookLM 匯出內容自動更新
 - 包含：影片摘要（繁體中文結構化時間軸）、投影片（SlideViewer 翻頁瀏覽器）、延伸測驗（Quiz 元件）
 - 嵌入於對應主課程的 sidebar 項目之下，採折疊式設計
+- 影片透過 `NlmVideo` 元件嵌入，支援三種字幕軌道（繁中 / 英文 / 中英雙語）
+- 字幕由 `/subtitle` skill（faster-whisper 轉錄 + Claude Haiku 翻譯）自動產出三份 VTT
 
 **4D 框架互動練習頁功能說明：**
 - 使用 VitePress + Vue 3 `<script setup>` 嵌入互動式自我評估問卷

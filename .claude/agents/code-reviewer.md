@@ -40,4 +40,18 @@ tools:
 - 檔案命名是否為英文小寫 kebab-case
 - 課程前置條件說明格式是否與其他頁面一致
 
+### Design Standards 審查（`.claude/rules/design-standards.md`）
+- 頁面 H1 是否有 Emoji（如 `# 🗺️ 學習路線圖`）
+- 提示區塊（`::: tip`、`::: info`）標題是否附上 Emoji
+- 自訂元件或 CSS 是否同時考量深色/淺色模式
+
+### 外部連結安全審查（`.claude/rules/external-links.md`）
+- 所有外部連結是否使用 `https://`
+- `<a target="_blank">` 是否附上 `rel="noopener noreferrer"`
+- 課程內容中的 API Key 範例是否使用虛構值（`sk-ant-xxxxx`）
+
+### NlmVideo 嵌入審查（`.claude/rules/subtitle-variants.md`）
+- 若頁面含 `<NlmVideo>`，是否同時提供 `zh-vtt`、`en-vtt`、`bi-vtt` 三個 prop
+- VTT 路徑的命名是否符合規範：`.zh-Hant.vtt`（純繁中）、`.en.vtt`（純英文）、`.bilingual.vtt`（雙語）
+
 發現問題時，列出具體檔案路徑和行號，並說明應如何修正。不要直接修改檔案。

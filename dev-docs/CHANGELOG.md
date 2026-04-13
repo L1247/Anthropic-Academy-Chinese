@@ -1,5 +1,28 @@
 # 更新日誌
 
+## [1.4.0] - 2026-04-13
+
+### 新增
+- `NlmVideo.vue`：CC 按鈕改為 Popover 選單，提供繁中 / 英文 / 中英 / 無字幕四個選項（依 prop 啟用）
+- `NlmVideo.vue`：字幕字級調整（14–40px，預設 24px，localStorage 跨頁持久化）
+- `NlmVideo.vue`：播放速度 Bar（1–2×，step 0.05，與音量 Bar 相同樣式）
+- `.claude/scripts/subtitle/srt_utils.py`：新增 `split_bilingual_cues()` 與 `write_vtt_from_cues()` helper
+- `.claude/rules/subtitle-variants.md`：字幕三份 VTT 命名規範與 NlmVideo 整合流程
+
+### 修改
+- `translate.py`：`translate_srt()` 新增 `out_zh_vtt`、`out_en_vtt` 參數，翻譯後自動拆出純繁中與純英文 VTT
+- `generate_subtitles.py`：每支影片改為產出三份 VTT（雙語 / 純繁中 / 純英文），完成判斷改為三份均存在才跳過
+- `SKILL.md`（video-subtitle）：更新產出檔案清單與附錄整合範例
+- `nlm01-summary.zh-Hant.vtt` / `nlm02-summary.zh-Hant.vtt`：覆寫為純繁中內容（原雙語內容移至 `.bilingual.vtt`）
+
+### 新增（字幕資產）
+- `docs/public/videos/ai-fluency/nlm01-summary.en.vtt`：純英文字幕
+- `docs/public/videos/ai-fluency/nlm01-summary.bilingual.vtt`：雙語字幕（英上中下）
+- `docs/public/videos/ai-fluency/nlm02-summary.en.vtt`：純英文字幕
+- `docs/public/videos/ai-fluency/nlm02-summary.bilingual.vtt`：雙語字幕
+
+---
+
 ## [1.3.0] - 2026-04-13
 
 ### 新增

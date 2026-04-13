@@ -26,11 +26,18 @@ anthropic-academy-chinese/
 │   │   └── test-runner.md             # VitePress 建置驗證
 │   ├── rules/                         # 路徑感知的開發規則
 │   │   ├── git-commit.md              # Commit message 格式規則
-│   │   └── vitepress-content.md       # VitePress 內容撰寫規則（作用於 docs/**）
+│   │   ├── vitepress-content.md       # VitePress 內容撰寫規則（docs/** 作用範圍）
+│   │   ├── design-standards.md        # Emoji 使用規則、深色/淺色模式設計規範
+│   │   ├── external-links.md          # HTTPS 強制、noopener noreferrer、可信任網域
+│   │   └── subtitle-variants.md       # 字幕三份 VTT 命名規範與 NlmVideo 整合流程
 │   ├── hooks/                         # 自動化 Hook 腳本
-│   │   ├── protect-files.sh           # PreToolUse：阻止編輯敏感檔案
+│   │   ├── protect-files.sh           # PreToolUse：阻止編輯敏感檔案（.env, *.lock）
 │   │   └── notify-done.sh             # Stop：任務完成 Windows 氣球通知
-│   └── skills/                        # 自訂 Skill 腳本
+│   └── skills/                        # 自訂 Skill 定義（user-invocable）
+│       ├── video-subtitle/            # /subtitle：影片轉錄 + Claude API 翻譯 → 三份 VTT
+│       │   └── SKILL.md
+│       └── notebooklm-course-updater/ # /notebooklm-update：從 NLM 匯出更新課程頁
+│           └── SKILL.md
 ├── dev-docs/                          # AI 輔助開發文件（不進入網站建置）
 │   ├── README.md
 │   ├── ARCHITECTURE.md
@@ -54,7 +61,8 @@ anthropic-academy-chinese/
     │           ├── HeroCertBadge.vue  # 首頁證書徽章裝飾元件（連結至 /certificates）
     │           ├── MermaidLightbox.vue# Mermaid 圖表放大燈箱（滾輪縮放、拖曳、ESC 關閉）
     │           ├── TypewriterBadge.vue# 首頁打字機動畫徽章元件
-    │           └── SlideViewer.vue    # 投影片翻頁瀏覽器（上下頁、全螢幕、鍵盤控制）
+    │           ├── SlideViewer.vue    # 投影片翻頁瀏覽器（上下頁、全螢幕、鍵盤控制）
+    │           └── NlmVideo.vue       # 自訂影片播放器（三語字幕 Popover、速度 Bar、字級調整）
     ├── index.md                       # 首頁（layout: home，含課程總覽表格）
     ├── roadmap.md                     # 學習路線圖（含 Mermaid 流程圖）
     ├── resources.md                   # 額外學習資源
@@ -176,6 +184,7 @@ VitePress 使用**檔案系統路由**（File-based Routing）：
 | `MermaidLightbox` | 無 Props | 自動掛載於所有 Mermaid 圖表，點擊可放大 |
 | `TypewriterBadge` | 無 Props | 首頁打字機動畫徽章，顯示 AI 素養精選標語 |
 | `SlideViewer` | `slides`({src,caption}[]) | 投影片翻頁瀏覽器，支援上下頁、全螢幕、鍵盤 ◀▶ 控制 |
+| `NlmVideo` | `src`, `poster`, `zhVtt`(必填), `enVtt?`, `biVtt?`, `defaultMode?`('zh'\|'en'\|'bi'\|'off') | 自訂影片播放器，CC 按鈕彈出字幕 Popover（繁中/英文/中英/無字幕），字幕字級 14–40px（localStorage 持久化），播放速度 1–2x Bar |
 
 **全域註冊位置**：`docs/.vitepress/theme/index.ts`，不需要在各頁面 import。
 
@@ -196,3 +205,49 @@ mermaid: {
 `npm run docs:build` 輸出至 `docs/.vitepress/dist/`：
 - 完全靜態的 HTML/CSS/JS
 - 不需要伺服器，可直接部署至靜態主機（GitHub Pages、Cloudflare Pages 等）
+
+## 字幕與影片系統
+
+### 字幕產生流程
+
+```
+.claude/notebooklm-exports/<course>/video.mp4
+        ↓  /subtitle skill（faster-whisper + Claude API）
+video.en.srt              # 英文轉錄（來源真相）
+video.zh-Hant.srt         # 雙語 SRT（英上中下）
+video.zh-Hant.vtt         # 雙語 VTT（整合用）
+video.zh-Hant-only.vtt    # 純繁中 VTT（發布用）
+video.en.vtt              # 純英文 VTT（發布用）
+```
+
+### 發布到課程頁的命名規則
+
+複製到 `docs/public/videos/<course>/` 時：
+
+| raw export 檔名 | 發布命名 | NlmVideo prop |
+|---|---|---|
+| `video.zh-Hant-only.vtt` | `<name>.zh-Hant.vtt` | `zh-vtt` |
+| `video.en.vtt` | `<name>.en.vtt` | `en-vtt` |
+| `video.zh-Hant.vtt` | `<name>.bilingual.vtt` | `bi-vtt` |
+
+> 注意：raw export 的 `video.zh-Hant.vtt` 是雙語內容，發布時必須改名為 `bilingual.vtt`，並以 `zh-Hant-only.vtt` 作為純繁中軌道。
+
+### NlmVideo 標準嵌入碼
+
+```html
+<NlmVideo
+  src="/videos/<course>/<name>.mp4"
+  poster="/images/<course>/<name>-poster.png"
+  zh-vtt="/videos/<course>/<name>.zh-Hant.vtt"
+  en-vtt="/videos/<course>/<name>.en.vtt"
+  bi-vtt="/videos/<course>/<name>.bilingual.vtt"
+  default-mode="zh"
+/>
+```
+
+### 字幕腳本位置
+
+- 主腳本：`.claude/scripts/subtitle/generate_subtitles.py`
+- 翻譯模組：`.claude/scripts/subtitle/translate.py`（Claude Haiku API，批次 40 條）
+- 工具函式：`.claude/scripts/subtitle/srt_utils.py`（parse / write / split_bilingual_cues）
+- Python venv：`.claude/scripts/subtitle/.venv/`（首次使用 /subtitle skill 自動建立）
