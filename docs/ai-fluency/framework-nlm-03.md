@@ -1,5 +1,5 @@
 ---
-title: 'NLM 延伸：深度探討一：什麼是生成式 AI？'
+title: 'NLM 延伸：什麼是生成式 AI？'
 description: 'Google NotebookLM 根據第 03 課影片自動生成的延伸學習素材：影片摘要、簡報重點、測驗'
 ---
 
@@ -31,7 +31,7 @@ const nlm03Slides = [
 ]
 </script>
 
-# 📓 第 03 課：深度探討一：什麼是生成式 AI？
+# 📓 第 03 課：什麼是生成式 AI？
 
 <Badge type="tip" text="NotebookLM 生成" /> <Badge type="info" text="影片摘要 + 簡報 + 測驗" />
 

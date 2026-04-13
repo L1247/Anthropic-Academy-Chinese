@@ -21,8 +21,8 @@
     },
     {
       "number": "03",
-      "title_zh": "深度探討一：什麼是生成式 AI？",
-      "title_en": "Deep Dive 1: What is Generative AI?",
+      "title_zh": "什麼是生成式 AI？",
+      "title_en": "What is Generative AI?",
       "description_zh": "不需要技術背景的生成式 AI 原理介紹：語言模型如何運作、訓練資料如何影響輸出、模型的「知識截止日」是什麼意思。建立你判斷 AI 能力邊界所需的心智模型。",
       "nlm_page_exists": true
     },
@@ -49,8 +49,8 @@
     },
     {
       "number": "07",
-      "title_zh": "深度探討二：有效提示技巧",
-      "title_en": "Deep Dive 2: Effective Prompting Techniques",
+      "title_zh": "有效提示技巧",
+      "title_en": "Effective Prompting Techniques",
       "description_zh": "聚焦六項具體的提示技巧，透過大量示範對比「弱提示」與「強提示」的差異。這是課程中最多實作練習的一堂課。",
       "nlm_page_exists": true
     },
