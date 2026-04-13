@@ -68,10 +68,10 @@ def transcribe(
         print(f"  抽取音訊：{video_path.name} → {wav_path.name}")
         extract_audio(video_path, wav_path)
 
-        print("  開始轉錄（language=en, vad_filter=True）…")
+        print("  開始轉錄（task=translate → 輸出英文, vad_filter=True）…")
         segments, info = model.transcribe(
             str(wav_path),
-            language="en",
+            task="translate",   # 不論來源語言，輸出英文翻譯
             vad_filter=True,
             vad_parameters=dict(min_silence_duration_ms=500),
             beam_size=5,
