@@ -15,7 +15,7 @@ except:
     print('')
 " 2>/dev/null)
 
-# 從 history.jsonl 取得對應的 display 標題
+# 從 history.jsonl 取得該 session 的第一筆 display（即 sidebar 顯示的任務名稱）
 HISTORY_FILE="$USERPROFILE/.claude/history.jsonl"
 MSG="任務完成"
 
@@ -25,7 +25,7 @@ import json, sys
 
 session_id = sys.argv[1]
 history_file = sys.argv[2]
-display = ''
+first_display = ''
 
 with open(history_file, encoding='utf-8') as f:
     for line in f:
@@ -35,11 +35,15 @@ with open(history_file, encoding='utf-8') as f:
         try:
             obj = json.loads(line)
             if obj.get('sessionId') == session_id and obj.get('display'):
-                display = obj['display'].strip()
+                first_display = obj['display'].strip()
+                break  # 取第一筆即停止
         except:
             pass
 
-print(display)
+if first_display:
+    # 移除換行，截斷至 50 字
+    clean = first_display.replace('\n', ' ').replace('\r', '').strip()
+    print(clean[:50] + ('...' if len(clean) > 50 else ''))
 " "$SESSION_ID" "$HISTORY_FILE" 2>/dev/null)
 
     [ -n "$EXTRACTED" ] && MSG="$EXTRACTED"
