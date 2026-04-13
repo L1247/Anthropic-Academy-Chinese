@@ -110,6 +110,13 @@ python -m venv ".claude/scripts/subtitle/.venv"
 
 若產出了 `.vtt` 檔案，提示整合到 VitePress 的下一步（可用 `/subtitle-embed <course-name>` 觸發嵌入，見下方附錄）。
 
+成功回報範例（三份 VTT 產出）：
+- `video.en.srt`
+- `video.zh-Hant.srt`（雙語 SRT）
+- `video.zh-Hant.vtt`（雙語 VTT：英上中下）
+- `video.zh-Hant-only.vtt`（純繁中 VTT）
+- `video.en.vtt`（純英文 VTT）
+
 ---
 
 ## 附錄：產出的字幕整合到 VitePress 頁面
@@ -118,17 +125,24 @@ python -m venv ".claude/scripts/subtitle/.venv"
 
 字幕驗證無誤後，若要在課程頁面嵌入播放器：
 
-1. 將 `video.mp4` 與 `video.zh-Hant.vtt` 複製到 `docs/public/videos/<course-name>/`
-2. 在課程 Markdown 頁面插入：
+1. 將 `video.mp4`、`video.zh-Hant-only.vtt`、`video.en.vtt`、`video.zh-Hant.vtt` 複製到 `docs/public/videos/<course-name>/`，並依課程命名慣例重新命名（如 `nlm01-summary.*.vtt`）。
+2. 命名對應規則：
+   - `video.zh-Hant-only.vtt` → `<name>.zh-Hant.vtt`（對應 `zh-vtt` prop，純繁中）
+   - `video.en.vtt`            → `<name>.en.vtt`（對應 `en-vtt` prop，純英文）
+   - `video.zh-Hant.vtt`       → `<name>.bilingual.vtt`（對應 `bi-vtt` prop，雙語）
+3. 在課程 Markdown 頁面插入 `<NlmVideo>` 元件：
 
 ```html
-<video controls width="100%" style="border-radius: 8px; margin: 1rem 0;">
-  <source src="/videos/<course-name>/video.mp4" type="video/mp4">
-  <track default kind="subtitles" srclang="zh-Hant"
-         src="/videos/<course-name>/video.zh-Hant.vtt" label="繁中＋英文">
-</video>
+<NlmVideo
+  src="/videos/<course-name>/<name>.mp4"
+  poster="/images/<course-name>/<name>-poster.png"
+  zh-vtt="/videos/<course-name>/<name>.zh-Hant.vtt"
+  en-vtt="/videos/<course-name>/<name>.en.vtt"
+  bi-vtt="/videos/<course-name>/<name>.bilingual.vtt"
+  default-mode="zh"
+/>
 ```
 
-3. `npm run docs:dev` 驗證播放與字幕顯示正常。
+4. `npm run docs:dev` 驗證播放、三種字幕語系切換、字幕大小調整及播放速度控制均正常。
 
 > **注意**：`video.mp4` 檔案較大，建議放 CDN 後只保留 `.vtt` 進 git；或將 `docs/public/videos/` 加入 `.gitignore`。
