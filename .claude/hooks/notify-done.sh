@@ -4,32 +4,35 @@
 
 [ -n "$CLAUDE_SUBPROCESS" ] && exit 0
 
-TEMP_MSG_FILE="C:\\Users\\User\\AppData\\Local\\Temp\\claude_balloon_msg.txt"
 TEMP_MSG_FILE_UNIX="/c/Users/User/AppData/Local/Temp/claude_balloon_msg.txt"
+TEMP_MSG_FILE_WIN="C:\\Users\\User\\AppData\\Local\\Temp\\claude_balloon_msg.txt"
 
-# 從 stdin 取得 hook 輸入，由 Python 一次完成：讀 session_id、查 history.jsonl、寫暫存檔
-cat | python3 - "$USERPROFILE/.claude/history.jsonl" "$TEMP_MSG_FILE_UNIX" << 'PYEOF'
+# 先把 stdin 存到變數，避免 heredoc 搶走 stdin
+HOOK_INPUT=$(cat)
+
+# Python 從環境變數讀 hook input，寫任務名稱到暫存檔
+HOOK_INPUT="$HOOK_INPUT" \
+HISTORY_FILE="$USERPROFILE/.claude/history.jsonl" \
+OUTPUT_FILE="$TEMP_MSG_FILE_UNIX" \
+python3 << 'PYEOF'
 import json, sys, os
 
-history_file = sys.argv[1]
-output_file = sys.argv[2]
+hook_input_str = os.environ.get("HOOK_INPUT", "")
+history_file = os.environ.get("HISTORY_FILE", "")
+output_file = os.environ.get("OUTPUT_FILE", "")
 default_msg = "任務完成"
+msg = default_msg
 
 try:
-    hook_input = json.load(sys.stdin)
+    hook_input = json.loads(hook_input_str)
     session_id = hook_input.get("session_id", "")
 except:
     session_id = ""
 
-msg = default_msg
-
-if session_id:
+if session_id and history_file:
     try:
-        with open(history_file, encoding="utf-8") as f:
+        with open(history_file, 'rb') as f:
             for line in f:
-                line = line.strip()
-                if not line:
-                    continue
                 try:
                     obj = json.loads(line)
                     if obj.get("sessionId") == session_id and obj.get("display"):
@@ -41,7 +44,6 @@ if session_id:
     except:
         pass
 
-# 直接用 Python 寫檔，避免 bash 編碼問題
 with open(output_file, "w", encoding="utf-8") as f:
     f.write(msg)
 PYEOF
@@ -51,7 +53,7 @@ Add-Type -AssemblyName System.Windows.Forms
 \$notify = New-Object System.Windows.Forms.NotifyIcon
 \$notify.Icon = [System.Drawing.SystemIcons]::Information
 \$notify.Visible = \$true
-\$msg = (Get-Content '$TEMP_MSG_FILE' -Encoding UTF8 -Raw).Trim()
+\$msg = (Get-Content '$TEMP_MSG_FILE_WIN' -Encoding UTF8 -Raw).Trim()
 \$notify.ShowBalloonTip(8000, 'Claude Code', \$msg, [System.Windows.Forms.ToolTipIcon]::Info)
 Start-Sleep -Seconds 9
 \$notify.Dispose()
