@@ -52,7 +52,9 @@ const nlm01Slides = [
 由 Google NotebookLM 根據課程影片自動生成的繁體中文動態摘要。
 :::
 
-<video controls preload="metadata" playsinline class="nlm-video" src="/videos/ai-fluency/nlm01-summary.mp4" poster="/images/ai-fluency/nlm01-video-poster.png" />
+<video controls preload="metadata" playsinline class="nlm-video" src="/videos/ai-fluency/nlm01-summary.mp4" poster="/images/ai-fluency/nlm01-video-poster.png">
+  <track default kind="subtitles" srclang="zh-Hant" src="/videos/ai-fluency/nlm01-summary.zh-Hant.vtt" label="繁中＋英文">
+</video>
 
 ### 📝 影片重點整理
 
