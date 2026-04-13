@@ -49,7 +49,8 @@
       "Bash(cp 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/the-4d-framework/slides_new/slide_03.png' 'D:/Git Project/Side Project/Anthropic Academy Chinese/docs/public/images/ai-fluency/nlm02-slide-03-4d-overview.png')",
       "Bash(cp 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/the-4d-framework/slides_new/slide_04.png' 'D:/Git Project/Side Project/Anthropic Academy Chinese/docs/public/images/ai-fluency/nlm02-slide-04-delegation.png')",
       "Bash(cp 'D:/Git Project/Side Project/Anthropic Academy Chinese/.claude/notebooklm-exports/the-4d-framework/slides_new/slide_05.png' 'D:/Git Project/Side Project/Anthropic Academy Chinese/docs/public/images/ai-fluency/nlm02-slide-05-delegation-case.png')",
-      "Bash(ffmpeg -i .claude/notebooklm-exports/the-4ds-of-ai-fluency/video-zh.mp4 -vf fps=1/5 .claude/notebooklm-exports/the-4ds-of-ai-fluency/frames/frame_%03d.png -y)"
+      "Bash(ffmpeg -i .claude/notebooklm-exports/the-4ds-of-ai-fluency/video-zh.mp4 -vf fps=1/5 .claude/notebooklm-exports/the-4ds-of-ai-fluency/frames/frame_%03d.png -y)",
+      "Bash(powershell.exe:*)"
     ],
     "additionalDirectories": [
       "D:\\Git Project\\Side Project\\Anthropic Academy Chinese\\.claude\\notebooklm-exports\\the-4ds-of-ai-fluency"
