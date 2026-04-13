@@ -11,6 +11,7 @@ import MermaidLightbox from './components/MermaidLightbox.vue'
 import HeroCertBadge from './components/HeroCertBadge.vue'
 import TypewriterBadge from './components/TypewriterBadge.vue'
 import SlideViewer from './components/SlideViewer.vue'
+import NlmVideo from './components/NlmVideo.vue'
 
 export default {
   extends: DefaultTheme,
@@ -29,5 +30,6 @@ export default {
     app.component('RankingExercise', RankingExercise)
     app.component('TypewriterBadge', TypewriterBadge)
     app.component('SlideViewer', SlideViewer)
+    app.component('NlmVideo', NlmVideo)
   }
 }
