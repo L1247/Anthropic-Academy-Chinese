@@ -59,7 +59,8 @@
       "Bash(mkdir -p \".claude/notebooklm-exports/the-4d-framework-v2/slides\")",
       "Bash(ffmpeg -i .claude/notebooklm-exports/the-4d-framework-v2/video.mp4 -vcodec libx264 -crf 28 -preset medium -vf scale=-2:720 -acodec aac -b:a 96k docs/public/videos/ai-fluency/nlm02-summary.mp4 -y)",
       "Bash(cp \".claude/notebooklm-exports/4ds-ai-fluency/video.zh-Hant.vtt\" \"docs/public/videos/ai-fluency/nlm01-summary.zh-Hant.vtt\")",
-      "Bash(cp \".claude/notebooklm-exports/the-4d-framework/video.zh-Hant.vtt\" \"docs/public/videos/ai-fluency/nlm02-summary.zh-Hant.vtt\")"
+      "Bash(cp \".claude/notebooklm-exports/the-4d-framework/video.zh-Hant.vtt\" \"docs/public/videos/ai-fluency/nlm02-summary.zh-Hant.vtt\")",
+      "Bash(.claude/scripts/subtitle/.venv/Scripts/python:*)"
     ],
     "additionalDirectories": [
       "D:\\Git Project\\Side Project\\Anthropic Academy Chinese\\.claude\\notebooklm-exports\\the-4ds-of-ai-fluency"
