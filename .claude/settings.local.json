@@ -60,7 +60,12 @@
       "Bash(ffmpeg -i .claude/notebooklm-exports/the-4d-framework-v2/video.mp4 -vcodec libx264 -crf 28 -preset medium -vf scale=-2:720 -acodec aac -b:a 96k docs/public/videos/ai-fluency/nlm02-summary.mp4 -y)",
       "Bash(cp \".claude/notebooklm-exports/4ds-ai-fluency/video.zh-Hant.vtt\" \"docs/public/videos/ai-fluency/nlm01-summary.zh-Hant.vtt\")",
       "Bash(cp \".claude/notebooklm-exports/the-4d-framework/video.zh-Hant.vtt\" \"docs/public/videos/ai-fluency/nlm02-summary.zh-Hant.vtt\")",
-      "Bash(.claude/scripts/subtitle/.venv/Scripts/python:*)"
+      "Bash(.claude/scripts/subtitle/.venv/Scripts/python:*)",
+      "Bash(ffmpeg -i \".claude/notebooklm-exports/framework-nlm-04/video.mp4\" -vf \"scale=-2:720\" -c:v libx264 -crf 28 -c:a aac -b:a 96k -movflags +faststart \"docs/public/videos/ai-fluency/nlm04-summary.mp4\" -y)",
+      "Bash(ffmpeg -ss 00:00:02 -i \".claude/notebooklm-exports/framework-nlm-04/video.mp4\" -vframes 1 -update 1 \"docs/public/images/ai-fluency/nlm04-video-poster.png\" -y)",
+      "Bash(cp \".claude/notebooklm-exports/framework-nlm-04/video.zh-Hant-only.vtt\" \"docs/public/videos/ai-fluency/nlm04-summary.zh-Hant.vtt\")",
+      "Bash(cp \".claude/notebooklm-exports/framework-nlm-04/video.en.vtt\" \"docs/public/videos/ai-fluency/nlm04-summary.en.vtt\")",
+      "Bash(cp \".claude/notebooklm-exports/framework-nlm-04/video.zh-Hant.vtt\" \"docs/public/videos/ai-fluency/nlm04-summary.bilingual.vtt\")"
     ],
     "additionalDirectories": [
       "D:\\Git Project\\Side Project\\Anthropic Academy Chinese\\.claude\\notebooklm-exports\\the-4ds-of-ai-fluency"
