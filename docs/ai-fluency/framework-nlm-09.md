@@ -1,5 +1,5 @@
 ---
-title: 'NLM 延伸：實踐工作場景 2：分析與決策'
+title: 'NLM 延伸：描述—辨識循環'
 description: 'Google NotebookLM 根據第 09 課影片自動生成的延伸學習素材：影片摘要、簡報重點、測驗'
 ---
 
@@ -120,7 +120,7 @@ const nlm09Slides = [
 ]
 </script>
 
-# 📓 第 09 課：實踐工作場景 2：分析與決策
+# 📓 第 09 課：描述—辨識循環
 
 <Badge type="tip" text="NotebookLM 生成" /> <Badge type="info" text="影片摘要 + 簡報 + 測驗" />
 

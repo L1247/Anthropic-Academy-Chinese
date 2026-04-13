@@ -1,5 +1,5 @@
 ---
-title: 'NLM 延伸：深度探討二：AI 與人類合作的未來'
+title: 'NLM 延伸：深度探討二：有效提示技巧'
 description: 'Google NotebookLM 根據第 07 課影片自動生成的延伸學習素材：影片摘要、簡報重點、測驗'
 ---
 
@@ -121,7 +121,7 @@ const nlm07Slides = [
 ]
 </script>
 
-# 📓 第 07 課：深度探討二：AI 與人類合作的未來
+# 📓 第 07 課：深度探討二：有效提示技巧
 
 <Badge type="tip" text="NotebookLM 生成" /> <Badge type="info" text="影片摘要 + 簡報 + 測驗" />
 

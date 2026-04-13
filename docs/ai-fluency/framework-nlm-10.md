@@ -1,5 +1,5 @@
 ---
-title: 'NLM 延伸：實踐工作場景 3：編碼與技術開發'
+title: 'NLM 延伸：盡責（Diligence）'
 description: 'Google NotebookLM 根據第 10 課影片自動生成的延伸學習素材：影片摘要、簡報重點、測驗'
 ---
 
@@ -119,7 +119,7 @@ const nlm10Slides = [
 ]
 </script>
 
-# 📓 第 10 課：實踐工作場景 3：編碼與技術開發
+# 📓 第 10 課：盡責（Diligence）
 
 <Badge type="tip" text="NotebookLM 生成" /> <Badge type="info" text="影片摘要 + 簡報 + 測驗" />
 
