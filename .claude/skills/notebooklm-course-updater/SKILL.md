@@ -66,13 +66,21 @@ triggers:
 
 從 JSON 條目中取得：
 - `title_zh`：課堂中文標題（必要）
-- `video_url`：影片 URL（必要，若為空 → 提示使用者填寫後終止）
+- `videos`：影片陣列，每個元素含 `part`、`url`、`title`、`duration_minutes`
 - `description_zh`：一行簡介（必要）
 - `nlm_page_exists`：若為 `true` → 提示 NLM 頁已存在，詢問是否繼續覆蓋
 
-若 `video_url` 為空，提示：
+**videos 陣列驗證規則**：
+- 必須至少有一個元素
+- 每個元素的 `url` 都不可為空，**任一為空 → 全部列出後終止**
+- `part` 可為空字串（單影片課）或 `"A"`、`"B"` 等（多影片課）
+- 多影片課的所有元素都會被加入**同一個** NotebookLM 筆記本
+
+若任一 `url` 為空，提示：
 ```
-❌ 第 NN 課的 video_url 尚未填寫。
+❌ 第 NN 課的影片 URL 尚未完整填寫：
+  - Part A: ✅ https://...
+  - Part B: ❌ 未填寫
 請至 YouTube 播放清單找到對應影片 URL，填入：
 .claude/skills/notebooklm-course-updater/lessons/<course-key>.json
 播放清單：https://www.youtube.com/playlist?list=PLf2m23nhTg1NjL3-jL3s0qZCYzO07ZQPv
@@ -80,7 +88,7 @@ triggers:
 
 **0.C 建立 NotebookLM 筆記本**
 
-使用 `course_title` + `title_zh` 組合筆記本名稱：
+使用 `course_title` + `title_zh` 組合筆記本名稱（**不區分 Part**，整堂課共用一個筆記本）：
 ```
 筆記本名稱 = "<course_title> - 第 <NN> 課：<title_zh>"
 例如：AI 素養：框架與基礎 - 第 03 課：深度探討一：什麼是生成式 AI？
@@ -92,14 +100,27 @@ PYTHONIOENCODING=utf-8 notebooklm create "<筆記本名稱>" --json 2>&1
 
 記錄回傳的 Notebook ID。
 
-**0.D 切換到新筆記本並加入影片來源**
+**0.D 切換到新筆記本並加入所有影片來源**
 
 ```bash
 PYTHONIOENCODING=utf-8 notebooklm use <新筆記本ID前8碼> 2>&1
-
-# YouTube URL
-PYTHONIOENCODING=utf-8 notebooklm source add "<video_url>" --type youtube 2>&1
 ```
+
+**對 `videos` 陣列中的每個元素執行 `source add`**（依陣列順序，A → B → ...）：
+
+```bash
+# 第一支影片
+PYTHONIOENCODING=utf-8 notebooklm source add "<videos[0].url>" --type youtube 2>&1
+
+# 第二支影片（若有）
+PYTHONIOENCODING=utf-8 notebooklm source add "<videos[1].url>" --type youtube 2>&1
+
+# ... 依此類推
+```
+
+**重要**：所有來源加入同一個筆記本後，NotebookLM 會將它們合併處理，後續的簡報、測驗、影片摘要會涵蓋所有來源的內容。**不需要為每支影片建立獨立筆記本**。
+
+加入完成後執行 `notebooklm source list` 確認所有來源都已就緒，再進入 Step 1。
 
 **0.E 確認後跳至 Step 1**
 
@@ -330,6 +351,10 @@ ffmpeg -i "$OUTDIR/video.mp4" -vf "fps=1/5" "$OUTDIR/frames/frame_%03d.png" -y 2
 
 使用 Read 工具逐張讀取 PNG 畫面，萃取文字與視覺內容，整理成影片摘要。
 
+**多影片課的處理**（課程編號模式 + `videos` 陣列長度 > 1）：
+
+NotebookLM 的 `notebooklm download video` 只會匯出**一支合併後的影片摘要**（NotebookLM 自動將多來源整合）。Step 8 仍只下載一次，但在 Step 9 的影片摘要區塊內，依 `videos` 陣列分節呈現原始來源資訊（標題、時長、Part 標籤），讓讀者知道內容來自哪幾段影片。
+
 ### Step 9：建立獨立 NLM 頁面
 
 為本次課堂建立獨立的 NotebookLM 延伸學習頁面（每堂課一個 `.md` 檔）。
@@ -375,9 +400,20 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 
 ## 🎬 影片摘要
 
-::: info 🎬 影片摘要：<影片標題>
-（根據影片畫面萃取的完整摘要，含關鍵引言與故事結構）
+::: info 🎬 影片摘要：<課堂標題>
+**來源影片**（共 N 段，已合併由 NotebookLM 處理）：
+
+| Part | 標題 | 時長 |
+|------|------|------|
+| A | <videos[0].title> | <videos[0].duration_minutes> 分鐘 |
+| B | <videos[1].title> | <videos[1].duration_minutes> 分鐘 |
+
+---
+
+（根據影片畫面萃取的完整摘要，含關鍵引言與故事結構。多影片課可使用 `### Part A`、`### Part B` 子節區隔不同影片的內容；單影片課省略 Part 子節。）
 :::
+
+> **單影片課簡化範本**：若 `videos` 陣列只有 1 個元素，省略上方的「來源影片」表格與 Part 子節，直接寫摘要即可。
 
 ## 📊 簡報概覽
 
