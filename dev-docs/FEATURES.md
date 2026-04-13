@@ -18,6 +18,8 @@
 | 官方證書頁 | ✅ 完成 | 17 門課程的證書資訊、CCA 認證說明、常見問題 |
 | HeroCertBadge | ✅ 完成 | 首頁裝飾性證書徽章元件，連結至 /certificates |
 | MermaidLightbox | ✅ 完成 | 點擊 Mermaid 圖表可放大，支援滾輪縮放與拖曳 |
+| TypewriterBadge | ✅ 完成 | 首頁打字機動畫徽章，顯示 AI 素養精選標語 |
+| SlideViewer | ✅ 完成 | 投影片翻頁瀏覽器，上下頁 + 全螢幕 + 鍵盤 ◀▶ 控制 |
 
 ## 內容功能
 
@@ -26,6 +28,7 @@
 - **Hero 區塊**：標語 + 兩個 CTA 按鈕（學習路線圖、官方課程）
 - **Features 區塊**：三大分類卡片含連結
 - **角色引導卡**：初學者 / 開發者 / 教育者 / 學生，各自導向最適合的起點課程
+- **AI 素養精選卡片**：TypewriterBadge 打字機動畫 + 精選課程推薦區塊
 - **課程總覽表格**：17 門課程一覽，含分類、難度、前置條件欄位
 
 ### 學習路線圖（docs/roadmap.md）
@@ -58,17 +61,24 @@
 
 ## 課程內容清單
 
-### AI 素養（6 門 + 互動練習頁）
+### AI 素養（6 門 + NLM 延伸頁 + 互動練習頁）
 
 | 課程 | 檔案 | 狀態 |
 |------|------|------|
 | AI 素養：框架與基礎 | `ai-fluency/framework-foundations.md` | ✅ |
+| NLM 延伸：第 01 課學習素材 | `ai-fluency/framework-nlm-01.md` | ✅ |
+| NLM 延伸：第 02 課 4D 框架詳解 | `ai-fluency/framework-nlm-02.md` | ✅ |
 | AI 能力與限制 | `ai-fluency/capabilities-limitations.md` | ✅ |
 | 教育者的 AI 素養 | `ai-fluency/for-educators.md` | ✅ |
 | 學生的 AI 素養 | `ai-fluency/for-students.md` | ✅ |
 | 教授 AI 素養 | `ai-fluency/teaching.md` | ✅ |
 | 非營利組織的 AI 素養 | `ai-fluency/for-nonprofits.md` | ✅ |
 | 4D 框架互動練習 | `ai-fluency/4d-practice.md` | ✅ |
+
+**NLM 延伸頁功能說明：**
+- 由 `notebooklm-course-updater` skill 從 NotebookLM 匯出內容自動更新
+- 包含：影片摘要（繁體中文結構化時間軸）、投影片（SlideViewer 翻頁瀏覽器）、延伸測驗（Quiz 元件）
+- 嵌入於對應主課程的 sidebar 項目之下，採折疊式設計
 
 **4D 框架互動練習頁功能說明：**
 - 使用 VitePress + Vue 3 `<script setup>` 嵌入互動式自我評估問卷
