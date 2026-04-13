@@ -1,0 +1,132 @@
+{
+  "course_key": "framework",
+  "course_title": "AI 素養：框架與基礎",
+  "main_page": "docs/ai-fluency/framework-foundations.md",
+  "nlm_page_pattern": "docs/ai-fluency/framework-nlm-{NN}.md",
+  "sidebar_section": "/ai-fluency/",
+  "source_root": "https://anthropic.skilljar.com/ai-fluency-framework-foundations",
+  "youtube_playlist": "https://www.youtube.com/playlist?list=PLf2m23nhTg1NjL3-jL3s0qZCYzO07ZQPv",
+  "_note": "video_url 欄位請至 YouTube 播放清單取得每堂課的連結。已有 NLM 頁的課號（01、02）可留空。",
+  "lessons": [
+    {
+      "number": "01",
+      "title_zh": "AI 素養簡介（4Ds 概覽）",
+      "title_en": "AI Fluency Introduction",
+      "description_zh": "課程開場，建立共同語言。介紹「AI 素養」的定義——不是技術技能，而是與 AI 系統有效協作的思維能力。說明為什麼所有人，無論職業背景，都需要培養 AI 素養。",
+      "video_url": "",
+      "video_title": "AI 流暢力框架：與 AI 一起思考",
+      "duration_minutes": 6,
+      "nlm_page_exists": true
+    },
+    {
+      "number": "02",
+      "title_zh": "4D 框架詳解",
+      "title_en": "The 4D Framework",
+      "description_zh": "深入拆解 4D 框架的四個核心能力：委派（Delegation）、描述（Description）、辨識（Discernment）、盡責（Diligence），並介紹三種人機互動模式（自動化、擴增、代理）。",
+      "video_url": "",
+      "video_title": "The 4D Framework",
+      "duration_minutes": 0,
+      "nlm_page_exists": true
+    },
+    {
+      "number": "03",
+      "title_zh": "深度探討一：什麼是生成式 AI？",
+      "title_en": "Deep Dive 1: What is Generative AI?",
+      "description_zh": "不需要技術背景的生成式 AI 原理介紹：語言模型如何運作、訓練資料如何影響輸出、模型的「知識截止日」是什麼意思。建立你判斷 AI 能力邊界所需的心智模型。",
+      "video_url": "",
+      "video_title": "",
+      "duration_minutes": 0,
+      "nlm_page_exists": false
+    },
+    {
+      "number": "04",
+      "title_zh": "委派（Delegation）",
+      "title_en": "Delegation",
+      "description_zh": "4Ds 的第一個 D。學習如何判斷哪些任務適合委派給 AI，包含目標與任務意識、平台意識、任務委派三個層面，以及「委派四問」快速評估工具。",
+      "video_url": "",
+      "video_title": "",
+      "duration_minutes": 0,
+      "nlm_page_exists": false
+    },
+    {
+      "number": "05",
+      "title_zh": "委派的應用",
+      "title_en": "Applying Delegation",
+      "description_zh": "把委派原則帶入真實工作情境：練習用 Delegation 思維分解多步驟項目，建立你自己的「AI 委派計畫」（Delegation Plan）。",
+      "video_url": "",
+      "video_title": "",
+      "duration_minutes": 0,
+      "nlm_page_exists": false
+    },
+    {
+      "number": "06",
+      "title_zh": "描述（Description）",
+      "title_en": "Description",
+      "description_zh": "4Ds 的第二個 D。有效地向 AI 描述你的目標——提示設計的核心原則，涵蓋成果描述、過程描述、效能描述三個層面。",
+      "video_url": "",
+      "video_title": "",
+      "duration_minutes": 0,
+      "nlm_page_exists": false
+    },
+    {
+      "number": "07",
+      "title_zh": "深度探討二：有效提示技巧",
+      "title_en": "Deep Dive 2: Effective Prompting Techniques",
+      "description_zh": "聚焦六項具體的提示技巧，透過大量示範對比「弱提示」與「強提示」的差異。這是課程中最多實作練習的一堂課。",
+      "video_url": "",
+      "video_title": "",
+      "duration_minutes": 0,
+      "nlm_page_exists": false
+    },
+    {
+      "number": "08",
+      "title_zh": "辨識（Discernment）",
+      "title_en": "Discernment",
+      "description_zh": "4Ds 的第三個 D。學習系統性評估 AI 輸出的方法，包含成果辨識、過程辨識、效能辨識三個層面。建立有根據的判斷標準而非懷疑一切。",
+      "video_url": "",
+      "video_title": "",
+      "duration_minutes": 0,
+      "nlm_page_exists": false
+    },
+    {
+      "number": "09",
+      "title_zh": "描述—辨識循環",
+      "title_en": "The Description-Discernment Loop",
+      "description_zh": "把描述與辨識連結起來，介紹「描述—辨識循環」：根據 AI 輸出的品質調整提示，循環迭代直到達到你的標準。",
+      "video_url": "",
+      "video_title": "",
+      "duration_minutes": 0,
+      "nlm_page_exists": false
+    },
+    {
+      "number": "10",
+      "title_zh": "盡責（Diligence）",
+      "title_en": "Diligence",
+      "description_zh": "4Ds 的第四個 D，也是最具倫理深度的一課。涵蓋創作盡責、透明盡責、部署盡責三個層面，以及如何撰寫「盡責聲明」。",
+      "video_url": "",
+      "video_title": "",
+      "duration_minutes": 0,
+      "nlm_page_exists": false
+    },
+    {
+      "number": "11",
+      "title_zh": "課程總結",
+      "title_en": "Course Conclusion",
+      "description_zh": "整合 4Ds 與三種互動模式，建立完整的 AI 素養行動框架。引導你建立個人 AI 素養發展計畫，評估自己在四個 D 各面向的強度。",
+      "video_url": "",
+      "video_title": "",
+      "duration_minutes": 0,
+      "nlm_page_exists": false
+    },
+    {
+      "number": "12",
+      "title_zh": "延伸活動",
+      "title_en": "Extension Activities",
+      "description_zh": "提供進階練習與資源，供希望更深入應用的學習者使用。包含情境模擬、跨領域應用，以及個人素養評估。",
+      "video_url": "",
+      "video_title": "",
+      "duration_minutes": 0,
+      "nlm_page_exists": false
+    }
+  ]
+}

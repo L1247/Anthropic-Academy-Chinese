@@ -12,6 +12,7 @@ triggers:
 
 ```
 /notebooklm-update <notebook名稱或ID|Skilljar-URL> [課程檔案路徑]
+/notebooklm-update <course-key> <lesson-number>
 ```
 
 **範例：**
@@ -19,11 +20,100 @@ triggers:
 /notebooklm-update "The 4Ds of AI Fluency"
 /notebooklm-update 208e3044 docs/ai-fluency/framework-foundations.md
 /notebooklm-update https://anthropic.skilljar.com/ai-fluency-framework-foundations/291876
+
+# 課程編號模式（自動查表 → 建立 NLM → 產出延伸頁）
+/notebooklm-update framework 03
+/notebooklm-update framework 07
 ```
+
+**`course-key` 對應表**：
+
+| course-key | 課程 | 目錄檔 |
+|---|---|---|
+| `framework` | AI 素養：框架與基礎 | `.claude/skills/notebooklm-course-updater/lessons/framework-foundations.json` |
+
+> 未來新增課程系列只需在 `lessons/` 放入對應的 JSON 檔，並使用相同格式。
 
 ---
 
 ## 執行步驟
+
+### Step 0.0：偵測輸入格式（優先判斷）
+
+在所有步驟之前，先判斷輸入類型：
+
+1. **若輸入為 `<course-key> <lesson-number>` 格式**（如 `framework 03`）→ **進入課程編號模式**（見下方）
+2. **若輸入以 `https://` 開頭** → 進入 Step 0（Skilljar URL 模式）
+3. **其他** → 進入 Step 1-3（現有 Notebook 名稱 / ID 模式）
+
+---
+
+### 🆕 課程編號模式：`/notebooklm-update framework 03`
+
+當輸入符合 `<course-key> <lesson-number>` 格式時，執行以下專屬流程：
+
+**0.A 讀取課程目錄 JSON**
+
+```
+.claude/skills/notebooklm-course-updater/lessons/<course-key>.json
+```
+
+- 若檔案不存在 → 回報路徑，說明需要建立目錄檔後終止
+- 讀取 JSON，找到 `number === "<lesson-number>"` 的條目（如 `"03"`）
+- 若找不到條目 → 列出所有可用課號後終止
+
+**0.B 驗證必要欄位**
+
+從 JSON 條目中取得：
+- `title_zh`：課堂中文標題（必要）
+- `video_url`：影片 URL（必要，若為空 → 提示使用者填寫後終止）
+- `description_zh`：一行簡介（必要）
+- `nlm_page_exists`：若為 `true` → 提示 NLM 頁已存在，詢問是否繼續覆蓋
+
+若 `video_url` 為空，提示：
+```
+❌ 第 NN 課的 video_url 尚未填寫。
+請至 YouTube 播放清單找到對應影片 URL，填入：
+.claude/skills/notebooklm-course-updater/lessons/<course-key>.json
+播放清單：https://www.youtube.com/playlist?list=PLf2m23nhTg1NjL3-jL3s0qZCYzO07ZQPv
+```
+
+**0.C 建立 NotebookLM 筆記本**
+
+使用 `course_title` + `title_zh` 組合筆記本名稱：
+```
+筆記本名稱 = "<course_title> - 第 <NN> 課：<title_zh>"
+例如：AI 素養：框架與基礎 - 第 03 課：深度探討一：什麼是生成式 AI？
+```
+
+```bash
+PYTHONIOENCODING=utf-8 notebooklm create "<筆記本名稱>" --json 2>&1
+```
+
+記錄回傳的 Notebook ID。
+
+**0.D 切換到新筆記本並加入影片來源**
+
+```bash
+PYTHONIOENCODING=utf-8 notebooklm use <新筆記本ID前8碼> 2>&1
+
+# YouTube URL
+PYTHONIOENCODING=utf-8 notebooklm source add "<video_url>" --type youtube 2>&1
+```
+
+**0.E 確認後跳至 Step 1**
+
+記錄以下資訊供後續步驟使用：
+- `COURSE_KEY`：如 `framework`
+- `LESSON_NUM`：如 `03`（兩位數字串）
+- `LESSON_TITLE`：`title_zh`
+- `LESSON_DESC`：`description_zh`
+- `TARGET_PAGE`：`nlm_page_pattern` 套用課號（如 `docs/ai-fluency/framework-nlm-03.md`）
+- `MAIN_PAGE`：`main_page`（如 `docs/ai-fluency/framework-foundations.md`）
+
+確認後繼續 **Step 1**（已在新筆記本中，可跳過 Step 2-3）。
+
+---
 
 ### Step 0：從 Skilljar URL 建立新筆記本（若輸入為 URL）
 
@@ -244,9 +334,9 @@ ffmpeg -i "$OUTDIR/video.mp4" -vf "fps=1/5" "$OUTDIR/frames/frame_%03d.png" -y 2
 
 為本次課堂建立獨立的 NotebookLM 延伸學習頁面（每堂課一個 `.md` 檔）。
 
-**檔案命名**：`docs/<category>/<course-slug>-nlm-<NN>.md`
-- `<course-slug>`：取課程主頁檔名的第一段（如 `framework` 來自 `framework-foundations`）
-- `<NN>`：兩位數課號（如 `01`、`02`）
+**檔案命名**：
+- **課程編號模式**：使用 `TARGET_PAGE`（即 `nlm_page_pattern` 套用課號），例如 `docs/ai-fluency/framework-nlm-03.md`
+- **其他模式**：`docs/<category>/<course-slug>-nlm-<NN>.md`，其中 `<course-slug>` 取課程主頁檔名第一段（如 `framework`）、`<NN>` 為兩位數課號
 
 **頁面結構：**
 ```markdown
@@ -264,8 +354,24 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 
 <Badge type="tip" text="NotebookLM 生成" /> <Badge type="info" text="影片摘要 + 簡報 + 測驗" />
 
-> 以下內容由 Google NotebookLM 根據課程影片自動生成，作為延伸濃縮學習素材。
+> 以下內容由 Google NotebookLM 根據課程影片自動生成，作為延伸濃縮學習素材。  
 > 📖 回到主課程：[<課程名稱>](/<category>/<course-main-page>)
+
+## 📋 課程概覽
+
+### 第 NN 課：<課堂標題>
+
+<LESSON_DESC>（來自 JSON 的 description_zh）
+
+---
+
+（🆕 課程編號模式專屬）
+
+## 📖 課程大綱深度說明
+
+（從主課程頁 MAIN_PAGE 萃取對應的 H3 標題 + `<details>` 深度說明區塊，完整複製。若主課程頁無對應區塊則省略此節。）
+
+---
 
 ## 🎬 影片摘要
 
@@ -298,9 +404,40 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 />
 ```
 
-**測驗編號規則**：每個 NLM 頁面內部從 `測驗 <課號>-1` 開始（如第 01 課為 `1-1`、`1-2`；第 02 課為 `2-1`、`2-2`）。`nlmQ*Options` 陣列在各頁面內部從 `nlmQ1Options` 開始，互不干涉。
+**測驗編號規則**：每個 NLM 頁面內部從 `測驗 <課號>-1` 開始（如第 03 課為 `3-1`、`3-2`；第 04 課為 `4-1`、`4-2`）。`nlmQ*Options` 陣列在各頁面內部從 `nlmQ1Options` 開始，互不干涉。
 
-**課程主頁處理**：
+---
+
+#### 🆕 課程編號模式專屬：Step 9.1 大綱搬遷
+
+完成 NLM 頁面產出後，進行主課程頁的大綱搬遷：
+
+**9.1.A 從主課程頁萃取課程大綱區塊**
+
+使用 Read 工具讀取 `MAIN_PAGE`，找到對應 `### 第 <LESSON_NUM> 課：` H3 標題區塊（包含其下的 `<details>...</details>` 全部內容）。
+
+若找不到對應區塊（如 01、02 課在主頁無 H3），跳過 9.1.B，僅在 NLM 頁的 `## 📋 課程概覽` 填入 `LESSON_DESC`。
+
+**9.1.B 修改主課程頁**
+
+將主課程頁中原有的 H3 + `<details>` 區塊替換為精簡版（標題 + 一行簡介 + 連結），格式如下：
+
+```markdown
+### 第 NN 課：<title_zh>
+
+<description_zh>
+
+→ [深度說明與 NotebookLM 延伸學習](./framework-nlm-NN.md)
+```
+
+**注意**：
+- 保留區塊前後的空行，確保 H3 順序與 Markdown 結構不被破壞
+- 僅替換對應課號的區塊，不動其他課號
+- 若主課程頁的 `<details>` 區塊後還有 slide-card 等元件，保持原位不動
+
+---
+
+**課程主頁 NLM 導引連結處理**：
 - 若課程主頁尚無 NLM 導引連結，在 `## 💡 學習建議` 之前加入：
   ```markdown
   ::: tip 📓 NotebookLM 延伸學習
@@ -312,18 +449,22 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 
 ### Step 10：更新 Sidebar
 
-每次建立新 NLM 頁面後，將連結插入 `docs/.vitepress/config.mts` 中**對應課程的 items 清單**，緊接在該課程的互動練習連結（`└ 🎯`）之後：
+每次建立新 NLM 頁面後，將連結插入 `docs/.vitepress/config.mts` 中**對應課程的最後一個 `└ 📓` 條目之後**（保持課號升序）：
 
 ```typescript
 { text: 'AI 素養：框架與基礎', link: '/ai-fluency/framework-foundations' },
 { text: '└ 🎯4D 互動練習', link: '/ai-fluency/4d-practice' },
 { text: '└ 📓 第 01 課：AI 素養簡介', link: '/ai-fluency/framework-nlm-01' },
 { text: '└ 📓 第 02 課：4D 框架詳解', link: '/ai-fluency/framework-nlm-02' },
-// 新增：
-{ text: '└ 📓 第 NN 課：<標題>', link: '/ai-fluency/<course-slug>-nlm-NN' },
+// 新增（依課號順序插入）：
+{ text: '└ 📓 第 03 課：深度探討一：什麼是生成式 AI？', link: '/ai-fluency/framework-nlm-03' },
 ```
 
-NLM 頁面屬於對應課程的延伸內容，應放在課程項目底下，而非獨立分組。
+**插入規則**：
+- 新條目**依課號升序**插入現有 `└ 📓` 群組末尾
+- `text` 格式：`└ 📓 第 <NN> 課：<title_zh>`（`title_zh` 取自 JSON 目錄檔）
+- `link` 格式：`/ai-fluency/<course-key>-nlm-<NN>`（不含 `.md`）
+- NLM 頁面屬於對應課程的延伸內容，放在課程項目底下，而非獨立分組
 
 每道測驗題必須加入 `hint` prop（對應 `quiz.json` 的 `questions[].hint`）。若 `hint` 為空或 null，省略該 prop。
 
