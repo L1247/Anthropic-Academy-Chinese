@@ -106,20 +106,18 @@ const nlmQ70Options = {
 };
 
 const nlm07Slides = [
-  { src: '/images/ai-fluency/nlm07-slide-01-slide1.png', caption: '投影片 1' },
-  { src: '/images/ai-fluency/nlm07-slide-02-slide2.png', caption: '投影片 2' },
-  { src: '/images/ai-fluency/nlm07-slide-03-slide3.png', caption: '投影片 3' },
-  { src: '/images/ai-fluency/nlm07-slide-04-slide4.png', caption: '投影片 4' },
-  { src: '/images/ai-fluency/nlm07-slide-05-slide5.png', caption: '投影片 5' },
-  { src: '/images/ai-fluency/nlm07-slide-06-slide6.png', caption: '投影片 6' },
-  { src: '/images/ai-fluency/nlm07-slide-07-slide7.png', caption: '投影片 7' },
-  { src: '/images/ai-fluency/nlm07-slide-08-slide8.png', caption: '投影片 8' },
-  { src: '/images/ai-fluency/nlm07-slide-09-slide9.png', caption: '投影片 9' },
-  { src: '/images/ai-fluency/nlm07-slide-10-slide10.png', caption: '投影片 10' },
-  { src: '/images/ai-fluency/nlm07-slide-11-slide11.png', caption: '投影片 11' },
-  { src: '/images/ai-fluency/nlm07-slide-12-slide12.png', caption: '投影片 12' },
-  { src: '/images/ai-fluency/nlm07-slide-13-slide13.png', caption: '投影片 13' },
-  { src: '/images/ai-fluency/nlm07-slide-14-slide14.png', caption: '投影片 14' },
+  { src: '/images/ai-fluency/nlm07-slide-01-title.png', caption: '投影片 01' },
+  { src: '/images/ai-fluency/nlm07-slide-02-overview.png', caption: '投影片 02' },
+  { src: '/images/ai-fluency/nlm07-slide-03-components.png', caption: '投影片 03' },
+  { src: '/images/ai-fluency/nlm07-slide-04-framework.png', caption: '投影片 04' },
+  { src: '/images/ai-fluency/nlm07-slide-05-dimensions.png', caption: '投影片 05' },
+  { src: '/images/ai-fluency/nlm07-slide-06-assessment.png', caption: '投影片 06' },
+  { src: '/images/ai-fluency/nlm07-slide-07-evaluation.png', caption: '投影片 07' },
+  { src: '/images/ai-fluency/nlm07-slide-08-guidelines.png', caption: '投影片 08' },
+  { src: '/images/ai-fluency/nlm07-slide-09-examples.png', caption: '投影片 09' },
+  { src: '/images/ai-fluency/nlm07-slide-10-implementation.png', caption: '投影片 10' },
+  { src: '/images/ai-fluency/nlm07-slide-11-best-practices.png', caption: '投影片 11' },
+  { src: '/images/ai-fluency/nlm07-slide-12-summary.png', caption: '投影片 12' },
 ]
 </script>
 
