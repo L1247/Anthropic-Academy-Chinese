@@ -7,3 +7,6 @@ docs/.vitepress/dist/
 
 # NotebookLM 匯出的原始素材（大型二進位，可重新匯出）
 .claude/notebooklm-exports/
+
+# 字幕腳本虛擬環境
+.claude/scripts/subtitle/.venv/
