@@ -2,6 +2,9 @@
 # Hook: 任務完成 Windows 氣球通知
 # 事件: Stop
 
+# 若為自動 commit 子程序，跳過通知
+[ -n "$CLAUDE_SUBPROCESS" ] && exit 0
+
 powershell.exe -NoProfile -NonInteractive -c "
 Add-Type -AssemblyName System.Windows.Forms;
 \$notify = New-Object System.Windows.Forms.NotifyIcon;
