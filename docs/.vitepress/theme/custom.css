@@ -13,10 +13,10 @@
   --vp-home-hero-image-filter: blur(44px);
 }
 
-/* Sidebar 內容往右內縮，靠近捲動條 */
+/* Sidebar 內容往右內縮，離捲動條保持距離 */
 .VPSidebar .nav {
-  padding-left: 24px !important;
-  padding-right: 15px !important;
+  padding-left: 24px;
+  padding-right: 15px;
 }
 
 /* 網站標題靠右對齊 */
