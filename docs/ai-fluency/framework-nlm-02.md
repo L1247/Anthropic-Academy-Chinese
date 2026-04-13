@@ -35,6 +35,23 @@ const quizOptions3 = [
   "只要在文件末尾標注「AI 輔助」就完成了盡責義務",
   "盡責只適用於涉及敏感資訊的任務"
 ]
+
+const nlm02Slides = [
+  { src: '/images/ai-fluency/nlm02-slide-01-cover.png', caption: '封面：超越提示詞——掌握自動化、增強與代理模式的 4D 實踐框架' },
+  { src: '/images/ai-fluency/nlm02-slide-02-access-friction.png', caption: '「取得」≠「精通」：許多人有 AI 工具，卻仍面臨回覆不準確、無法描述需求、資安隱憂等阻礙' },
+  { src: '/images/ai-fluency/nlm02-slide-03-ai-fluency.png', caption: 'AI 流暢度四維度：效能（最大化互動成果）、效率（減少時間浪費）、安全（保護隱私）、倫理（負責任的態度）' },
+  { src: '/images/ai-fluency/nlm02-slide-04-paradigm-shift.png', caption: '三個演化階段：工具（被動執行）→ 媒介（思維延伸）→ 協作者/共創夥伴（提供創意與洞察）' },
+  { src: '/images/ai-fluency/nlm02-slide-05-interaction-spectrum.png', caption: '互動光譜：自動化（人類主導 AI 執行）→ 增強（人機高頻協同）→ 代理（人類設定願景 AI 自主運行）' },
+  { src: '/images/ai-fluency/nlm02-slide-06-automation.png', caption: '自動化：人類角色為「指令下達者」，適用已有明確預期結果的任務；注意目標不清晰時容易遇到瓶頸' },
+  { src: '/images/ai-fluency/nlm02-slide-07-augmentation.png', caption: '增強：人類為「協同探索者」，AI 是創意思考與解決問題的夥伴；適用於故事角色發展、攻克難題、複雜研究等' },
+  { src: '/images/ai-fluency/nlm02-slide-08-agency.png', caption: '代理：人類從「撰寫精確指令」轉變為「設定願景的導演」；適用於需持續運作或動態應對的情境' },
+  { src: '/images/ai-fluency/nlm02-slide-09-decision-matrix.png', caption: '決策矩陣：自動化（低 AI 自主性、標準化）vs 增強（中、具備創意）vs 代理（高、動態自動化流程）' },
+  { src: '/images/ai-fluency/nlm02-slide-10-4d-framework.png', caption: '雙層齒輪模型：外圈（委派 + 勤勉）定義邊界與責任；內圈（描述 ↔ 辨別）構成日常高頻微循環' },
+  { src: '/images/ai-fluency/nlm02-slide-11-delegation.png', caption: '委派三步驟：釐清目標與問題 → 辨識 AI 能力邊界 → 在你與 AI 之間進行深思熟慮的工作劃分' },
+  { src: '/images/ai-fluency/nlm02-slide-12-description-discernment.png', caption: '描述（超越單一提示詞）vs 辨別（注入人類專業判斷）：「這個產出真的能幫助我推進工作嗎？」' },
+  { src: '/images/ai-fluency/nlm02-slide-13-diligence.png', caption: '勤勉五支柱：確保公平（防偏見）→ 驗證準確度 → 保護資料 → 維持透明 → 承擔責任' },
+  { src: '/images/ai-fluency/nlm02-slide-14-conclusion.png', caption: '全域架構：底層基石（4D 框架）× 三種互動模式 × 頂層目標（AI 流暢度）→「掌握 4D 框架，讓 AI 成為擴展人類潛能的最強媒介」' },
+]
 </script>
 
 # 📓 第 02 課：4D 框架詳解
@@ -201,67 +218,10 @@ flowchart LR
 ## 📊 簡報概覽
 
 ::: tip 📊 簡報：超越提示詞——建構 AI 時代的核心流暢度（由 NotebookLM 生成）
-以下為 NotebookLM 根據「The 4D Framework」課程自動生成的繁體中文簡報，共 14 張投影片。
+共 14 張投影片，使用左右按鈕或縮圖列切換；點擊主圖或全螢幕鈕可放大檢視。
 :::
 
-<div class="slide-image-gallery">
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-01-cover.png" alt="超越提示詞：建構 AI 時代的核心流暢度（封面）" loading="lazy" />
-    <div class="slide-image-caption">封面：超越提示詞——掌握自動化、增強與代理模式的 4D 實踐框架</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-02-access-friction.png" alt="擁有強大的 AI 系統，不代表我們懂得發揮其最大價值" loading="lazy" />
-    <div class="slide-image-caption">「取得」≠「精通」：許多人有 AI 工具，卻仍面臨回覆不準確、無法描述需求、資安隱憂等阻礙</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-03-ai-fluency.png" alt="AI 流暢度：一套持續適應技術變革的綜合素養" loading="lazy" />
-    <div class="slide-image-caption">AI 流暢度四維度：效能（最大化互動成果）、效率（減少時間浪費）、安全（保護隱私）、倫理（負責任的態度）</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-04-paradigm-shift.png" alt="範式轉移：從單一工具到強大的協同媒介" loading="lazy" />
-    <div class="slide-image-caption">三個演化階段：工具（被動執行）→ 媒介（思維延伸）→ 協作者/共創夥伴（提供創意與洞察）</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-05-interaction-spectrum.png" alt="互動光譜：三種主要人機協作模式" loading="lazy" />
-    <div class="slide-image-caption">互動光譜：自動化（人類主導 AI 執行）→ 增強（人機高頻協同）→ 代理（人類設定願景 AI 自主運行）</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-06-automation.png" alt="模式一：自動化——明確指令的精準執行" loading="lazy" />
-    <div class="slide-image-caption">自動化：人類角色為「指令下達者」，適用已有明確預期結果的任務；注意目標不清晰時容易遇到瓶頸</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-07-augmentation.png" alt="模式二：增強——突破框架的創意協同" loading="lazy" />
-    <div class="slide-image-caption">增強：人類為「協同探索者」，AI 是創意思考與解決問題的夥伴；適用於故事角色發展、攻克難題、複雜研究等</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-08-agency.png" alt="模式三：代理——建立模式與願景的自主運行" loading="lazy" />
-    <div class="slide-image-caption">代理：人類從「撰寫精確指令」轉變為「設定願景的導演」；適用於需持續運作或動態應對的情境</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-09-decision-matrix.png" alt="互動模式決策矩陣：根據任務特性選擇最佳策略" loading="lazy" />
-    <div class="slide-image-caption">決策矩陣：自動化（低 AI 自主性、標準化）vs 增強（中、具備創意）vs 代理（高、動態自動化流程）</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-10-4d-framework.png" alt="4D 框架：驅馭 AI 流暢度的核心作業系統" loading="lazy" />
-    <div class="slide-image-caption">雙層齒輪模型：外圈（委派 + 勤勉）定義邊界與責任；內圈（描述 ↔ 辨別）構成日常高頻微循環</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-11-delegation.png" alt="D1 委派：定義全局視野與策略分工" loading="lazy" />
-    <div class="slide-image-caption">委派三步驟：釐清目標與問題 → 辨識 AI 能力邊界 → 在你與 AI 之間進行深思熟慮的工作劃分</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-12-description-discernment.png" alt="D2 & D3 描述與辨別：高頻迭代的微循環" loading="lazy" />
-    <div class="slide-image-caption">描述（超越單一提示詞）vs 辨別（注入人類專業判斷）：「這個產出真的能幫助我推進工作嗎？」</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-13-diligence.png" alt="D4 勤勉：建立安全、倫理與當責的防線" loading="lazy" />
-    <div class="slide-image-caption">勤勉五支柱：確保公平（防偏見）→ 驗證準確度 → 保護資料 → 維持透明 → 承擔責任</div>
-  </div>
-  <div class="slide-image-item">
-    <img src="/images/ai-fluency/nlm02-v2-slide-14-conclusion.png" alt="建立永不過時的護城河：AI 流暢度全域架構" loading="lazy" />
-    <div class="slide-image-caption">全域架構：底層基石（4D 框架）× 三種互動模式 × 頂層目標（AI 流暢度）→「掌握 4D 框架，讓 AI 成為擴展人類潛能的最強媒介」</div>
-  </div>
-</div>
+<SlideViewer :slides="nlm02Slides" />
 
 ## 🧪 延伸測驗
 

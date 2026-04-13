@@ -10,6 +10,7 @@ import RankingExercise from './components/RankingExercise.vue'
 import MermaidLightbox from './components/MermaidLightbox.vue'
 import HeroCertBadge from './components/HeroCertBadge.vue'
 import TypewriterBadge from './components/TypewriterBadge.vue'
+import SlideViewer from './components/SlideViewer.vue'
 
 export default {
   extends: DefaultTheme,
@@ -27,5 +28,6 @@ export default {
     app.component('MatchingPairs', MatchingPairs)
     app.component('RankingExercise', RankingExercise)
     app.component('TypewriterBadge', TypewriterBadge)
+    app.component('SlideViewer', SlideViewer)
   }
 }

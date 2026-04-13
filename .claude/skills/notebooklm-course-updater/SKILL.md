@@ -71,16 +71,14 @@ triggers:
 - `nlm_page_exists`：若為 `true` → 提示 NLM 頁已存在，詢問是否繼續覆蓋
 
 **videos 陣列驗證規則**：
-- 必須至少有一個元素
-- 每個元素的 `url` 都不可為空，**任一為空 → 全部列出後終止**
-- `part` 可為空字串（單影片課）或 `"A"`、`"B"` 等（多影片課）
-- 多影片課的所有元素都會被加入**同一個** NotebookLM 筆記本
+- 必須至少有一個元素；只取 `videos[0]`，多元素視為設定錯誤並終止
+- `videos[0].url` 不可為空，為空時終止並提示填寫
+- `part` 欄位已棄用，每課只允許單一影片來源
 
-若任一 `url` 為空，提示：
+若 `videos[0].url` 為空，提示：
 ```
-❌ 第 NN 課的影片 URL 尚未完整填寫：
-  - Part A: ✅ https://...
-  - Part B: ❌ 未填寫
+❌ 第 NN 課的影片 URL 尚未填寫：
+  - videos[0].url: ❌ 未填寫
 請至 YouTube 播放清單找到對應影片 URL，填入：
 .claude/skills/notebooklm-course-updater/lessons/<course-key>.json
 播放清單：https://www.youtube.com/playlist?list=PLf2m23nhTg1NjL3-jL3s0qZCYzO07ZQPv
@@ -88,7 +86,7 @@ triggers:
 
 **0.C 建立 NotebookLM 筆記本**
 
-使用 `course_title` + `title_zh` 組合筆記本名稱（**不區分 Part**，整堂課共用一個筆記本）：
+使用 `course_title` + `title_zh` 組合筆記本名稱（整堂課共用一個筆記本）：
 ```
 筆記本名稱 = "<course_title> - 第 <NN> 課：<title_zh>"
 例如：AI 素養：框架與基礎 - 第 03 課：深度探討一：什麼是生成式 AI？
@@ -106,21 +104,13 @@ PYTHONIOENCODING=utf-8 notebooklm create "<筆記本名稱>" --json 2>&1
 PYTHONIOENCODING=utf-8 notebooklm use <新筆記本ID前8碼> 2>&1
 ```
 
-**對 `videos` 陣列中的每個元素執行 `source add`**（依陣列順序，A → B → ...）：
+加入 `videos[0]` 的影片來源：
 
 ```bash
-# 第一支影片
 PYTHONIOENCODING=utf-8 notebooklm source add "<videos[0].url>" --type youtube 2>&1
-
-# 第二支影片（若有）
-PYTHONIOENCODING=utf-8 notebooklm source add "<videos[1].url>" --type youtube 2>&1
-
-# ... 依此類推
 ```
 
-**重要**：所有來源加入同一個筆記本後，NotebookLM 會將它們合併處理，後續的簡報、測驗、影片摘要會涵蓋所有來源的內容。**不需要為每支影片建立獨立筆記本**。
-
-加入完成後執行 `notebooklm source list` 確認所有來源都已就緒，再進入 Step 1。
+加入完成後執行 `notebooklm source list` 確認來源已就緒，再進入 Step 1。
 
 **0.E 確認後跳至 Step 1**
 
@@ -281,19 +271,21 @@ PYTHONIOENCODING=utf-8 notebooklm generate video "請以繁體中文（Tradition
 
 生成完成後繼續 Step 5 下載。
 
-### Step 5.5：將 slides.pdf 轉為圖片並判斷是否可直接嵌入
+### Step 5.5：將 slides.pdf 轉為圖片並嵌入 SlideViewer
 
 使用 PyMuPDF（需 Python 3.10+）將每頁轉為 PNG：
 
 ```bash
 py -3.11 -c "
-import fitz, os
-doc = fitz.open('$OUTDIR/slides.pdf')
-os.makedirs('$OUTDIR/slides', exist_ok=True)
-for i, page in enumerate(doc):
-    pix = page.get_pixmap(dpi=200)
-    pix.save(f'$OUTDIR/slides/slide_{i+1:02d}.png')
-doc.close()
+import fitz, os, sys
+sys.stdout.reconfigure(encoding='utf-8')
+with fitz.open('$OUTDIR/slides.pdf') as doc:
+    n = doc.page_count
+    os.makedirs('$OUTDIR/slides', exist_ok=True)
+    for i, page in enumerate(doc):
+        pix = page.get_pixmap(dpi=200)
+        pix.save(f'$OUTDIR/slides/slide_{i+1:02d}.png')
+print(f'OK: {n} slides')
 "
 ```
 
@@ -301,23 +293,36 @@ doc.close()
 
 | 條件 | 結果 |
 |------|------|
-| 繁體中文內容 + 無真實人臉 | ✅ 複製到 `docs/public/images/<category>/` 直接嵌入 |
-| 含英文文字 或 含真實人臉照片 | ❌ 使用 `.slide-card` CSS/HTML 元件以中文重製 |
+| 繁體中文內容 + 無真實人臉 | ✅ 複製到 `docs/public/images/<category>/nlm<NN>-slide-NN-<semantic>.png` |
+| 含英文文字 或 含真實人臉照片 | ❌ 使用 `.slide-card` CSS/HTML 元件以中文重製（不放入 SlideViewer） |
 
-**嵌入語法**（Markdown）：
+**命名規則**：`nlm<NN>-slide-<序號>-<語意名>.png`（序號為兩位數，語意名取英文小寫 kebab-case，例如 `delegation`、`interaction-spectrum`）。
+
+**嵌入方式（SlideViewer 元件）**：
+
+在 `<script setup>` 加入 slides 陣列：
+```js
+const nlmNNSlides = [
+  { src: '/images/<category>/nlm<NN>-slide-01-<name>.png', caption: '<中文說明（25-60 字，凝練該頁核心訊息）>' },
+  // ... 全部頁數
+]
+```
+
+在簡報概覽區塊使用：
 ```markdown
-![簡報說明文字](/images/<category>/slide-XX-<name>.png)
+## 📊 簡報概覽
+
+::: tip 📊 簡報：<簡報標題>（由 NotebookLM 生成）
+共 N 張投影片，使用左右按鈕或縮圖列切換；點擊主圖或全螢幕鈕可放大檢視。
+:::
+
+<SlideViewer :slides="nlmNNSlides" />
 ```
 
-**容器樣式**（搭配 custom.css 的 `.slide-image-gallery` / `.slide-image-item`）：
-```html
-<div class="slide-image-gallery">
-  <div class="slide-image-item">
-    <img src="/images/<category>/slide-XX.png" alt="說明" loading="lazy" />
-    <div class="slide-image-caption">簡短中文說明</div>
-  </div>
-</div>
-```
+**規則補充**：
+- **必須納入全部頁數**，不可只挑代表性的幾張
+- 含真實人臉的頁面：改為 `.slide-card` HTML 元件，獨立列在 SlideViewer 上方或下方
+- 第一次使用 `<SlideViewer>` 前，確認 `docs/.vitepress/theme/index.ts` 已有 `app.component('SlideViewer', SlideViewer)` 且 `SlideViewer.vue` 已存在於 `components/`
 
 若 PyMuPDF 未安裝：`py -3.11 -m pip install pymupdf`
 
@@ -386,10 +391,6 @@ ffmpeg -i "$OUTDIR/video.mp4" -vf "fps=1/5" "$OUTDIR/frames/frame_%03d.png" -y 2
 
 使用 Read 工具逐張讀取 PNG 畫面，萃取文字與視覺內容，整理成影片重點。
 
-**多影片課的處理**（課程編號模式 + `videos` 陣列長度 > 1）：
-
-NotebookLM 的 `notebooklm download video` 只會匯出**一支合併後的影片摘要**（NotebookLM 自動將多來源整合）。Step 8 仍只下載一次，但在 Step 9 的影片摘要區塊內，依 `videos` 陣列分節呈現原始來源資訊（標題、時長、Part 標籤），讓讀者知道內容來自哪幾段影片。
-
 ### Step 9：建立獨立 NLM 頁面
 
 為本次課堂建立獨立的 NotebookLM 延伸學習頁面（每堂課一個 `.md` 檔）。
@@ -443,7 +444,7 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 
 ### 📝 影片重點整理
 
-（根據影片畫面萃取的重點表格與金句。多影片課可使用 `#### Part A`、`#### Part B` 子節區隔不同影片的內容；單影片課省略 Part 子節。）
+（根據影片畫面萃取的重點表格與金句。）
 
 > **CSS 依賴**：第一次使用 `<video>` 嵌入前，確認 `docs/.vitepress/theme/custom.css` 已有 `.nlm-video` 樣式（深淺模式）：
 > ```css
@@ -459,16 +460,6 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 > .dark .nlm-video {
 >   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 > }
-> ```
-
-> **多影片課來源表格**（`videos` 陣列長度 > 1 時，在 `### 📝 影片重點整理` 前加入）：
-> ```markdown
-> **來源影片**（共 N 段，已合併由 NotebookLM 處理）：
->
-> | Part | 標題 | 時長 |
-> |------|------|------|
-> | A | <videos[0].title> | <videos[0].duration_minutes> 分鐘 |
-> | B | <videos[1].title> | <videos[1].duration_minutes> 分鐘 |
 > ```
 
 ## 📊 簡報概覽
@@ -580,6 +571,48 @@ const nlmQ1Options = ["選項A", "選項B", "選項C", "選項D"]
 - ffmpeg 需已安裝（`where ffmpeg` 確認）
 - 影片摘要檔案需先用 ffmpeg 壓縮（CRF 28、720p、AAC 96k）再 commit 到 `docs/public/videos/<category>/`；原始 `video.mp4` 留在 `.claude/notebooklm-exports/`（已 gitignore），不進版控
 - 所有 bash 命令使用**絕對路徑**（避免因 `cd` 造成相對路徑跑到錯誤目錄）
+- 每課只支援單一影片來源；若課程有多支影片，請選擇主要影片，**不再支援多 source 自動合併流程**
+
+### 重新生成同一課的「清空 → 放入」規則
+
+每次為**同一課**重新生成 NotebookLM 內容時，必須採用「**先清空目標位置、再把新內容放進去**」的流程，禁止使用 `-v2`、`-new`、`-old` 等版本後綴並列。
+
+**標準流程**：
+
+1. **暫存可用內容**（若新內容已下載到別處，跳過此步）：將欲保留的素材複製到 `/tmp/nlm<NN>-backup/` 或專案外暫存區。
+
+2. **清空 exports 目錄**：
+   ```bash
+   rm -rf .claude/notebooklm-exports/<notebook-slug>/
+   rm -rf .claude/notebooklm-exports/<notebook-slug>-v2/   # 若有殘留也一併清掉
+   mkdir -p .claude/notebooklm-exports/<notebook-slug>/
+   ```
+
+3. **清空該課所有 public 素材**：
+   ```bash
+   rm -f docs/public/images/<category>/nlm<NN>-slide-*.png
+   rm -f docs/public/images/<category>/nlm<NN>-v2-slide-*.png   # 若有殘留也一併清掉
+   rm -f docs/public/images/<category>/nlm<NN>-video-poster.png
+   rm -f docs/public/videos/<category>/nlm<NN>-summary.mp4
+   ```
+
+4. **重新放入新內容**：簡報 PNG 用 `nlm<NN>-slide-NN-<semantic>.png` 命名；影片走 ffmpeg 壓縮輸出到固定路徑。
+
+5. **頁面 (.md) 同步更新**：用 Edit 工具把 `script setup` 內的 `nlmNNSlides` 陣列重建，並 grep 全頁確認無殘留版本後綴字串。
+
+6. **引用完整性檢查（必跑，任何 MISS 都要處理後才能 build）**：
+   ```bash
+   PAGE="docs/<category>/<page>.md"
+   grep -oE '/(images|videos)/[a-zA-Z0-9./_-]+\.(png|jpg|jpeg|webp|mp4)' "$PAGE" \
+     | sort -u \
+     | while read ref; do
+         [ -f "docs/public${ref}" ] && echo "OK  $ref" || echo "MISS $ref"
+       done
+   ```
+
+7. **build 驗證**：`npm run docs:build` 通過，無 dead link、無 Vue parser 警告。
+
+> **為何禁用版本後綴**：每課累積 v2、v3、v4 會讓 `docs/public/` 迅速失控；同名覆蓋搭配 git history 即可追溯歷史，引用完整性檢查確保網站不會指向已清空的素材。
 
 ### 中英文處理規則
 
