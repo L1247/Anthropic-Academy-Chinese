@@ -3,7 +3,11 @@
     "allow": [
       "WebFetch(domain:www.analyticsvidhya.com)",
       "Edit(~/.npm/**)",
-      "Read(~/.npm/**)"
+      "Read(~/.npm/**)",
+      "Bash(cd * && git *)",
+      "Bash(cd * && git * | *)",
+      "Bash(cd * && git * && *)",
+      "Bash(cd /mnt/d/* && git *)"
     ],
     "deny": [
       "Bash(rm -rf *)",

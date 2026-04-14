@@ -1,0 +1,22 @@
+# 強制所有文字檔使用 LF 換行（避免 WSL2/Windows 混用 CRLF 問題）
+* text=auto eol=lf
+
+# 明確指定各類型文字檔
+*.md   text eol=lf
+*.vtt  text eol=lf
+*.srt  text eol=lf
+*.ts   text eol=lf
+*.mts  text eol=lf
+*.json text eol=lf
+*.css  text eol=lf
+*.html text eol=lf
+
+# 二進位檔案不做換行轉換
+*.mp4   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
