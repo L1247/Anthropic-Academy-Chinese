@@ -60,6 +60,12 @@
         "hooks": [
           {
             "type": "command",
+            "command": "bash \"$HOME/.claude/hooks/notify-on-stop.sh\"",
+            "statusMessage": "生成任務摘要中...",
+            "timeout": 15
+          },
+          {
+            "type": "command",
             "command": "bash -c 'if [ -n \"$(git status --porcelain 2>/dev/null)\" ]; then CLAUDE_SUBPROCESS=1 claude -p \"請依照 .claude/rules/git-commit.md 規範分析 git 變更、選擇 commit type，執行 git add 與 git commit（不要 push）。\" --allowedTools Bash --max-turns 8 2>/dev/null || true; fi'",
             "statusMessage": "自動提交變更中...",
             "timeout": 120
