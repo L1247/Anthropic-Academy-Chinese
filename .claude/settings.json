@@ -60,8 +60,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$HOME/.claude/hooks/notify-on-stop.sh\"",
-            "statusMessage": "生成任務摘要中...",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$HOME/.claude/hooks/task-done-notify.ps1\"",
+            "statusMessage": "顯示任務摘要中...",
             "timeout": 15
           },
           {
