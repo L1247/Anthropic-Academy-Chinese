@@ -60,14 +60,14 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$HOME/.claude/hooks/task-done-notify.ps1\"",
-            "statusMessage": "顯示任務摘要中...",
-            "timeout": 15
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$HOME/.claude/hooks/task-done-notify.ps1\" 2>/dev/null",
+            "suppressOutput": true,
+            "timeout": 5
           },
           {
             "type": "command",
             "command": "bash -c 'if [ -n \"$(git status --porcelain 2>/dev/null)\" ]; then CLAUDE_SUBPROCESS=1 claude -p \"請依照 .claude/rules/git-commit.md 規範分析 git 變更、選擇 commit type，執行 git add 與 git commit（不要 push）。\" --allowedTools Bash --max-turns 8 2>/dev/null || true; fi'",
-            "statusMessage": "自動提交變更中...",
+            "suppressOutput": true,
             "timeout": 120
           }
         ]
