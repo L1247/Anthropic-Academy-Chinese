@@ -25,6 +25,8 @@ const volume = ref(1)
 const isFullscreen = ref(false)
 const controlsVisible = ref(true)
 const currentCueLines = ref<string[]>([])
+const isSeeking = ref(false)
+const seekPreview = ref(0)
 
 const subtitleMode = ref<Mode>(props.defaultMode)
 const subtitleMenuOpen = ref(false)
@@ -139,10 +141,20 @@ function onEnded() {
   controlsVisible.value = true
 }
 
+function onSeekStart() {
+  isSeeking.value = true
+  seekPreview.value = currentTime.value
+}
+
 function onSeekInput(e: Event) {
+  seekPreview.value = parseFloat((e.target as HTMLInputElement).value)
+}
+
+function onSeekEnd(e: Event) {
   const t = parseFloat((e.target as HTMLInputElement).value)
   videoEl.value!.currentTime = t
   currentTime.value = t
+  isSeeking.value = false
 }
 
 // ── 音量控制 ───────────────────────────────────────────
@@ -284,8 +296,11 @@ onBeforeUnmount(() => {
           min="0"
           :max="duration || 100"
           step="0.1"
-          :value="currentTime"
+          :value="isSeeking ? seekPreview : currentTime"
+          @mousedown="onSeekStart"
+          @touchstart.passive="onSeekStart"
           @input="onSeekInput"
+          @change="onSeekEnd"
         >
       </div>
 
