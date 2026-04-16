@@ -26,7 +26,7 @@ const isFullscreen = ref(false)
 const controlsVisible = ref(true)
 const currentCueLines = ref<string[]>([])
 const isSeeking = ref(false)
-const seekPreview = ref(0)
+const seekEl = ref<HTMLInputElement | null>(null)
 
 const subtitleMode = ref<Mode>(props.defaultMode)
 const subtitleMenuOpen = ref(false)
@@ -127,7 +127,12 @@ function togglePlay() {
 }
 
 function onTimeUpdate() {
-  currentTime.value = videoEl.value!.currentTime
+  const t = videoEl.value!.currentTime
+  currentTime.value = t
+  // 直接操作 DOM，避免 Vue re-render 在拖曳中途重置滑桿位置
+  if (!isSeeking.value && seekEl.value) {
+    seekEl.value.value = String(t)
+  }
 }
 
 function onLoadedMetadata() {
@@ -143,11 +148,10 @@ function onEnded() {
 
 function onSeekStart() {
   isSeeking.value = true
-  seekPreview.value = currentTime.value
 }
 
-function onSeekInput(e: Event) {
-  seekPreview.value = parseFloat((e.target as HTMLInputElement).value)
+function onSeekInput(_e: Event) {
+  // 拖曳中：只更新顯示，不觸發 seek
 }
 
 function onSeekEnd(e: Event) {
@@ -291,16 +295,17 @@ onBeforeUnmount(() => {
       <!-- 進度條 -->
       <div class="nlm-seek-row">
         <input
+          ref="seekEl"
           type="range"
           class="nlm-seek"
           min="0"
           :max="duration || 100"
           step="0.1"
-          :value="isSeeking ? seekPreview : currentTime"
           @mousedown="onSeekStart"
           @touchstart.passive="onSeekStart"
           @input="onSeekInput"
           @change="onSeekEnd"
+          @touchend="onSeekEnd"
         >
       </div>
 
