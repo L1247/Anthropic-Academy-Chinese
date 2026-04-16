@@ -2,11 +2,41 @@
 import { ref, computed } from 'vue'
 
 const props = defineProps({
-  question: { type: String, required: true },
-  options: { type: Array, required: true },
-  answer: { type: [Number, Array], required: true },
-  explanation: { type: String, required: true },
+  question: { type: String, default: '' },
+  options: { type: [Array, Object], required: true },
+  answer: { type: [Number, Array], default: null },
+  explanation: { type: String, default: '' },
   multi: { type: Boolean, default: false }
+})
+
+// Support both formats:
+// 1. Legacy: <Quiz question="..." :options="[str]" :answer="0" explanation="..." />
+// 2. Config object: <Quiz :options="{ question, options: [{text, explanation}], correctAnswer }" />
+const isConfigObject = computed(() => !Array.isArray(props.options))
+
+const resolvedQuestion = computed(() =>
+  isConfigObject.value ? props.options.question : props.question
+)
+
+const resolvedOptions = computed(() => {
+  const raw = isConfigObject.value ? props.options.options : props.options
+  return raw.map(o => (typeof o === 'string' ? o : o.text))
+})
+
+const resolvedAnswer = computed(() =>
+  isConfigObject.value ? props.options.correctAnswer : props.answer
+)
+
+const resolvedExplanation = computed(() => {
+  if (isConfigObject.value) {
+    const opts = props.options.options
+    const ans = props.options.correctAnswer
+    if (Array.isArray(ans)) {
+      return opts[ans[0]]?.explanation ?? ''
+    }
+    return opts[ans]?.explanation ?? ''
+  }
+  return props.explanation
 })
 
 const selected = ref(props.multi ? [] : null)
@@ -38,7 +68,7 @@ function isSelected(i) {
 }
 
 function isCorrect(i) {
-  const ans = props.answer
+  const ans = resolvedAnswer.value
   return Array.isArray(ans) ? ans.includes(i) : i === ans
 }
 
@@ -52,11 +82,11 @@ function optionStatus(i) {
 const isAllCorrect = computed(() => {
   if (!submitted.value) return false
   if (props.multi) {
-    const ans = new Set(Array.isArray(props.answer) ? props.answer : [props.answer])
+    const ans = new Set(Array.isArray(resolvedAnswer.value) ? resolvedAnswer.value : [resolvedAnswer.value])
     const sel = new Set(selected.value)
     return ans.size === sel.size && [...ans].every(x => sel.has(x))
   }
-  return selected.value === props.answer
+  return selected.value === resolvedAnswer.value
 })
 
 const canSubmit = computed(() => {
@@ -66,11 +96,11 @@ const canSubmit = computed(() => {
 
 <template>
   <div class="practice-card">
-    <p class="quiz-question">{{ question }}</p>
+    <p class="quiz-question">{{ resolvedQuestion }}</p>
     <p v-if="multi" class="quiz-hint">（可複選，選完後再點「檢查答案」）</p>
     <div class="quiz-options">
       <button
-        v-for="(opt, i) in options"
+        v-for="(opt, i) in resolvedOptions"
         :key="i"
         class="practice-option"
         :class="optionStatus(i)"
@@ -105,7 +135,7 @@ const canSubmit = computed(() => {
       :class="isAllCorrect ? 'correct-feedback' : 'wrong-feedback'"
     >
       <strong>{{ isAllCorrect ? '✅ 正確！' : '💭 再想想看…' }}</strong>
-      <p>{{ explanation }}</p>
+      <p>{{ resolvedExplanation }}</p>
     </div>
   </div>
 </template>
