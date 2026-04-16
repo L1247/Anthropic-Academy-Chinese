@@ -15,3 +15,8 @@ docs/.vitepress/dist/
 __pycache__/
 *.pyc
 .env
+
+# 本地筆記與建議（不納入版控）
+Todo.md
+如何啟動.md
+專案相關建議.md
