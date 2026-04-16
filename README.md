@@ -4,6 +4,8 @@
 
 [![部署狀態](https://img.shields.io/badge/部署-Cloudflare%20Pages-orange)](https://anthropic-academy-chinese.pages.dev)
 
+**線上網站：[https://anthropic-academy-chinese.pages.dev](https://anthropic-academy-chinese.pages.dev)**
+
 ## 關於本專案
 
 [Anthropic Academy](https://anthropic.skilljar.com/) 提供 17 門免費課程，但全為英文。本專案將課程內容整理成**完整繁體中文學習指南**，協助中文使用者快速理解課程架構、重點概念與實作方式。
