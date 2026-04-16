@@ -181,3 +181,28 @@ const nlm11Slides = [
 
 <SlideViewer :slides="nlm11Slides" />
 ---
+## 🧪 延伸測驗
+
+::: tip 🧪 互動學習
+透過以下測驗檢測你對課程內容的理解程度。
+:::
+
+<Quiz :options="nlmQ101Options" />
+
+<Quiz :options="nlmQ102Options" />
+
+<Quiz :options="nlmQ103Options" />
+
+<Quiz :options="nlmQ104Options" />
+
+<Quiz :options="nlmQ105Options" />
+
+<Quiz :options="nlmQ106Options" />
+
+<Quiz :options="nlmQ107Options" />
+
+<Quiz :options="nlmQ108Options" />
+
+<Quiz :options="nlmQ109Options" />
+
+<Quiz :options="nlmQ110Options" />
